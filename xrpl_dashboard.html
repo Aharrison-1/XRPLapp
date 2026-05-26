@@ -17,14 +17,14 @@
 body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;min-height:100vh}
 .wrap{padding:10px}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:3px;margin-bottom:8px;gap:8px;flex-wrap:wrap;position:sticky;top:8px;z-index:50;backdrop-filter:blur(8px)}
-.logo{font-size:12px;color:var(--accent);letter-spacing:3px;flex-shrink:0}
-.status{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--t2);flex:1}
+.logo{font-size:14px;color:var(--accent);letter-spacing:3px;flex-shrink:0}
+.status{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2);flex:1}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.8s infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 /* COLUMN TOGGLE */
 .ctog{display:flex;align-items:center;gap:3px;flex-shrink:0}
-.ctoglbl{font-size:8px;color:var(--t3);margin-right:2px;letter-spacing:1px}
-.ctb{font-size:8px;padding:2px 8px;background:transparent;border:1px solid var(--border);color:var(--t2);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s}
+.ctoglbl{font-size:9px;color:var(--t3);margin-right:2px;letter-spacing:1px}
+.ctb{font-size:9px;padding:2px 8px;background:transparent;border:1px solid var(--border);color:var(--t2);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s}
 .ctb:hover{border-color:var(--borderhi);color:var(--t)}
 .ctb.act{background:rgba(0,255,180,.1);border-color:var(--accent);color:var(--accent)}
 /* CSS Columns masonry — browser handles gapless layout natively */
@@ -51,26 +51,26 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .box:hover{border-color:var(--borderhi)}
 .bh{display:flex;align-items:center;justify-content:space-between;padding:5px 9px;background:var(--bg3);border-bottom:1px solid var(--border);gap:5px;min-height:26px}
 .bhl{display:flex;align-items:center;gap:5px;flex:1;min-width:0}
-.bt{font-size:9px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.bt{font-size:11px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
 .bhr{display:flex;align-items:center;gap:4px;flex-shrink:0}
 /* EXPAND ICON — small, subtle */
-.xi{font-size:9px;line-height:1;padding:0 3px;background:transparent;border:1px solid rgba(0,255,180,.08);color:rgba(100,140,120,.5);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s;flex-shrink:0;height:14px;display:inline-flex;align-items:center}
+.xi{font-size:11px;line-height:1;padding:0 3px;background:transparent;border:1px solid rgba(0,255,180,.08);color:rgba(100,140,120,.5);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s;flex-shrink:0;height:14px;display:inline-flex;align-items:center}
 .xi:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,255,180,.05)}
 /* badges */
-.blv{font-size:8px;color:var(--green);letter-spacing:.5px}
-.bnet{font-size:8px;padding:1px 5px;border:1px solid var(--border);color:var(--t2);border-radius:2px}
-.b24{font-size:8px;padding:1px 5px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);color:var(--accent2);border-radius:2px}
-.b7d{font-size:8px;padding:1px 5px;background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.2);color:var(--yellow);border-radius:2px}
-.balrt{font-size:7px;padding:1px 4px;background:rgba(255,68,102,.15);border:1px solid rgba(255,68,102,.3);color:var(--red);border-radius:2px}
-.bconf{font-size:7px;padding:1px 4px;background:rgba(255,159,67,.15);border:1px solid rgba(255,159,67,.3);color:var(--orange);border-radius:2px}
-.beco{font-size:7px;padding:1px 4px;background:rgba(0,232,122,.08);border:1px solid rgba(0,232,122,.2);color:var(--green);border-radius:2px}
-.bnew{font-size:7px;padding:1px 4px;background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.28);color:var(--purple);border-radius:2px}
-.btess{font-size:7px;padding:1px 4px;background:rgba(0,232,122,.1);color:var(--green);border:1px solid rgba(0,232,122,.2);border-radius:2px;flex-shrink:0}
-.lvc{font-size:8px;color:var(--green)}
-.va{font-size:8px;color:var(--t2);text-decoration:none;padding:1px 5px;border:1px solid var(--border);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s}
+.blv{font-size:9px;color:var(--green);letter-spacing:.5px}
+.bnet{font-size:9px;padding:1px 5px;border:1px solid var(--border);color:var(--t2);border-radius:2px}
+.b24{font-size:9px;padding:1px 5px;background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);color:var(--accent2);border-radius:2px}
+.b7d{font-size:9px;padding:1px 5px;background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.2);color:var(--yellow);border-radius:2px}
+.balrt{font-size:8px;padding:1px 4px;background:rgba(255,68,102,.15);border:1px solid rgba(255,68,102,.3);color:var(--red);border-radius:2px}
+.bconf{font-size:8px;padding:1px 4px;background:rgba(255,159,67,.15);border:1px solid rgba(255,159,67,.3);color:var(--orange);border-radius:2px}
+.beco{font-size:8px;padding:1px 4px;background:rgba(0,232,122,.08);border:1px solid rgba(0,232,122,.2);color:var(--green);border-radius:2px}
+.bnew{font-size:8px;padding:1px 4px;background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.28);color:var(--purple);border-radius:2px}
+.btess{font-size:8px;padding:1px 4px;background:rgba(0,232,122,.1);color:var(--green);border:1px solid rgba(0,232,122,.2);border-radius:2px;flex-shrink:0}
+.lvc{font-size:9px;color:var(--green)}
+.va{font-size:9px;color:var(--t2);text-decoration:none;padding:1px 5px;border:1px solid var(--border);border-radius:2px;white-space:nowrap;transition:color .15s,border-color .15s}
 .va:hover{color:var(--accent);border-color:var(--borderhi)}
 /* cycle button */
-.cbtn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:8.5px;font-weight:bold;letter-spacing:1px;padding:2px 6px;border-radius:2px;cursor:pointer;border:none;outline:none;transition:all .2s;user-select:none;white-space:nowrap;min-width:32px}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:bold;letter-spacing:1px;padding:2px 6px;border-radius:2px;cursor:pointer;border:none;outline:none;transition:all .2s;user-select:none;white-space:nowrap;min-width:32px}
 .cbtn.live{background:rgba(255,68,102,.15);color:var(--red);box-shadow:0 0 0 1px rgba(255,68,102,.4)}
 .cbtn.hist{background:rgba(192,132,252,.13);color:var(--purple);box-shadow:0 0 0 1px rgba(192,132,252,.35)}
 .cbtn:hover{filter:brightness(1.2)}
@@ -79,45 +79,45 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .box{display:flex;flex-direction:column;overflow:hidden}
 .sr{display:flex;justify-content:space-between;align-items:baseline;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .sr:last-child{border-bottom:none}
-.sl{color:var(--t2);font-size:9px}.sv{color:var(--t);font-size:10px}
+.sl{color:var(--t2);font-size:8px}.sv{color:var(--t);font-size:8px}
 .sv.a{color:var(--accent)}.sv.a2{color:var(--accent2)}.sv.y{color:var(--yellow)}.sv.g{color:var(--green)}.sv.r{color:var(--red)}
 .tr{display:flex;align-items:center;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);gap:3px}
 .tr:last-child{border-bottom:none}
-.ttime{color:var(--t3);font-size:8px;flex-shrink:0;min-width:32px}
-.wl{font-size:9px;text-decoration:none;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ttime{color:var(--t3);font-size:9px;flex-shrink:0;min-width:32px}
+.wl{font-size:11px;text-decoration:none;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .wl:hover{opacity:.75;text-decoration:underline}
 .wl.from{color:var(--green)}.wl.to{color:var(--accent2)}
-.ta{color:var(--t3);font-size:8px;flex-shrink:0}
-.tamt{font-size:9px;color:var(--yellow);flex-shrink:0;text-align:right;min-width:52px;text-decoration:none}
+.ta{color:var(--t3);font-size:9px;flex-shrink:0}
+.tamt{font-size:11px;color:var(--yellow);flex-shrink:0;text-align:right;min-width:52px;text-decoration:none}
 .tamt:hover{opacity:.75;text-decoration:underline;text-decoration-color:var(--yellow)}
-.txdr{font-size:8px;color:var(--purple);padding:2px 0 3px;border-bottom:1px solid var(--border);margin-bottom:3px;letter-spacing:1px;display:none}
+.txdr{font-size:9px;color:var(--purple);padding:2px 0 3px;border-bottom:1px solid var(--border);margin-bottom:3px;letter-spacing:1px;display:none}
 .actr{display:flex;align-items:center;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);gap:4px}
 .actr:last-child{border-bottom:none}
-.atype{font-size:7px;padding:1px 4px;border-radius:2px;flex-shrink:0;white-space:nowrap}
+.atype{font-size:8px;padding:1px 4px;border-radius:2px;flex-shrink:0;white-space:nowrap}
 .tpay{background:rgba(0,200,255,.1);color:var(--accent2);border:1px solid rgba(0,200,255,.22)}
 .toff{background:rgba(255,209,102,.08);color:var(--yellow);border:1px solid rgba(255,209,102,.18)}
 .ttrs{background:rgba(192,132,252,.1);color:var(--purple);border:1px solid rgba(192,132,252,.22)}
 .tesc{background:rgba(255,159,67,.08);color:var(--orange);border:1px solid rgba(255,159,67,.18)}
 .tnft{background:rgba(0,255,180,.06);color:var(--accent);border:1px solid rgba(0,255,180,.18)}
-.aacct{color:var(--t2);font-size:9px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.aval{color:var(--yellow);font-size:9px;flex-shrink:0;min-width:50px;text-align:right}
+.aacct{color:var(--t2);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aval{color:var(--yellow);font-size:11px;flex-shrink:0;min-width:50px;text-align:right}
 .nrow{padding:4px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .nrow:last-child{border-bottom:none}
 .nsrc{display:flex;align-items:center;gap:4px;margin-bottom:2px}
-.nsl{font-size:8px;color:var(--t3);letter-spacing:.5px;text-transform:uppercase}
-.nhl{font-size:9px;color:var(--t);line-height:1.4}
-.nage{font-size:8px;color:var(--t3);margin-top:1px}
+.nsl{font-size:9px;color:var(--t3);letter-spacing:.5px;text-transform:uppercase}
+.nhl{font-size:11px;color:var(--t);line-height:1.4}
+.nage{font-size:9px;color:var(--t3);margin-top:1px}
 .pr{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .pr:last-child{border-bottom:none}
-.pn{color:var(--accent2);font-size:9px}.pv{color:var(--t2);font-size:8px}.pf{color:var(--yellow);font-size:9px}
+.pn{color:var(--accent2);font-size:8px}.pv{color:var(--t2);font-size:7px}.pf{color:var(--yellow);font-size:8px}
 .tk{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .tk:last-child{border-bottom:none}
-.ts{color:var(--accent);font-size:10px;font-weight:bold;min-width:52px}
-.tp{color:var(--t);font-size:9px;flex:1;text-align:center}.tc{font-size:9px}
+.ts{color:var(--accent);font-size:12px;font-weight:bold;min-width:52px}
+.tp{color:var(--t);font-size:11px;flex:1;text-align:center}.tc{font-size:8px}
 .amr{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .amr:last-child{border-bottom:none}
-.amn{font-size:9px;color:var(--t);flex:1}.amv{font-size:8px;color:var(--t2)}
-.bdg{font-size:7px;padding:1px 4px;border-radius:2px}
+.amn{font-size:11px;color:var(--t);flex:1}.amv{font-size:9px;color:var(--t2)}
+.bdg{font-size:8px;padding:1px 4px;border-radius:2px}
 .en{background:rgba(0,232,122,.1);color:var(--green);border:1px solid rgba(0,232,122,.22)}
 .vt{background:rgba(255,209,102,.08);color:var(--yellow);border:1px solid rgba(255,209,102,.18)}
 .vlr{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
@@ -126,90 +126,90 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .vok{background:var(--green)}
 .vwarn{background:var(--yellow)}
 .vbad{background:var(--red)}
-.vn{font-size:9px;color:var(--t);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.vdom{font-size:8px;color:var(--t2);flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.vf{font-size:9px;flex-shrink:0}.vs{font-size:8px;color:var(--accent2);flex-shrink:0}
+.vn{font-size:11px;color:var(--t);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vdom{font-size:9px;color:var(--t2);flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vf{font-size:11px;flex-shrink:0}.vs{font-size:9px;color:var(--accent2);flex-shrink:0}
 .dpr{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .dpr:last-child{border-bottom:none}
-.dn{color:var(--accent2);font-size:10px;min-width:80px}.da{color:var(--t2);font-size:8px;flex:1;text-align:center}
-.dv{color:var(--yellow);font-size:9px}.dchg{font-size:8px}
+.dn{color:var(--accent2);font-size:12px;min-width:80px}.da{color:var(--t2);font-size:9px;flex:1;text-align:center}
+.dv{color:var(--yellow);font-size:8px}.dchg{font-size:7px}
 .prbox{text-align:center;padding:4px 0 2px}
-.prnum{font-size:19px;color:var(--accent)}
+.prnum{font-size:22px;color:var(--accent)}
 .conv{display:flex;align-items:center;gap:5px;margin-top:6px;padding-top:5px;border-top:1px solid var(--border)}
-.conv input{background:var(--bg3);border:1px solid var(--border);color:var(--accent);font-family:var(--mono);font-size:11px;padding:3px 5px;border-radius:2px;width:56px;outline:none;text-align:right}
-.ceq{color:var(--t2);font-size:9px}.cres{color:var(--yellow);font-size:11px}
+.conv input{background:var(--bg3);border:1px solid var(--border);color:var(--accent);font-family:var(--mono);font-size:13px;padding:3px 5px;border-radius:2px;width:56px;outline:none;text-align:right}
+.ceq{color:var(--t2);font-size:8px}.cres{color:var(--yellow);font-size:9px}
 .spk{width:100%;height:42px;margin-top:5px;display:block}
 .obside{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.oblbl{font-size:8px;color:var(--t2);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
-.obr{display:flex;justify-content:space-between;padding:1px 0;font-size:9px}
-.obbid{color:var(--green)}.obask{color:var(--red)}.obqty{color:var(--t2);font-size:8px}
-.obmid{text-align:center;font-size:9px;color:var(--yellow);padding:3px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:3px 0}
-.obpair{font-size:8px;color:var(--t2);margin-bottom:4px;letter-spacing:1px}
+.oblbl{font-size:9px;color:var(--t2);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.obr{display:flex;justify-content:space-between;padding:1px 0;font-size:8px}
+.obbid{color:var(--green)}.obask{color:var(--red)}.obqty{color:var(--t2);font-size:7px}
+.obmid{text-align:center;font-size:11px;color:var(--yellow);padding:3px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:3px 0}
+.obpair{font-size:9px;color:var(--t2);margin-bottom:4px;letter-spacing:1px}
 .escr{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .escr:last-child{border-bottom:none}
-.esca{color:var(--accent2);font-size:9px;flex:1}
-.escamt{color:var(--yellow);font-size:9px;flex-shrink:0}
-.escdue{font-size:8px;color:var(--t2);flex-shrink:0;min-width:58px;text-align:right}
+.esca{color:var(--accent2);font-size:11px;flex:1}
+.escamt{color:var(--yellow);font-size:11px;flex-shrink:0}
+.escdue{font-size:9px;color:var(--t2);flex-shrink:0;min-width:58px;text-align:right}
 .xmr{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .xmr:last-child{border-bottom:none}
-.xms{font-size:10px;font-weight:bold;color:var(--accent);min-width:52px}
-.xmp{color:var(--t);font-size:9px;flex:1;text-align:center}.xmc{font-size:9px}
+.xms{font-size:12px;font-weight:bold;color:var(--accent);min-width:52px}
+.xmp{color:var(--t);font-size:11px;flex:1;text-align:center}.xmc{font-size:8px}
 .xmdiv{margin-top:4px;padding-top:4px;border-top:1px solid var(--border)}
-.xmst{display:flex;justify-content:space-between;padding:2px 0;font-size:9px}
+.xmst{display:flex;justify-content:space-between;padding:2px 0;font-size:8px}
 .xmsl{color:var(--t2)}.xmsv{color:var(--accent2)}
 .ntr{display:flex;align-items:center;gap:4px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .ntr:last-child{border-bottom:none}
-.ntsym{color:var(--accent);font-size:9px;font-weight:bold;min-width:44px}
-.ntiss{color:var(--t2);font-size:8px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ntliq{color:var(--yellow);font-size:9px;flex-shrink:0;min-width:44px;text-align:right}
-.ntage{color:var(--t3);font-size:8px;flex-shrink:0;min-width:28px;text-align:right}
+.ntsym{color:var(--accent);font-size:11px;font-weight:bold;min-width:44px}
+.ntiss{color:var(--t2);font-size:9px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ntliq{color:var(--yellow);font-size:11px;flex-shrink:0;min-width:44px;text-align:right}
+.ntage{color:var(--t3);font-size:9px;flex-shrink:0;min-width:28px;text-align:right}
 .nftr{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .nftr:last-child{border-bottom:none}
-.nftn{color:var(--accent2);font-size:9px;flex:1}
-.nfts{color:var(--t2);font-size:8px;flex-shrink:0;min-width:52px;text-align:center}
-.nftv{color:var(--yellow);font-size:9px;flex-shrink:0;min-width:44px;text-align:right}
+.nftn{color:var(--accent2);font-size:11px;flex:1}
+.nfts{color:var(--t2);font-size:9px;flex-shrink:0;min-width:52px;text-align:center}
+.nftv{color:var(--yellow);font-size:11px;flex-shrink:0;min-width:44px;text-align:right}
 .s2c{display:grid;grid-template-columns:1fr 1fr;gap:5px}
 .sc{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:5px 7px}
-.scl{font-size:8px;color:var(--t2);margin-bottom:2px}
-.scv{font-size:13px;color:var(--accent)}
-.scs{font-size:8px;color:var(--t3);margin-top:1px}
+.scl{font-size:9px;color:var(--t2);margin-bottom:2px}
+.scv{font-size:16px;color:var(--accent)}
+.scs{font-size:9px;color:var(--t3);margin-top:1px}
 .whr{display:flex;align-items:center;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);gap:3px}
 .whr:last-child{border-bottom:none}
-.whi{font-size:9px;flex-shrink:0}
-.whf{color:var(--green);font-size:9px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.wht{color:var(--accent2);font-size:9px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
-.wha{color:var(--yellow);font-size:9px;font-weight:bold;flex-shrink:0;min-width:58px;text-align:right}
+.whi{font-size:11px;flex-shrink:0}
+.whf{color:var(--green);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wht{color:var(--accent2);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.wha{color:var(--yellow);font-size:11px;font-weight:bold;flex-shrink:0;min-width:58px;text-align:right}
 .pgbw{height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;margin:5px 0}
 .pgb{height:100%;border-radius:3px;background:var(--green)}
 /* XLS */
 .xlssec{margin-top:8px}
 .xlshead{display:flex;align-items:center;justify-content:space-between;padding:5px 9px;background:var(--bg3);border:1px solid var(--border);border-radius:3px 3px 0 0;border-bottom:none}
-.xlsht{font-size:9px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.xlsht{font-size:11px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .xlsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:0}
 .xlsc{background:linear-gradient(135deg,#1a3a8f 0%,#0e2060 100%);border:1px solid #2451c8;border-radius:4px;padding:9px 11px;position:relative;overflow:hidden}
 .xlsc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent2));opacity:.6}
 .xlscd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:7px;gap:6px}
-.xlsn{font-size:9.5px;color:#fff;font-weight:bold;letter-spacing:.5px;line-height:1.3}
-.xlsd{font-size:7.5px;color:rgba(200,220,255,.55);margin-top:2px;line-height:1.3}
-.xlsl{font-size:7px;color:var(--accent2);text-decoration:none;flex-shrink:0;padding:1px 5px;border:1px solid rgba(0,200,255,.3);border-radius:2px;white-space:nowrap}
+.xlsn{font-size:11px;color:#fff;font-weight:bold;letter-spacing:.5px;line-height:1.3}
+.xlsd{font-size:9px;color:rgba(200,220,255,.55);margin-top:2px;line-height:1.3}
+.xlsl{font-size:8px;color:var(--accent2);text-decoration:none;flex-shrink:0;padding:1px 5px;border:1px solid rgba(0,200,255,.3);border-radius:2px;white-space:nowrap}
 .xlsl:hover{background:rgba(0,200,255,.1)}
 .kdg{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;align-items:baseline}
-.kdd{font-size:8.5px;color:#90b8ff;white-space:nowrap}
+.kdd{font-size:10px;color:#90b8ff;white-space:nowrap}
 .kdd.tba{color:rgba(200,220,255,.3);font-style:italic}
 .kdd.chg{color:var(--green);font-weight:bold}
-.kdl{font-size:7.5px;color:rgba(200,220,255,.5);text-align:right}
+.kdl{font-size:9px;color:rgba(200,220,255,.5);text-align:right}
 .vw{margin-top:6px;padding-top:5px;border-top:1px solid rgba(255,255,255,.08)}
 .vwh{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
-.vwl{font-size:7.5px;color:rgba(200,220,255,.5)}.vwp{font-size:8.5px;color:var(--yellow);font-weight:bold}
+.vwl{font-size:9px;color:rgba(200,220,255,.5)}.vwp{font-size:10px;color:var(--yellow);font-weight:bold}
 .vwbg{height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
 .vwfg{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width 1s ease}
-.chgb{display:inline-flex;align-items:center;font-size:6.5px;padding:1px 4px;border-radius:2px;margin-left:4px}
+.chgb{display:inline-flex;align-items:center;font-size:12px;padding:1px 4px;border-radius:2px;margin-left:4px}
 .cg{background:rgba(0,232,122,.1);border:1px solid rgba(0,232,122,.25);color:var(--green)}
 .cy{background:rgba(255,209,102,.1);border:1px solid rgba(255,209,102,.25);color:var(--yellow)}
 .cb{background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.25);color:var(--accent2)}
 .clwrap{padding:6px 0 0;border-top:1px solid var(--border);margin-top:8px}
-.clt{font-size:8px;color:var(--t3);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
-.clr{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:8px}
+.clt{font-size:9px;color:var(--t3);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
+.clr{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:7px}
 .clr:last-child{border-bottom:none}
 .cls{color:var(--accent2);min-width:52px;flex-shrink:0}.clw{color:var(--t2);flex:1}
 .clv{color:var(--green);flex-shrink:0;text-align:right;min-width:140px}
@@ -219,27 +219,27 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .movl.open{display:flex}
 .mdl{background:var(--bg2);border:1px solid var(--borderhi);border-radius:4px;width:88%;max-width:880px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 0 50px rgba(0,255,180,.04)}
 .mdlh{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:var(--bg3);border-bottom:1px solid var(--border);flex-shrink:0}
-.mdlt{font-size:11px;color:var(--accent);letter-spacing:2px;text-transform:uppercase}
-.mdlx{background:transparent;border:1px solid var(--border);color:var(--t2);font-size:13px;width:22px;height:22px;border-radius:2px;cursor:pointer;font-family:var(--mono);display:flex;align-items:center;justify-content:center;transition:all .15s}
+.mdlt{font-size:13px;color:var(--accent);letter-spacing:2px;text-transform:uppercase}
+.mdlx{background:transparent;border:1px solid var(--border);color:var(--t2);font-size:16px;width:22px;height:22px;border-radius:2px;cursor:pointer;font-family:var(--mono);display:flex;align-items:center;justify-content:center;transition:all .15s}
 .mdlx:hover{border-color:var(--red);color:var(--red)}
-.mdlb{padding:14px;overflow-y:auto;flex:1;font-size:11px}
-.mdlb .sr{padding:4px 0}.mdlb .sl{font-size:10px}.mdlb .sv{font-size:12px}
-.mdlb .tr{padding:4px 0}.mdlb .wl{font-size:10px}.mdlb .tamt{font-size:10px}
-.mdlb .actr{padding:4px 0}.mdlb .aacct{font-size:10px}.mdlb .aval{font-size:10px}
-.mdlb .nrow{padding:5px 0}.mdlb .nhl{font-size:10px;line-height:1.5}
-.mdlb .pr{padding:4px 0}.mdlb .pn{font-size:11px}.mdlb .pf{font-size:11px}
-.mdlb .amr{padding:4px 0}.mdlb .amn{font-size:10px}
-.mdlb .vlr{padding:4px 0}.mdlb .vn{font-size:10px}.mdlb .vdom{font-size:9px}
-.mdlb .tk{padding:4px 0}.mdlb .ts{font-size:12px}.mdlb .tp{font-size:11px}
-.mdlb .dpr{padding:4px 0}.mdlb .dn{font-size:11px}
-.mdlb .whr{padding:4px 0}.mdlb .whf,.mdlb .wht,.mdlb .wha{font-size:10px}
-.mdlb .ntr{padding:4px 0}.mdlb .nftr{padding:4px 0}.mdlb .nftn{font-size:10px}
-.mdlb .escr{padding:4px 0}.mdlb .esca{font-size:10px}.mdlb .escamt{font-size:10px}
+.mdlb{padding:14px;overflow-y:auto;flex:1;font-size:9px}
+.mdlb .sr{padding:4px 0}.mdlb .sl{font-size:8px}.mdlb .sv{font-size:9px}
+.mdlb .tr{padding:4px 0}.mdlb .wl{font-size:8px}.mdlb .tamt{font-size:8px}
+.mdlb .actr{padding:4px 0}.mdlb .aacct{font-size:8px}.mdlb .aval{font-size:8px}
+.mdlb .nrow{padding:5px 0}.mdlb .nhl{font-size:12px;line-height:1.5}
+.mdlb .pr{padding:4px 0}.mdlb .pn{font-size:9px}.mdlb .pf{font-size:9px}
+.mdlb .amr{padding:4px 0}.mdlb .amn{font-size:8px}
+.mdlb .vlr{padding:4px 0}.mdlb .vn{font-size:8px}.mdlb .vdom{font-size:8px}
+.mdlb .tk{padding:4px 0}.mdlb .ts{font-size:9px}.mdlb .tp{font-size:9px}
+.mdlb .dpr{padding:4px 0}.mdlb .dn{font-size:9px}
+.mdlb .whr{padding:4px 0}.mdlb .whf,.mdlb .wht,.mdlb .wha{font-size:8px}
+.mdlb .ntr{padding:4px 0}.mdlb .nftr{padding:4px 0}.mdlb .nftn{font-size:8px}
+.mdlb .escr{padding:4px 0}.mdlb .esca{font-size:8px}.mdlb .escamt{font-size:8px}
 .m2c{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .msc{background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:10px 12px}
-.mscl{font-size:9px;color:var(--t2);margin-bottom:4px}.mscv{font-size:20px;color:var(--accent)}.mscs{font-size:8px;color:var(--t3);margin-top:2px}
+.mscl{font-size:11px;color:var(--t2);margin-bottom:4px}.mscv{font-size:24px;color:var(--accent)}.mscs{font-size:9px;color:var(--t3);margin-top:2px}
 .msec{margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}
-.msect{font-size:8px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.msect{font-size:9px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
 .mspk{width:100%;height:80px;display:block;margin:8px 0}
 /* DRAG HANDLE — cursor only, no visual change */
 .xi{cursor:nwse-resize}
@@ -249,7 +249,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .box .bb{transition:min-height .25s ease}
 
 .bh{cursor:default}
-.bhl{cursor:default}
+.bhl{cursor:default;display:flex;align-items:center;gap:5px}
 /* Drag ghost indicator */
 .box.dragging{outline:1px dashed var(--accent);outline-offset:-1px}
 /* Snap ghost overlay during drag */
@@ -262,74 +262,74 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .tps-bar{flex:1;background:var(--accent);border-radius:1px 1px 0 0;min-width:3px;transition:height .4s ease,background .3s}
 .tps-bar.hi{background:var(--yellow)}
 .tps-bar.vhi{background:var(--red)}
-.tps-xax{display:flex;justify-content:space-between;font-size:7px;color:var(--t3);margin-top:2px}
+.tps-xax{display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:2px}
 .tps-stats{display:flex;justify-content:space-between;margin-top:4px;padding-top:4px;border-top:1px solid var(--border)}
 .tps-stat{text-align:center}
-.tps-sl{font-size:7px;color:var(--t3)}
-.tps-sv{font-size:10px;color:var(--accent)}
+.tps-sl{font-size:8px;color:var(--t3)}
+.tps-sv{font-size:12px;color:var(--accent)}
 /* DONUT CHART */
 .donut-wrap{display:flex;align-items:center;gap:10px;padding:4px 0}
 .donut-svg{flex-shrink:0}
 .donut-legend{display:flex;flex-direction:column;gap:3px;flex:1}
-.dl-row{display:flex;align-items:center;gap:5px;font-size:8px}
+.dl-row{display:flex;align-items:center;gap:5px;font-size:7px}
 .dl-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .dl-lbl{color:var(--t2);flex:1}
-.dl-val{color:var(--t);font-size:8px}
+.dl-val{color:var(--t);font-size:7px}
 /* LOAD GAUGE */
 .gauge-wrap{display:flex;flex-direction:column;align-items:center;padding:4px 0}
 .gauge-svg{width:100%;max-width:180px}
-.gauge-val{font-size:18px;color:var(--accent);text-align:center;margin-top:2px}
-.gauge-lbl{font-size:8px;color:var(--t2);text-align:center;letter-spacing:1px}
+.gauge-val{font-size:22px;color:var(--accent);text-align:center;margin-top:2px}
+.gauge-lbl{font-size:9px;color:var(--t2);text-align:center;letter-spacing:1px}
 .gauge-stats{width:100%;margin-top:6px}
 /* TOP MOVERS */
 .mv-row{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .mv-row:last-child{border-bottom:none}
-.mv-sym{font-size:9px;font-weight:bold;min-width:44px}
+.mv-sym{font-size:11px;font-weight:bold;min-width:44px}
 .mv-bar-wrap{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin:0 6px}
 .mv-bar{height:100%;border-radius:3px;transition:width .5s}
-.mv-pct{font-size:9px;min-width:44px;text-align:right;font-weight:bold}
+.mv-pct{font-size:11px;min-width:44px;text-align:right;font-weight:bold}
 .mv-tabs{display:flex;gap:4px;margin-bottom:6px}
-.mv-tab{font-size:8px;padding:1px 7px;background:transparent;border:1px solid var(--border);color:var(--t2);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s}
+.mv-tab{font-size:9px;padding:1px 7px;background:transparent;border:1px solid var(--border);color:var(--t2);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s}
 .mv-tab.act{background:rgba(0,255,180,.1);border-color:var(--accent);color:var(--accent)}
 /* GITHUB */
 .gh-row{display:flex;align-items:center;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .gh-row:last-child{border-bottom:none}
-.gh-repo{color:var(--accent2);font-size:9px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gh-repo{color:var(--accent2);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .gh-stat{display:flex;gap:6px;flex-shrink:0}
-.gh-pill{font-size:7px;padding:1px 5px;border-radius:2px}
+.gh-pill{font-size:8px;padding:1px 5px;border-radius:2px}
 .gh-commits{background:rgba(0,255,180,.08);color:var(--accent);border:1px solid rgba(0,255,180,.18)}
 .gh-prs{background:rgba(0,200,255,.08);color:var(--accent2);border:1px solid rgba(0,200,255,.18)}
 .gh-issues{background:rgba(255,68,102,.08);color:var(--red);border:1px solid rgba(255,68,102,.18)}
 .gh-heat{display:flex;gap:2px;margin:5px 0 3px;flex-wrap:wrap}
 .gh-hcell{width:8px;height:8px;border-radius:1px;flex-shrink:0}
-.gh-hlegend{display:flex;align-items:center;gap:5px;font-size:7px;color:var(--t3)}
+.gh-hlegend{display:flex;align-items:center;gap:5px;font-size:8px;color:var(--t3)}
 /* LEDGER OBJECTS */
 .lo-row{display:flex;align-items:center;gap:6px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .lo-row:last-child{border-bottom:none}
-.lo-lbl{color:var(--t2);font-size:9px;flex:1}
+.lo-lbl{color:var(--t2);font-size:11px;flex:1}
 .lo-bar-wrap{width:60px;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;flex-shrink:0}
 .lo-bar{height:100%;border-radius:3px;background:var(--accent2)}
-.lo-val{color:var(--t);font-size:9px;min-width:56px;text-align:right;flex-shrink:0}
-.lo-delta{font-size:8px;flex-shrink:0;min-width:36px;text-align:right}
+.lo-val{color:var(--t);font-size:11px;min-width:56px;text-align:right;flex-shrink:0}
+.lo-delta{font-size:9px;flex-shrink:0;min-width:36px;text-align:right}
 /* ODL CORRIDORS */
 .odl-row{display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .odl-row:last-child{border-bottom:none}
-.odl-flag{font-size:10px;flex-shrink:0}
-.odl-lane{font-size:9px;color:var(--accent2);min-width:72px;flex-shrink:0}
+.odl-flag{font-size:12px;flex-shrink:0}
+.odl-lane{font-size:11px;color:var(--accent2);min-width:72px;flex-shrink:0}
 .odl-bar-wrap{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
 .odl-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .6s ease}
-.odl-vol{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:44px;text-align:right}
-.odl-status{font-size:7px;padding:1px 4px;border-radius:2px;flex-shrink:0}
+.odl-vol{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:44px;text-align:right}
+.odl-status{font-size:8px;padding:1px 4px;border-radius:2px;flex-shrink:0}
 .odl-on{background:rgba(0,232,122,.1);color:var(--green);border:1px solid rgba(0,232,122,.25)}
 .odl-off{background:rgba(255,68,102,.1);color:var(--red);border:1px solid rgba(255,68,102,.2)}
 
 /* RICHLIST */
 .rich-row{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .rich-row:last-child{border-bottom:none}
-.rich-rank{font-size:8px;color:var(--t3);min-width:16px;flex-shrink:0;text-align:right}
-.rich-name{font-size:9px;color:var(--accent2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rich-bal{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:70px;text-align:right}
-.rich-chg{font-size:8px;flex-shrink:0;min-width:38px;text-align:right}
+.rich-rank{font-size:9px;color:var(--t3);min-width:16px;flex-shrink:0;text-align:right}
+.rich-name{font-size:11px;color:var(--accent2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rich-bal{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:70px;text-align:right}
+.rich-chg{font-size:9px;flex-shrink:0;min-width:38px;text-align:right}
 
 /* CLOSE TIME HISTOGRAM — inherits .tps-wrap/.tps-bar */
 .ct-bar{flex:1;background:var(--accent);border-radius:1px 1px 0 0;min-width:3px;transition:height .4s ease}
@@ -337,24 +337,24 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .ct-bar.stress{background:var(--red)}
 
 /* DEX TRADE HISTORY */
-.dex-row{display:flex;align-items:center;gap:4px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:9px}
+.dex-row{display:flex;align-items:center;gap:4px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:8px}
 .dex-row:last-child{border-bottom:none}
-.dex-side{width:26px;flex-shrink:0;font-size:7px;padding:1px 3px;border-radius:2px;text-align:center}
+.dex-side{width:26px;flex-shrink:0;font-size:8px;padding:1px 3px;border-radius:2px;text-align:center}
 .dex-buy{background:rgba(0,232,122,.12);color:var(--green);border:1px solid rgba(0,232,122,.25)}
 .dex-sell{background:rgba(255,68,102,.1);color:var(--red);border:1px solid rgba(255,68,102,.2)}
 .dex-price{color:var(--t);flex:1;text-align:center}
 .dex-size{color:var(--yellow);flex-shrink:0;min-width:56px;text-align:right}
-.dex-time{color:var(--t3);font-size:8px;flex-shrink:0;min-width:32px;text-align:right}
+.dex-time{color:var(--t3);font-size:9px;flex-shrink:0;min-width:32px;text-align:right}
 
 /* SNIPER FEED */
 .snp-row{display:flex;align-items:center;gap:4px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .snp-row:last-child{border-bottom:none}
-.snp-sym{font-size:9px;font-weight:bold;color:var(--accent);min-width:52px;flex-shrink:0}
-.snp-iss{font-size:8px;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.snp-liq{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:44px;text-align:right}
-.snp-trust{font-size:8px;color:var(--t2);flex-shrink:0;min-width:34px;text-align:right}
-.snp-age{font-size:8px;color:var(--t3);flex-shrink:0;min-width:28px;text-align:right}
-.snp-risk{font-size:7px;padding:1px 4px;border-radius:2px;flex-shrink:0}
+.snp-sym{font-size:11px;font-weight:bold;color:var(--accent);min-width:52px;flex-shrink:0}
+.snp-iss{font-size:9px;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.snp-liq{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:44px;text-align:right}
+.snp-trust{font-size:9px;color:var(--t2);flex-shrink:0;min-width:34px;text-align:right}
+.snp-age{font-size:9px;color:var(--t3);flex-shrink:0;min-width:28px;text-align:right}
+.snp-risk{font-size:8px;padding:1px 4px;border-radius:2px;flex-shrink:0}
 .snp-safe{background:rgba(0,232,122,.1);color:var(--green);border:1px solid rgba(0,232,122,.22)}
 .snp-warn{background:rgba(255,209,102,.08);color:var(--yellow);border:1px solid rgba(255,209,102,.2)}
 .snp-new{background:rgba(192,132,252,.12);color:var(--purple);border:1px solid rgba(192,132,252,.28)}
@@ -362,31 +362,31 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 /* LP HOLDERS */
 .lp-row{display:flex;align-items:center;gap:5px;padding:2px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .lp-row:last-child{border-bottom:none}
-.lp-name{font-size:9px;color:var(--accent2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lp-pool{font-size:8px;color:var(--t2);flex-shrink:0;min-width:64px}
-.lp-pct{font-size:9px;color:var(--accent);flex-shrink:0;min-width:36px;text-align:right}
-.lp-val{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:50px;text-align:right}
+.lp-name{font-size:11px;color:var(--accent2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lp-pool{font-size:9px;color:var(--t2);flex-shrink:0;min-width:64px}
+.lp-pct{font-size:11px;color:var(--accent);flex-shrink:0;min-width:36px;text-align:right}
+.lp-val{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:50px;text-align:right}
 
 /* CRASH GAME */
-.crash-chip{display:inline-flex;align-items:center;justify-content:center;font-size:8px;padding:1px 5px;border-radius:2px;font-family:'Courier New',monospace;font-weight:bold;flex-shrink:0}
+.crash-chip{display:inline-flex;align-items:center;justify-content:center;font-size:9px;padding:1px 5px;border-radius:2px;font-family:'Courier New',monospace;font-weight:bold;flex-shrink:0}
 .crash-win{background:rgba(0,232,122,.12);color:var(--green);border:1px solid rgba(0,232,122,.25)}
 .crash-bust{background:rgba(255,68,102,.1);color:var(--red);border:1px solid rgba(255,68,102,.2)}
 .crash-mid{background:rgba(255,209,102,.1);color:var(--yellow);border:1px solid rgba(255,209,102,.22)}
 /* Crash history table row */
-.crash-log-row{display:grid;grid-template-columns:56px 1fr 1fr;gap:2px 6px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:9px;align-items:center}
+.crash-log-row{display:grid;grid-template-columns:56px 1fr 1fr;gap:2px 6px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04);font-size:11px;align-items:center}
 .crash-log-row:last-child{border-bottom:none}
-.crash-log-id{color:var(--t2);font-size:8px;font-family:'Courier New',monospace}
+.crash-log-id{color:var(--t2);font-size:9px;font-family:'Courier New',monospace}
 .crash-log-mult{text-align:center;font-family:'Courier New',monospace;font-weight:bold}
-.crash-log-time{text-align:right;font-size:8px;color:var(--t3)}
+.crash-log-time{text-align:right;font-size:9px;color:var(--t3)}
 
 /* PREDICTION MARKET */
 .pred-row{padding:5px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .pred-row:last-child{border-bottom:none}
-.pred-q{font-size:9px;color:var(--t);line-height:1.35;margin-bottom:4px}
+.pred-q{font-size:11px;color:var(--t);line-height:1.35;margin-bottom:4px}
 .pred-bar-wrap{display:flex;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;margin-bottom:3px}
 .pred-yes{background:var(--green);transition:width .5s}
 .pred-no{background:var(--red);transition:width .5s}
-.pred-meta{display:flex;justify-content:space-between;font-size:8px}
+.pred-meta{display:flex;justify-content:space-between;font-size:7px}
 .pred-yes-lbl{color:var(--green)}
 .pred-no-lbl{color:var(--red)}
 .pred-vol{color:var(--t3)}
@@ -395,22 +395,22 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 /* MEMEPAD */
 .mem-row{display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .mem-row:last-child{border-bottom:none}
-.mem-sym{font-size:9px;font-weight:bold;color:var(--accent);min-width:52px;flex-shrink:0}
-.mem-name{font-size:8px;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mem-mc{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:46px;text-align:right}
-.mem-chg{font-size:8px;flex-shrink:0;min-width:40px;text-align:right}
+.mem-sym{font-size:11px;font-weight:bold;color:var(--accent);min-width:52px;flex-shrink:0}
+.mem-name{font-size:9px;color:var(--t2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mem-mc{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:46px;text-align:right}
+.mem-chg{font-size:9px;flex-shrink:0;min-width:40px;text-align:right}
 .mem-prog-wrap{width:100%;height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:1px}
 .mem-prog{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--purple),var(--accent2))}
 
 /* FARMING */
 .farm-row{display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,255,180,.04)}
 .farm-row:last-child{border-bottom:none}
-.farm-pool{font-size:9px;color:var(--accent2);flex:1}
-.farm-tvl{font-size:9px;color:var(--yellow);flex-shrink:0;min-width:50px;text-align:right}
-.farm-apy{font-size:9px;color:var(--green);font-weight:bold;flex-shrink:0;min-width:44px;text-align:right}
-.farm-reward{font-size:8px;color:var(--t2);flex-shrink:0;min-width:40px;text-align:right}
+.farm-pool{font-size:11px;color:var(--accent2);flex:1}
+.farm-tvl{font-size:11px;color:var(--yellow);flex-shrink:0;min-width:50px;text-align:right}
+.farm-apy{font-size:11px;color:var(--green);font-weight:bold;flex-shrink:0;min-width:44px;text-align:right}
+.farm-reward{font-size:9px;color:var(--t2);flex-shrink:0;min-width:40px;text-align:right}
 /* DRAG REORDER GRIP */
-.box-grip{cursor:grab;font-size:12px;color:var(--t3);padding:0 4px;line-height:1;flex-shrink:0;user-select:none;transition:color .15s;letter-spacing:-1px}
+.box-grip{cursor:grab;font-size:14px;color:var(--t3);padding:0 4px;line-height:1;flex-shrink:0;user-select:none;transition:color .15s;letter-spacing:-1px}
 .box-grip:hover{color:var(--accent)}
 .box-grip:active,.box-grip.grabbing{cursor:grabbing;color:var(--accent)}
 .box.drag-source{opacity:.4;outline:1px dashed rgba(0,255,180,.35);outline-offset:-1px}
@@ -432,7 +432,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     <span style="color:var(--t3)">|</span>
     <span id="clk" style="color:var(--accent2)">--:--:--</span>
     <span style="color:var(--t3)">|</span>
-    <span id="tps" style="color:var(--green);font-size:9px">-- TPS</span>
+    <span id="tps" style="color:var(--green);font-size:11px">-- TPS</span>
   </div>
   <div class="ctog">
     <span class="ctoglbl">COLS</span>
@@ -444,7 +444,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <div class="grid" id="mg">
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRPL Live Statistics</span><span class="b24">24H</span></div><div class="bhr"><a class="va" href="https://bithomp.com" target="_blank">View All</a><button class="xi" onclick="openModal('stats')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">XRPL Live Statistics</span></div><div class="bhr"><a class="va" href="https://bithomp.com" target="_blank">View All</a><button class="xi" onclick="openModal('stats')">⤢</button></div></div>
   <div class="bb"><div class="s2c">
     <div class="sc"><div class="scl">Active Accounts</div><div class="scv" id="stat-acct">17,145</div><div class="scs">+312 new today</div></div>
     <div class="sc"><div class="scl">Transactions</div><div class="scv" id="stat-tx">1,282,314</div><div class="scs">ledger seq</div></div>
@@ -453,13 +453,13 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div></div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">The Last Ledger</span><span class="blv">● LIVE</span></div><div class="bhr"><a class="va" href="https://bithomp.com/ledgers" target="_blank">View All</a><button class="xi" onclick="openModal('ledger')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">The Last Ledger</span></div><div class="bhr"><a class="va" href="https://bithomp.com/ledgers" target="_blank">View All</a><button class="xi" onclick="openModal('ledger')">⤢</button></div></div>
   <div class="bb">
     <div class="sr"><span class="sl">Ledger Index</span><a class="sv a" id="li" href="https://bithomp.com/ledger/94821043" target="_blank" style="text-decoration:none">94,821,043</a></div>
     <div class="sr"><span class="sl">Close Time</span><span class="sv" id="lct">--:--:--</span></div>
     <div class="sr"><span class="sl">Transactions</span><span class="sv y" id="ltx">12</span></div>
     <div class="sr"><span class="sl">Base Fee</span><span class="sv">0.00001 XRP</span></div>
-    <div class="sr"><span class="sl">Validation Quorum</span><span class="sv a2">28 <span style="color:var(--t3);font-size:8px">(35 proposers)</span></span></div>
+    <div class="sr"><span class="sl">Validation Quorum</span><span class="sv a2">28 <span style="color:var(--t3);font-size:9px">(35 proposers)</span></span></div>
   </div>
 </div>
 <div class="box">
@@ -475,7 +475,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 <div class="box">
   <div class="bh"><div class="bhl"><span class="bt">XRP Live Price &amp; Converter</span></div><div class="bhr"><button class="cbtn hist" id="pbtn" onclick="advP()">1D</button><button class="xi" onclick="openModal('price')">⤢</button></div></div>
   <div class="bb">
-    <div class="prbox"><div class="prnum">1 XRP = <span id="xp">1.3558</span> USD</div><div style="font-size:7px;color:var(--t3);letter-spacing:.5px;margin-top:3px" id="price-src">simulated · loading…</div></div>
+    <div class="prbox"><div class="prnum">1 XRP = <span id="xp">1.3558</span> USD</div><div style="font-size:8px;color:var(--t3);letter-spacing:.5px;margin-top:3px" id="price-src">simulated · loading…</div></div>
     <div class="conv"><input type="number" id="cin" value="1" min="0" step="0.01"><span class="ceq">XRP =</span><span class="cres" id="cout">$1.3558</span><span class="ceq">USD</span></div>
     <svg class="spk" id="spk" aria-hidden="true"></svg>
   </div>
@@ -495,7 +495,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top Tokens</span><span class="b24">24H</span></div><div class="bhr"><a class="va" href="https://bithomp.com/tokens" target="_blank">View All</a><button class="xi" onclick="openModal('tokens')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Tokens</span></div><div class="bhr"><a class="va" href="https://bithomp.com/tokens" target="_blank">View All</a><button class="xi" onclick="openModal('tokens')">⤢</button></div></div>
   <div class="bb">
     <div class="tk"><span class="ts">RLUSD</span><span class="tp">$0.9987</span><span class="tc" style="color:var(--green)">+0%</span></div>
     <div class="tk"><span class="ts">PHNIX</span><span class="tp">$0.01828</span><span class="tc" style="color:var(--green)">+0%</span></div>
@@ -523,7 +523,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top Dapps</span><span class="b24">24H</span></div><div class="bhr"><a class="va" href="https://bithomp.com/dapps" target="_blank">View All</a><button class="xi" onclick="openModal('dapp')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Dapps</span></div><div class="bhr"><a class="va" href="https://bithomp.com/dapps" target="_blank">View All</a><button class="xi" onclick="openModal('dapp')">⤢</button></div></div>
   <div class="bb">
     <div class="dpr"><span class="dn">Magnetic</span><span class="da">565 addr</span><span class="dv">$116.7K</span><span class="dchg" style="color:var(--red)">-41.9%</span></div>
     <div class="dpr"><span class="dn">First Ledger</span><span class="da">444 addr</span><span class="dv">$97.1K</span><span class="dchg" style="color:var(--green)">+8.0%</span></div>
@@ -533,15 +533,15 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRPL Live Activity</span></div><div class="bhr"><span class="lvc">● LIVE · <span id="actc">0</span>/MIN</span><button class="xi" onclick="openModal('act')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRPL Live Activity</span></div><div class="bhr"><button class="xi" onclick="openModal('act')">⤢</button></div></div>
   <div class="bb" id="actl"></div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Whale Alerts</span><span style="font-size:8px;color:var(--t2)">›100K XRP</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('whale')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Whale Alerts</span><span style="font-size:9px;color:var(--t2)">›100K XRP</span></div><div class="bhr"><button class="xi" onclick="openModal('whale')">⤢</button></div></div>
   <div class="bb" id="whl"></div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Market News</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('news')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRP Market News</span></div><div class="bhr"><button class="xi" onclick="openModal('news')">⤢</button></div></div>
   <div class="bb">
     <div class="nrow"><div class="nsrc"><span class="nsl">COINDESK XRP</span><span class="balrt">ALERT</span></div><div class="nhl">BTC bounces to $77,200, ETH, XRP follow suit as Senate curbs Trump's Iran war powers</div><div class="nage">2 days ago</div></div>
     <div class="nrow"><div class="nsrc"><span class="nsl">XRP MARKETS</span></div><div class="nhl">XRP Price Prediction: Can XRP Reach $1,000? Analysts weigh long-term targets</div><div class="nage">3 days ago</div></div>
@@ -549,18 +549,18 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">RLUSD &amp; Stablecoins</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('rlusd')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">RLUSD &amp; Stablecoins</span></div><div class="bhr"><button class="xi" onclick="openModal('rlusd')">⤢</button></div></div>
   <div class="bb">
     <div class="sr"><span class="sl">RLUSD Supply</span><span class="sv a">$1.65B</span></div>
     <div class="sr"><span class="sl">Peg Status</span><span class="sv g">$1.0001 ✓</span></div>
     <div class="sr"><span class="sl">24H Volume</span><span class="sv y">$284M</span></div>
     <div class="pgbw"><div class="pgb" style="width:99.98%"></div></div>
-    <div style="font-size:8px;color:var(--t2);text-align:right;margin-top:1px">99.98% peg confidence</div>
+    <div style="font-size:9px;color:var(--t2);text-align:right;margin-top:1px">99.98% peg confidence</div>
     <div class="nrow" style="margin-top:5px"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">GROWTH</span></div><div class="nhl">RLUSD supply surpasses $1.65B, signaling rising adoption and market confidence</div><div class="nage">yesterday</div></div>
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Tokenization &amp; RWA</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('rwa')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Tokenization &amp; RWA</span></div><div class="bhr"><button class="xi" onclick="openModal('rwa')">⤢</button></div></div>
   <div class="bb">
     <div class="sr"><span class="sl">RWA on XRPL (TVL)</span><span class="sv a">$3.5B</span></div>
     <div class="sr"><span class="sl">30D Inflow</span><span class="sv g">+$412M</span></div>
@@ -570,7 +570,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Policy &amp; Regulation</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('policy')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Policy &amp; Regulation</span></div><div class="bhr"><button class="xi" onclick="openModal('policy')">⤢</button></div></div>
   <div class="bb">
     <div class="nrow"><div class="nsrc"><span class="nsl">GLOBAL POLICY</span><span class="beco">ECONOMIC</span></div><div class="nhl">Is XRP becoming a model for institutional adoption? — Azerbaijan report</div><div class="nage">3 days ago</div></div>
     <div class="nrow"><div class="nsrc"><span class="nsl">CRYPTO REGULATION</span></div><div class="nhl">What The CLARITY Act Says About XRP — full breakdown via XRPL.org</div><div class="nage">4 days ago</div></div>
@@ -578,7 +578,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">New Token Listings</span><span class="bnew">DETECTED</span></div><div class="bhr"><span class="blv">● STREAM</span><button class="xi" onclick="openModal('ntok')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bnew">DETECTED</span><span class="bt">New Token Listings</span></div><div class="bhr"><button class="xi" onclick="openModal('ntok')">⤢</button></div></div>
   <div class="bb" id="ntokl"></div>
 </div>
 <div class="box">
@@ -619,7 +619,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     <div class="sr"><span class="sl">Active Escrows</span><span class="sv a">14,168</span></div>
     <div class="sr"><span class="sl">Total XRP Locked</span><span class="sv y">4.82B XRP</span></div>
     <div class="sr"><span class="sl">Ripple ODL Held</span><span class="sv a2">3.1B XRP</span></div>
-    <div style="margin-top:5px;font-size:8px;color:var(--t2);letter-spacing:1px;margin-bottom:3px">UPCOMING RELEASES</div>
+    <div style="margin-top:5px;font-size:9px;color:var(--t2);letter-spacing:1px;margin-bottom:3px">UPCOMING RELEASES</div>
     <div id="escl"></div>
   </div>
 </div>
@@ -628,19 +628,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- ODL CORRIDOR TRACKER -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">ODL Corridors</span><span class="blv">● LIVE</span></div><div class="bhr"><a class="va" href="https://ripple.com/solutions/cross-border-payments/" target="_blank">Ripple ODL</a><button class="xi" onclick="openModal('odl')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">ODL Corridors</span></div><div class="bhr"><a class="va" href="https://ripple.com/solutions/cross-border-payments/" target="_blank">Ripple ODL</a><button class="xi" onclick="openModal('odl')">⤢</button></div></div>
   <div class="bb" id="odl-list"></div>
 </div>
 
 <!-- XRP RICHLIST -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Richlist</span><span style="font-size:8px;color:var(--t2)">TOP WALLETS</span></div><div class="bhr"><a class="va" href="https://bithomp.com/top-wallets" target="_blank">View All</a><button class="xi" onclick="openModal('richlist')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRP Richlist</span><span style="font-size:9px;color:var(--t2)">TOP WALLETS</span></div><div class="bhr"><a class="va" href="https://bithomp.com/top-wallets" target="_blank">View All</a><button class="xi" onclick="openModal('richlist')">⤢</button></div></div>
   <div class="bb" id="rich-list"></div>
 </div>
 
 <!-- LEDGER CLOSE TIME HISTOGRAM -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Ledger Close Times</span><span style="font-size:8px;color:var(--t2)">LAST 60</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('closetime')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Ledger Close Times</span><span style="font-size:9px;color:var(--t2)">LAST 60</span></div><div class="bhr"><button class="xi" onclick="openModal('closetime')">⤢</button></div></div>
   <div class="bb">
     <div class="tps-wrap" id="ct-bars"></div>
     <div class="tps-xax"><span>60 ago</span><span>30 ago</span><span>now</span></div>
@@ -655,18 +655,18 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- DEX TRADE HISTORY -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">DEX Trade History</span></div><div class="bhr"><span style="font-size:8px;color:var(--t2)" id="dex-pair-lbl">XRP/RLUSD</span><span class="blv" style="margin-left:4px">● LIVE</span><button class="xi" onclick="openModal('dextrades')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">DEX Trade History</span></div><div class="bhr"><span style="font-size:9px;color:var(--t2)" id="dex-pair-lbl">XRP/RLUSD</span><button class="xi" onclick="openModal('dextrades')">⤢</button></div></div>
   <div class="bb" id="dex-trades"></div>
 </div>
 
 <!-- CONSENSUS ROUND TIMER -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Consensus Timer</span><span class="blv">● LIVE</span></div><div class="bhr"><button class="xi" onclick="openModal('consensus')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Consensus Timer</span></div><div class="bhr"><button class="xi" onclick="openModal('consensus')">⤢</button></div></div>
   <div class="bb">
     <div style="text-align:center;padding:6px 0 2px">
-      <div style="font-size:9px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">NEXT LEDGER CLOSE IN</div>
+      <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">NEXT LEDGER CLOSE IN</div>
       <div id="cns-timer" style="font-size:36px;color:var(--accent);letter-spacing:4px;font-family:'Courier New',monospace">3.4s</div>
-      <div id="cns-phase" style="font-size:9px;color:var(--accent2);letter-spacing:2px;margin-top:4px">OPEN</div>
+      <div id="cns-phase" style="font-size:11px;color:var(--accent2);letter-spacing:2px;margin-top:4px">OPEN</div>
     </div>
     <div style="margin:6px 0 4px;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden">
       <div id="cns-bar" style="height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:2px;transition:width .1s linear;width:0%"></div>
@@ -680,23 +680,23 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- xMAGNETIC SNIPER FEED -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">xMagnetic Sniper</span><span class="bnew">NEW LAUNCH</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><span class="blv" style="margin-left:4px">● STREAM</span><button class="xi" onclick="openModal('sniper')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bnew">NEW LAUNCH</span><span class="bt">xMagnetic Sniper</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><button class="xi" onclick="openModal('sniper')">⤢</button></div></div>
   <div class="bb" id="sniper-list"></div>
 </div>
 
 <!-- TOP LP TOKEN HOLDERS -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top LP Holders</span><span style="font-size:8px;color:var(--t2)">BY POOL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View AMMs</a><button class="xi" onclick="openModal('lpholders')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Top LP Holders</span><span style="font-size:9px;color:var(--t2)">BY POOL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View AMMs</a><button class="xi" onclick="openModal('lpholders')">⤢</button></div></div>
   <div class="bb" id="lp-list"></div>
 </div>
 
 <!-- VALIDATOR AGREEMENT HEATMAP -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Validator Agreement</span><span style="font-size:8px;color:var(--t2)">LAST 20 LEDGERS</span></div><div class="bhr"><span class="blv">● LIVE</span><button class="xi" onclick="openModal('valheat')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Validator Agreement</span><span style="font-size:9px;color:var(--t2)">LAST 20 LEDGERS</span></div><div class="bhr"><button class="xi" onclick="openModal('valheat')">⤢</button></div></div>
   <div class="bb">
-    <div style="display:flex;justify-content:space-between;font-size:7px;color:var(--t3);margin-bottom:3px"><span>VALIDATORS →</span><span>← LEDGER AGE</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-bottom:3px"><span>VALIDATORS →</span><span>← LEDGER AGE</span></div>
     <div id="valheat-grid" style="display:grid;grid-template-columns:repeat(20,1fr);gap:1px"></div>
-    <div style="display:flex;align-items:center;gap:8px;margin-top:5px;font-size:8px;color:var(--t3)">
+    <div style="display:flex;align-items:center;gap:8px;margin-top:5px;font-size:9px;color:var(--t3)">
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:1px;margin-right:3px"></span>Agreed</span>
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--yellow);border-radius:1px;margin-right:3px"></span>Late</span>
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--red);border-radius:1px;margin-right:3px"></span>Missed</span>
@@ -708,10 +708,10 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- FEE MARKET HISTORY -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Fee Market History</span><span class="b7d">7 DAYS</span></div><div class="bhr"><button class="xi" onclick="openModal('feemarket')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b7d">7 DAYS</span><span class="bt">Fee Market History</span></div><div class="bhr"><button class="xi" onclick="openModal('feemarket')">⤢</button></div></div>
   <div class="bb">
     <svg id="fee-chart" style="width:100%;height:70px;display:block" aria-hidden="true"></svg>
-    <div style="display:flex;justify-content:space-between;font-size:7px;color:var(--t3);margin-top:2px"><span>7d ago</span><span>4d ago</span><span>now</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:2px"><span>7d ago</span><span>4d ago</span><span>now</span></div>
     <div class="sr" style="margin-top:4px"><span class="sl">Peak Load Factor</span><span class="sv r" id="fee-peak">--</span></div>
     <div class="sr"><span class="sl">Avg Load Factor</span><span class="sv" id="fee-avg">--</span></div>
     <div class="sr"><span class="sl">Congestion Events (&gt;2×)</span><span class="sv y" id="fee-events">--</span></div>
@@ -733,27 +733,27 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
       <button class="mv-tab" id="tr-7d" onclick="setTokRange('7D',this)">7D</button>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
-      <span id="tc-sym" style="font-size:10px;color:var(--accent);font-weight:bold">MAG</span>
-      <span id="tc-price" style="font-size:14px;color:var(--t)">$0.00182</span>
-      <span id="tc-chg" style="font-size:10px;color:var(--red)">-1.2%</span>
+      <span id="tc-sym" style="font-size:12px;color:var(--accent);font-weight:bold">MAG</span>
+      <span id="tc-price" style="font-size:17px;color:var(--t)">$0.00182</span>
+      <span id="tc-chg" style="font-size:12px;color:var(--red)">-1.2%</span>
     </div>
     <svg id="tok-chart" style="width:100%;height:52px;display:block" aria-hidden="true"></svg>
     <div id="vol-bars" style="display:flex;align-items:flex-end;gap:1px;height:14px;margin-top:2px"></div>
-    <div style="display:flex;justify-content:space-between;font-size:7px;color:var(--t3);margin-top:1px"><span id="tc-range-start">24h ago</span><span>now</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:1px"><span id="tc-range-start">24h ago</span><span>now</span></div>
   </div>
 </div>
 
 <!-- XRP SUPPLY SCHEDULE -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Supply Schedule</span><span style="font-size:8px;color:var(--t2)">ESCROW RELEASES</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">Escrows</a><button class="xi" onclick="openModal('supplysched')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRP Supply Schedule</span><span style="font-size:9px;color:var(--t2)">ESCROW RELEASES</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">Escrows</a><button class="xi" onclick="openModal('supplysched')">⤢</button></div></div>
   <div class="bb">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;font-size:8px;color:var(--t3)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;font-size:9px;color:var(--t3)">
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:1px;margin-right:3px;opacity:.8"></span>Released</span>
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--yellow);border-radius:1px;margin-right:3px;opacity:.8"></span>Sold/Used</span>
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--bg3);border:1px solid var(--border);border-radius:1px;margin-right:3px"></span>Returned</span>
     </div>
     <div id="supply-chart" style="display:flex;align-items:flex-end;gap:3px;height:72px"></div>
-    <div id="supply-labels" style="display:flex;justify-content:space-between;font-size:7px;color:var(--t3);margin-top:2px"></div>
+    <div id="supply-labels" style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:2px"></div>
     <div class="sr" style="margin-top:5px"><span class="sl">Total Remaining in Escrow</span><span class="sv a">4.82B XRP</span></div>
     <div class="sr"><span class="sl">Next Release</span><span class="sv y">Jun 1, 2026 · 500M XRP</span></div>
     <div class="sr"><span class="sl">Est. Full Release Year</span><span class="sv a2">~2027</span></div>
@@ -764,12 +764,12 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- CRASH GAME MONITOR -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">☄️ Crash</span><span class="blv">● LIVE</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/crash?network=mainnet" target="_blank">Play ↗</a><button class="xi" onclick="openModal('crash')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">☄️ Crash</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/crash?network=mainnet" target="_blank">Play ↗</a><button class="xi" onclick="openModal('crash')">⤢</button></div></div>
   <div class="bb">
     <div style="text-align:center;padding:4px 0 6px">
-      <div style="font-size:8px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">CURRENT MULTIPLIER</div>
+      <div style="font-size:9px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">CURRENT MULTIPLIER</div>
       <div id="crash-mult" style="font-size:34px;font-weight:bold;letter-spacing:2px;font-family:'Courier New',monospace;color:var(--green)">1.00×</div>
-      <div id="crash-status" style="font-size:9px;letter-spacing:2px;margin-top:4px;color:var(--accent2)">RUNNING</div>
+      <div id="crash-status" style="font-size:11px;letter-spacing:2px;margin-top:4px;color:var(--accent2)">RUNNING</div>
     </div>
     <div style="height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-bottom:6px">
       <div id="crash-bar" style="height:100%;border-radius:2px;background:linear-gradient(90deg,var(--green),var(--accent));transition:width .1s linear;width:5%"></div>
@@ -780,7 +780,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     <div class="sr"><span class="sl">Wagered (24H)</span><span class="sv y">214,841 MAG</span></div>
     <!-- HISTORY TABLE -->
     <div style="margin-top:6px;padding-top:5px;border-top:1px solid var(--border)">
-      <div style="display:grid;grid-template-columns:56px 1fr 1fr;gap:2px 6px;font-size:8px;color:var(--t3);letter-spacing:.5px;padding-bottom:3px;border-bottom:1px solid rgba(0,255,180,.06);margin-bottom:2px">
+      <div style="display:grid;grid-template-columns:56px 1fr 1fr;gap:2px 6px;font-size:9px;color:var(--t3);letter-spacing:.5px;padding-bottom:3px;border-bottom:1px solid rgba(0,255,180,.06);margin-bottom:2px">
         <span>GAME ID</span><span style="text-align:center">MULTIPLIER</span><span style="text-align:right">END TIME</span>
       </div>
       <div id="crash-log" style="max-height:160px;overflow:hidden"></div>
@@ -796,13 +796,13 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- MEMEPAD -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">🚀 Memepad</span><span class="bnew">LAUNCHES</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/memepad" target="_blank">Launch ↗</a><button class="xi" onclick="openModal('memepad')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bnew">LAUNCHES</span><span class="bt">🚀 Memepad</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/memepad" target="_blank">Launch ↗</a><button class="xi" onclick="openModal('memepad')">⤢</button></div></div>
   <div class="bb" id="memepad-list"></div>
 </div>
 
 <!-- FARMING REWARDS -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">🌾 Farming</span><span class="b24">24H</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/farming" target="_blank">Farm ↗</a><button class="xi" onclick="openModal('farming')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">🌾 Farming</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/farming" target="_blank">Farm ↗</a><button class="xi" onclick="openModal('farming')">⤢</button></div></div>
   <div class="bb" id="farm-list"></div>
 </div>
 
@@ -813,7 +813,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- TPS BAR CHART -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">TPS Live Chart</span><span class="blv">● LIVE</span></div><div class="bhr"><span id="tps-cur" style="font-size:9px;color:var(--accent)">-- TPS</span><button class="xi" onclick="openModal('tpschart')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">TPS Live Chart</span></div><div class="bhr"><span id="tps-cur" style="font-size:11px;color:var(--accent)">-- TPS</span><button class="xi" onclick="openModal('tpschart')">⤢</button></div></div>
   <div class="bb">
     <div class="tps-wrap" id="tps-bars"></div>
     <div class="tps-xax"><span>60s ago</span><span>30s ago</span><span>now</span></div>
@@ -828,19 +828,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- TX TYPE DONUT -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Tx Type Breakdown</span><span class="b24">24H</span></div><div class="bhr"><button class="xi" onclick="openModal('donut')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Tx Type Breakdown</span></div><div class="bhr"><button class="xi" onclick="openModal('donut')">⤢</button></div></div>
   <div class="bb">
     <div class="donut-wrap">
       <svg class="donut-svg" id="donut-svg" width="80" height="80" viewBox="0 0 80 80"></svg>
       <div class="donut-legend" id="donut-legend"></div>
     </div>
-    <div style="text-align:center;font-size:8px;color:var(--t3);margin-top:2px">Total: <span id="donut-total" style="color:var(--t2)">--</span> transactions</div>
+    <div style="text-align:center;font-size:9px;color:var(--t3);margin-top:2px">Total: <span id="donut-total" style="color:var(--t2)">--</span> transactions</div>
   </div>
 </div>
 
 <!-- NETWORK LOAD GAUGE -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Network Load</span><span class="blv">● LIVE</span></div><div class="bhr"><button class="xi" onclick="openModal('gauge')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Network Load</span></div><div class="bhr"><button class="xi" onclick="openModal('gauge')">⤢</button></div></div>
   <div class="bb">
     <div class="gauge-wrap">
       <svg class="gauge-svg" id="gauge-svg" height="70" viewBox="0 0 180 90"></svg>
@@ -857,7 +857,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- TOP MOVERS -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top Movers</span></div><div class="bhr"><span id="mv-range-lbl" style="font-size:8px;color:var(--t2)">24H</span><button class="xi" onclick="openModal('movers')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Top Movers</span></div><div class="bhr"><span id="mv-range-lbl" style="font-size:9px;color:var(--t2)">24H</span><button class="xi" onclick="openModal('movers')">⤢</button></div></div>
   <div class="bb">
     <div class="mv-tabs">
       <button class="mv-tab act" onclick="setMovers('gain',this)">Gainers</button>
@@ -869,13 +869,13 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- XRPL GITHUB ACTIVITY -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRPL GitHub Activity</span><span class="b7d">7D</span></div><div class="bhr"><a class="va" href="https://github.com/XRPLF" target="_blank">XRPLF ↗</a><button class="xi" onclick="openModal('github')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b7d">7D</span><span class="bt">XRPL GitHub Activity</span></div><div class="bhr"><a class="va" href="https://github.com/XRPLF" target="_blank">XRPLF ↗</a><button class="xi" onclick="openModal('github')">⤢</button></div></div>
   <div class="bb">
     <div class="gh-row"><span class="gh-repo">XRPLF/rippled</span><div class="gh-stat"><span class="gh-pill gh-commits">14 commits</span><span class="gh-pill gh-prs">3 PRs</span><span class="gh-pill gh-issues">8 issues</span></div></div>
     <div class="gh-row"><span class="gh-repo">XRPLF/xrpl.js</span><div class="gh-stat"><span class="gh-pill gh-commits">7 commits</span><span class="gh-pill gh-prs">2 PRs</span><span class="gh-pill gh-issues">4 issues</span></div></div>
     <div class="gh-row"><span class="gh-repo">XRPLF/xrpl-py</span><div class="gh-stat"><span class="gh-pill gh-commits">5 commits</span><span class="gh-pill gh-prs">1 PRs</span><span class="gh-pill gh-issues">2 issues</span></div></div>
     <div class="gh-row"><span class="gh-repo">XRPLF/xrpl-dev-portal</span><div class="gh-stat"><span class="gh-pill gh-commits">11 commits</span><span class="gh-pill gh-prs">4 PRs</span><span class="gh-pill gh-issues">6 issues</span></div></div>
-    <div style="font-size:8px;color:var(--t3);margin-top:4px;padding-top:3px;border-top:1px solid var(--border)">Commit activity — last 7 days</div>
+    <div style="font-size:9px;color:var(--t3);margin-top:4px;padding-top:3px;border-top:1px solid var(--border)">Commit activity — last 7 days</div>
     <div class="gh-heat" id="gh-heat"></div>
     <div class="gh-hlegend"><span>Less</span><div class="gh-hcell" style="background:var(--bg3)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.2)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.5)"></div><div class="gh-hcell" style="background:var(--accent)"></div><span>More</span></div>
   </div>
@@ -883,31 +883,31 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 
 <!-- LEDGER OBJECT COUNTS -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Ledger Object Counts</span><span class="blv">● LIVE</span></div><div class="bhr"><button class="xi" onclick="openModal('objects')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Ledger Object Counts</span></div><div class="bhr"><button class="xi" onclick="openModal('objects')">⤢</button></div></div>
   <div class="bb" id="lo-list"></div>
 </div>
 
 <div class="box" id="xls-box">
   <div class="bh">
-    <div class="bhl"><span class="bt">◈ XLS Key Date Tracker</span><span style="font-size:8px;color:var(--green)">● MONITORING</span><span style="font-size:8px;color:var(--t3)">3 ACTIVE SPECS</span></div>
+    <div class="bhl"><span class="bt">◈ XLS Key Date Tracker</span><span style="font-size:9px;color:var(--green)">● MONITORING</span><span style="font-size:9px;color:var(--t3)">3 ACTIVE SPECS</span></div>
     <div class="bhr"><a class="va" href="https://opensource.ripple.com/docs" target="_blank">opensource.ripple.com/docs ↗</a><button class="xi" onclick="openModal('xls')">⤢</button></div>
   </div>
   <div class="bb" style="padding:9px">
   <div class="xlsgrid">
     <div class="xlsc">
       <div class="xlscd"><div><div class="xlsn">XLS-66 · Lending Protocol<span class="chgb cy">▲ VOTE RISING</span></div><div class="xlsd">DeFi primitive — fixed-term uncollateralized loans from a Single Asset Vault</div></div><a class="xlsl" href="https://opensource.ripple.com/docs/xls-66-lending-protocol" target="_blank">View Spec ↗</a></div>
-      <div class="kdg"><span class="kdd">Dec 1, 2025</span><span class="kdl">XLS Spec Live</span><span class="kdd">Jan 13, 2026</span><span class="kdl">Available to Test on Devnet</span><span class="kdd chg">Jan 27, 2026 <span style="font-size:7px;color:rgba(200,220,255,.35)">(v3.1.0)</span></span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus (80% needed)</span></div>
-      <div class="vw"><div class="vwh"><span class="vwl">Vote Consensus</span><span class="vwp" id="v66p">22.86%</span></div><div class="vwbg"><div class="vwfg" id="v66b" style="width:22.86%"></div></div><div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(200,220,255,.25);margin-top:2px"><span>0%</span><span style="color:rgba(255,209,102,.4)">▲ 80% threshold</span><span>100%</span></div></div>
+      <div class="kdg"><span class="kdd">Dec 1, 2025</span><span class="kdl">XLS Spec Live</span><span class="kdd">Jan 13, 2026</span><span class="kdl">Available to Test on Devnet</span><span class="kdd chg">Jan 27, 2026 <span style="font-size:8px;color:rgba(200,220,255,.35)">(v3.1.0)</span></span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus (80% needed)</span></div>
+      <div class="vw"><div class="vwh"><span class="vwl">Vote Consensus</span><span class="vwp" id="v66p">22.86%</span></div><div class="vwbg"><div class="vwfg" id="v66b" style="width:22.86%"></div></div><div style="display:flex;justify-content:space-between;font-size:8px;color:rgba(200,220,255,.25);margin-top:2px"><span>0%</span><span style="color:rgba(255,209,102,.4)">▲ 80% threshold</span><span>100%</span></div></div>
     </div>
     <div class="xlsc">
       <div class="xlscd"><div><div class="xlsn">XLS-68 · Sponsored Fees &amp; Reserves<span class="chgb cb">DATE SET</span></div><div class="xlsd">Sponsors pay fees and reserves on behalf of other accounts (sponsees)</div></div><a class="xlsl" href="https://opensource.ripple.com/docs/xls-68-sponsored-fees-and-reserves" target="_blank">View Spec ↗</a></div>
-      <div class="kdg"><span class="kdd chg">Jan 29, 2026</span><span class="kdl">XLS Spec Live <span class="chgb cg" style="font-size:6px">TBA→DATE</span></span><span class="kdd tba">TBA</span><span class="kdl">Available to Test on Devnet</span><span class="kdd tba">TBA</span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus</span></div>
+      <div class="kdg"><span class="kdd chg">Jan 29, 2026</span><span class="kdl">XLS Spec Live <span class="chgb cg" style="font-size:8px">TBA→DATE</span></span><span class="kdd tba">TBA</span><span class="kdl">Available to Test on Devnet</span><span class="kdd tba">TBA</span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus</span></div>
       <div class="vw"><div class="vwh"><span class="vwl">Vote Consensus</span><span class="vwp" style="color:var(--t2)">Not yet on Mainnet</span></div><div class="vwbg"><div class="vwfg" style="width:0%;background:rgba(200,220,255,.15)"></div></div></div>
     </div>
     <div class="xlsc">
       <div class="xlscd"><div><div class="xlsn">XLS-65 · Single Asset Vault<span class="chgb cy">▲ VOTE RISING</span></div><div class="xlsd">Pooled on-chain vaults enabling DeFi lending and yield — pairs with XLS-66</div></div><a class="xlsl" href="https://opensource.ripple.com/docs/xls-65-single-asset-vault" target="_blank">View Spec ↗</a></div>
-      <div class="kdg"><span class="kdd">Nov 14, 2025</span><span class="kdl">XLS Spec Live</span><span class="kdd">Jan 13, 2026</span><span class="kdl">Available to Test on Devnet</span><span class="kdd chg">Jan 27, 2026 <span style="font-size:7px;color:rgba(200,220,255,.35)">(v3.1.0)</span></span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus (80% needed)</span></div>
-      <div class="vw"><div class="vwh"><span class="vwl">Vote Consensus</span><span class="vwp" id="v65p">22.86%</span></div><div class="vwbg"><div class="vwfg" id="v65b" style="width:22.86%"></div></div><div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(200,220,255,.25);margin-top:2px"><span>0%</span><span style="color:rgba(255,209,102,.4)">▲ 80% threshold</span><span>100%</span></div></div>
+      <div class="kdg"><span class="kdd">Nov 14, 2025</span><span class="kdl">XLS Spec Live</span><span class="kdd">Jan 13, 2026</span><span class="kdl">Available to Test on Devnet</span><span class="kdd chg">Jan 27, 2026 <span style="font-size:8px;color:rgba(200,220,255,.35)">(v3.1.0)</span></span><span class="kdl">Open for Voting on Mainnet</span><span class="kdd tba">TBA</span><span class="kdl">Vote Consensus (80% needed)</span></div>
+      <div class="vw"><div class="vwh"><span class="vwl">Vote Consensus</span><span class="vwp" id="v65p">22.86%</span></div><div class="vwbg"><div class="vwfg" id="v65b" style="width:22.86%"></div></div><div style="display:flex;justify-content:space-between;font-size:8px;color:rgba(200,220,255,.25);margin-top:2px"><span>0%</span><span style="color:rgba(255,209,102,.4)">▲ 80% threshold</span><span>100%</span></div></div>
     </div>
   </div>
   <div class="clwrap">
@@ -965,7 +965,7 @@ function uconv(){var v=parseFloat(document.getElementById('cin').value)||0;docum
 document.getElementById('cin').addEventListener('input',uconv);
 
 var AT=[{l:'Payment',c:'tpay'},{l:'OfferCreate',c:'toff'},{l:'TrustSet',c:'ttrs'},{l:'EscrowCreate',c:'tesc'},{l:'NFTokenMint',c:'tnft'},{l:'OfferCreate',c:'toff'},{l:'Payment',c:'tpay'}];
-function aact(){var l=document.getElementById('actl'),tx=AT[Math.floor(Math.random()*AT.length)],addr=ra();var vs={'Payment':'$'+rn(1,500).toFixed(0)+'K','OfferCreate':rn(100,50000).toFixed(0)+' XRP','TrustSet':'TRUSTSET','EscrowCreate':rn(10000,1000000).toFixed(0)+' XRP','NFTokenMint':'NFT #'+Math.floor(rn(1000,9999))};var r=document.createElement('div');r.className='actr new';r.innerHTML='<span class="atype '+tx.c+'">'+tx.l+'</span><span class="btess">TESSUCCESS</span><span class="aacct">'+W[addr]+'</span><span class="aval">'+(vs[tx.l]||'--')+'</span>';l.insertBefore(r,l.firstChild);while(l.children.length>parseInt(l.dataset.maxRows||7))l.removeChild(l.lastChild);var c=document.getElementById('actc');c.textContent=parseInt(c.textContent||0)+1;}
+function aact(){var l=document.getElementById('actl'),tx=AT[Math.floor(Math.random()*AT.length)],addr=ra();var vs={'Payment':'$'+rn(1,500).toFixed(0)+'K','OfferCreate':rn(100,50000).toFixed(0)+' XRP','TrustSet':'TRUSTSET','EscrowCreate':rn(10000,1000000).toFixed(0)+' XRP','NFTokenMint':'NFT #'+Math.floor(rn(1000,9999))};var r=document.createElement('div');r.className='actr new';r.innerHTML='<span class="atype '+tx.c+'">'+tx.l+'</span><span class="btess">TESSUCCESS</span><span class="aacct">'+W[addr]+'</span><span class="aval">'+(vs[tx.l]||'--')+'</span>';l.insertBefore(r,l.firstChild);while(l.children.length>parseInt(l.dataset.maxRows||7))l.removeChild(l.lastChild);var c=document.getElementById('actc');if(c)c.textContent=parseInt(c.textContent||0)+1;}
 function awh(){var l=document.getElementById('whl'),f=ra(),t=ra();while(t===f)t=ra();var r=document.createElement('div');r.className='whr new';r.innerHTML='<span class="whi">🐋</span><a class="whf" href="'+wu(f)+'" target="_blank">'+W[f]+'</a><span class="ta">→</span><a class="wht" href="'+wu(t)+'" target="_blank">'+W[t]+'</a><span class="wha">'+rn(100,5000).toFixed(0)+'K XRP</span>';l.insertBefore(r,l.firstChild);while(l.children.length>parseInt(l.dataset.maxRows||5))l.removeChild(l.lastChild);}
 var TICKERS=['$724','$KRON','$AQUA','$SOLO2','$BFLX','$ORBT','$NOVA','$RZRP'],nti=0;
 function antok(){var l=document.getElementById('ntokl'),sym=TICKERS[nti%TICKERS.length];nti++;var iss=ra();var r=document.createElement('div');r.className='ntr new';r.innerHTML='<span class="ntsym">'+sym+'</span><a class="ntiss" href="https://bithomp.com/explorer/'+iss+'" target="_blank">'+W[iss]+'</a><span class="ntliq">$'+rn(1,80).toFixed(1)+'K</span><span class="bnew">NEW</span><span class="ntage">'+Math.floor(rn(1,59))+'m</span>';l.insertBefore(r,l.firstChild);while(l.children.length>parseInt(l.dataset.maxRows||6))l.removeChild(l.lastChild);}
@@ -982,25 +982,25 @@ var MC={
   stats:{t:'XRPL LIVE STATISTICS — 24H',h:function(){return '<div class="m2c"><div class="msc"><div class="mscl">Active Accounts</div><div class="mscv">'+document.getElementById('stat-acct').textContent+'</div><div class="mscs">+312 new wallets today</div></div><div class="msc"><div class="mscl">Total Transactions</div><div class="mscv">'+document.getElementById('stat-tx').textContent+'</div><div class="mscs">current ledger sequence</div></div><div class="msc"><div class="mscl">Payments (XRP + IOU)</div><div class="mscv">'+document.getElementById('stat-pay').textContent+'</div><div class="mscs">~40% of all transactions</div></div><div class="msc"><div class="mscl">Fees Burned Today</div><div class="mscv">382.9 XRP</div><div class="mscs">≈$519 USD at current price</div></div></div><div class="msec"><div class="msect">Additional Metrics</div><div class="sr"><span class="sl">OfferCreate Transactions</span><span class="sv a2">428,211</span></div><div class="sr"><span class="sl">TrustSet Transactions</span><span class="sv">81,440</span></div><div class="sr"><span class="sl">EscrowCreate Transactions</span><span class="sv y">2,109</span></div><div class="sr"><span class="sl">NFTokenMint Transactions</span><span class="sv">14,882</span></div><div class="sr"><span class="sl">AMM Transactions</span><span class="sv a">31,204</span></div><div class="sr"><span class="sl">Failed Transactions</span><span class="sv r">8,441 (0.66%)</span></div></div>';}},
   ledger:{t:'THE LAST LEDGER — FULL DETAIL',h:function(){var idx=parseInt(document.getElementById('li').textContent.replace(/,/g,''));return '<div class="sr"><span class="sl">Ledger Index</span><a class="sv a" href="https://bithomp.com/ledger/'+ledger+'" target="_blank" style="text-decoration:none">'+document.getElementById('li').textContent+'</a></div><div class="sr"><span class="sl">Close Time</span><span class="sv">'+document.getElementById('lct').textContent+'</span></div><div class="sr"><span class="sl">Transactions in Ledger</span><span class="sv y">'+document.getElementById('ltx').textContent+'</span></div><div class="sr"><span class="sl">Base Fee</span><span class="sv">0.00001 XRP (10 drops)</span></div><div class="sr"><span class="sl">Reserve Base</span><span class="sv">10 XRP per account</span></div><div class="sr"><span class="sl">Reserve Increment</span><span class="sv">2 XRP per object</span></div><div class="sr"><span class="sl">Validation Quorum</span><span class="sv a2">28 of 35 validators</span></div><div class="sr"><span class="sl">Close Time Resolution</span><span class="sv">10 seconds</span></div><div class="msec"><div class="msect">Recent Ledger History</div><div class="sr"><span class="sl">Ledger -1</span><span class="sv a">'+fmt(idx-1)+'</span></div><div class="sr"><span class="sl">Ledger -2</span><span class="sv a">'+fmt(idx-2)+'</span></div><div class="sr"><span class="sl">Ledger -3</span><span class="sv a">'+fmt(idx-3)+'</span></div></div>';}},
   network:{t:'NETWORK — FULL VIEW',h:function(){return '<div class="sr"><span class="sl">Total Accounts</span><span class="sv a">'+document.getElementById('na').textContent+'</span></div><div class="sr"><span class="sl">Usernames Registered</span><span class="sv">136,219</span></div><div class="sr"><span class="sl">Active Escrows</span><span class="sv">14,168</span></div><div class="sr"><span class="sl">AMM Pools</span><span class="sv a2">312</span></div><div class="sr"><span class="sl">Peer Nodes</span><span class="sv y">844</span></div><div class="sr"><span class="sl">Validator Nodes (UNL)</span><span class="sv g">35</span></div><div class="sr"><span class="sl">Trust Lines</span><span class="sv a2">8,214,441</span></div><div class="sr"><span class="sl">NFT Token Objects</span><span class="sv">2,881,024</span></div><div class="sr"><span class="sl">DEX Offers</span><span class="sv y">1,244,091</span></div><div class="sr"><span class="sl">XRP Circulating</span><span class="sv a">54.88B XRP</span></div><div class="sr"><span class="sl">XRP in Escrow</span><span class="sv">4.82B XRP</span></div><div class="sr"><span class="sl">rippled Version</span><span class="sv">v3.1.3</span></div>';}},
-  price:{t:'XRP LIVE PRICE & CONVERTER',h:function(){return '<div style="text-align:center;padding:12px 0 8px"><div style="font-size:30px;color:var(--accent)">1 XRP = $'+price.toFixed(4)+' USD</div><div style="font-size:9px;color:var(--t2);margin-top:5px;letter-spacing:2px">SIMULATED LIVE FEED</div></div><svg id="mspk" style="width:100%;height:80px;display:block;margin:8px 0" aria-hidden="true"></svg><div class="msec"><div class="msect">Price Reference</div><div class="sr"><span class="sl">24H High</span><span class="sv g">$'+(price+rn(0.02,0.08)).toFixed(4)+'</span></div><div class="sr"><span class="sl">24H Low</span><span class="sv r">$'+(price-rn(0.02,0.08)).toFixed(4)+'</span></div><div class="sr"><span class="sl">7D Change</span><span class="sv g">+4.2%</span></div><div class="sr"><span class="sl">30D Change</span><span class="sv r">-8.1%</span></div><div class="sr"><span class="sl">Market Cap</span><span class="sv a">$'+(price*54.88).toFixed(1)+'B</span></div><div class="sr"><span class="sl">24H Volume</span><span class="sv y">$2.14B</span></div><div class="sr"><span class="sl">All-Time High</span><span class="sv">$3.40 (Jan 7, 2018)</span></div></div>';}},
-  tx:{t:'TOP TRANSFERS — EXTENDED',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Live stream · click wallet names for Bithomp profile · click amounts for transaction detail</div>';for(var i=0;i<14;i++){var f=ra(),t=ra();while(t===f)t=ra();var v=Math.random(),amt=v<0.5?'$'+rn(1,68).toFixed(1)+'M':v<0.75?'$'+rn(100,9000).toFixed(0)+'K':'$'+rn(1,15).toFixed(1)+'M';var d=new Date();h+='<div class="tr">'+btr(f,t,amt,(d.getHours()<10?'0':'')+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes())+'</div>';}return h;}},
-  amm:{t:'TOP AMM POOLS BY TVL',h:function(){var pools=[['XRP/CRYPTO','769','$7.6M','0.3%'],['XRP/RLUSD','1,299','$5.4M','0.3%'],['XRP/FUZZY','411','$1.6M','1.0%'],['XRP/MAG','2,031','$1.1M','0.5%'],['XRP/XPM','2,751','$922.5K','1.0%'],['XRP/SOLO','882','$744K','0.3%'],['XRP/DROP','1,104','$611K','0.5%'],['XRP/YUZZF','512','$198K','1.0%'],['XRP/COREUM','309','$142K','0.3%'],['XRP/GALA','187','$98K','0.5%']];var h='<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px;font-size:8px;color:var(--t3);margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Pool</span><span>Holders</span><span>TVL</span><span>Fee</span></div>';pools.forEach(function(p){h+='<div class="pr" style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px"><span class="pn">'+p[0]+'</span><span class="pv">'+p[1]+'</span><span class="pf">'+p[2]+'</span><span style="font-size:9px;color:var(--t2)">'+p[3]+'</span></div>';});return h;}},
+  price:{t:'XRP LIVE PRICE & CONVERTER',h:function(){return '<div style="text-align:center;padding:12px 0 8px"><div style="font-size:30px;color:var(--accent)">1 XRP = $'+price.toFixed(4)+' USD</div><div style="font-size:11px;color:var(--t2);margin-top:5px;letter-spacing:2px">SIMULATED LIVE FEED</div></div><svg id="mspk" style="width:100%;height:80px;display:block;margin:8px 0" aria-hidden="true"></svg><div class="msec"><div class="msect">Price Reference</div><div class="sr"><span class="sl">24H High</span><span class="sv g">$'+(price+rn(0.02,0.08)).toFixed(4)+'</span></div><div class="sr"><span class="sl">24H Low</span><span class="sv r">$'+(price-rn(0.02,0.08)).toFixed(4)+'</span></div><div class="sr"><span class="sl">7D Change</span><span class="sv g">+4.2%</span></div><div class="sr"><span class="sl">30D Change</span><span class="sv r">-8.1%</span></div><div class="sr"><span class="sl">Market Cap</span><span class="sv a">$'+(price*54.88).toFixed(1)+'B</span></div><div class="sr"><span class="sl">24H Volume</span><span class="sv y">$2.14B</span></div><div class="sr"><span class="sl">All-Time High</span><span class="sv">$3.40 (Jan 7, 2018)</span></div></div>';}},
+  tx:{t:'TOP TRANSFERS — EXTENDED',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Live stream · click wallet names for Bithomp profile · click amounts for transaction detail</div>';for(var i=0;i<14;i++){var f=ra(),t=ra();while(t===f)t=ra();var v=Math.random(),amt=v<0.5?'$'+rn(1,68).toFixed(1)+'M':v<0.75?'$'+rn(100,9000).toFixed(0)+'K':'$'+rn(1,15).toFixed(1)+'M';var d=new Date();h+='<div class="tr">'+btr(f,t,amt,(d.getHours()<10?'0':'')+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes())+'</div>';}return h;}},
+  amm:{t:'TOP AMM POOLS BY TVL',h:function(){var pools=[['XRP/CRYPTO','769','$7.6M','0.3%'],['XRP/RLUSD','1,299','$5.4M','0.3%'],['XRP/FUZZY','411','$1.6M','1.0%'],['XRP/MAG','2,031','$1.1M','0.5%'],['XRP/XPM','2,751','$922.5K','1.0%'],['XRP/SOLO','882','$744K','0.3%'],['XRP/DROP','1,104','$611K','0.5%'],['XRP/YUZZF','512','$198K','1.0%'],['XRP/COREUM','309','$142K','0.3%'],['XRP/GALA','187','$98K','0.5%']];var h='<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px;font-size:9px;color:var(--t3);margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Pool</span><span>Holders</span><span>TVL</span><span>Fee</span></div>';pools.forEach(function(p){h+='<div class="pr" style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px"><span class="pn">'+p[0]+'</span><span class="pv">'+p[1]+'</span><span class="pf">'+p[2]+'</span><span style="font-size:11px;color:var(--t2)">'+p[3]+'</span></div>';});return h;}},
   tokens:{t:'TOP TOKENS — 24H',h:function(){var toks=[['RLUSD','$0.9987','+0%','g'],['PHNIX','$0.01828','+0.1%','g'],['BTX','$40.336','-3.4%','r'],['FUZZY','$0.004561','-2.0%','r'],['Xage','$0.001781','-12.5%','r'],['SOLO','$0.1261','-3.1%','r'],['COREUM','$0.0512','+1.4%','g'],['MAG','$0.00182','-1.2%','r'],['DROP','$0.000312','+0.8%','g'],['YUZZF','$0.000094','-0.4%','r'],['AQUA','$0.00044','+5.2%','g'],['XPM','$0.00021','+2.1%','g']];var h='';toks.forEach(function(t){h+='<div class="tk"><span class="ts">'+t[0]+'</span><span class="tp">'+t[1]+'</span><span class="tc" style="color:var(--'+t[3]+')">'+t[2]+'</span></div>';});return h;}},
   amend:{t:'AMENDMENTS — FULL LIST',h:function(){var a=[['SingleAssetVault','v1.1.0','vt','VOTING'],['LendingProtocol','v1.1.0','vt','VOTING'],['fixXChainRewardRounding','v2.2.0','vt','VOTING'],['XChainBridge','v2.0.0','vt','VOTING'],['PermissionedDEX','v2.3.0','en','ENABLED'],['TokenEscrow','v2.5.0','en','ENABLED'],['PermissionedDomains','v2.4.0','en','ENABLED'],['fixTokenEscrowV1','v3.0.0','en','ENABLED'],['AMMv1_1','v2.3.0','en','ENABLED'],['Credentials','v2.2.0','en','ENABLED'],['MPTokensV1','v2.2.0','en','ENABLED'],['fixEmptyDEXOrder','v2.4.0','en','ENABLED'],['fixNFTokenRemint','v1.9.0','en','ENABLED']];var h='';a.forEach(function(x){h+='<div class="amr"><span class="amn">'+x[0]+'</span><span class="amv">'+x[1]+'</span><span class="bdg '+x[2]+'">'+x[3]+'</span></div>';});return h;}},
-  val:{t:'dUNL VALIDATORS — 35 ACTIVE',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Vote latency: <span style="color:var(--green)">●</span> &lt;300ms · <span style="color:var(--yellow)">●</span> 300-600ms · <span style="color:var(--red)">●</span> &gt;600ms</div>';ALL_VALIDATORS.forEach(function(v){h+='<div class="vlr"><div class="vdot '+valDotClass(v.lat)+'" title="'+valLatLabel(v.lat)+'"></div><span class="vn">'+v.n+'</span><span class="vdom">'+v.d+'</span><span class="vf">'+v.f+'</span><span class="vs" style="color:'+(v.lat<300?'var(--green)':v.lat<600?'var(--yellow)':'var(--red)')+'">'+valLatLabel(v.lat)+'</span></div>';});h+='<div style="font-size:8px;color:var(--t3);margin-top:7px;padding-top:5px;border-top:1px solid var(--border)">+15 additional validators on dUNL · source: unl.xrplf.org · latency simulated</div>';return h;}},
+  val:{t:'dUNL VALIDATORS — 35 ACTIVE',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Vote latency: <span style="color:var(--green)">●</span> &lt;300ms · <span style="color:var(--yellow)">●</span> 300-600ms · <span style="color:var(--red)">●</span> &gt;600ms</div>';ALL_VALIDATORS.forEach(function(v){h+='<div class="vlr"><div class="vdot '+valDotClass(v.lat)+'" title="'+valLatLabel(v.lat)+'"></div><span class="vn">'+v.n+'</span><span class="vdom">'+v.d+'</span><span class="vf">'+v.f+'</span><span class="vs" style="color:'+(v.lat<300?'var(--green)':v.lat<600?'var(--yellow)':'var(--red)')+'">'+valLatLabel(v.lat)+'</span></div>';});h+='<div style="font-size:9px;color:var(--t3);margin-top:7px;padding-top:5px;border-top:1px solid var(--border)">+15 additional validators on dUNL · source: unl.xrplf.org · latency simulated</div>';return h;}},
   dapp:{t:'TOP DAPPS — 24H VOLUME',h:function(){var d=[['Magnetic','565','$116.7K','-41.9%','r'],['First Ledger','444','$97.1K','+8.0%','g'],['xrp.cafe','557','$57.7K','-2.5%','r'],['XPMarket','151','$30.5K','-12.2%','r'],['Sologenic','20','$8,139','+56.0%','g'],['Xumm / Xaman','3,411','$44.1K','+2.1%','g'],['Zerpmon','88','$5.1K','-8.0%','r'],['OnXRP','229','$21.4K','+14.2%','g']];var h='';d.forEach(function(x){h+='<div class="dpr"><span class="dn">'+x[0]+'</span><span class="da">'+x[1]+' addr</span><span class="dv">'+x[2]+'</span><span class="dchg" style="color:var(--'+x[4]+')">'+x[3]+'</span></div>';});return h;}},
-  act:{t:'XRPL LIVE ACTIVITY — FULL STREAM',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">All transaction types · TESSUCCESS filtered · real-time simulation</div>';for(var i=0;i<16;i++){var tx=AT[Math.floor(Math.random()*AT.length)],addr=ra();var vs={'Payment':'$'+rn(1,500).toFixed(0)+'K','OfferCreate':rn(100,50000).toFixed(0)+' XRP','TrustSet':'TRUSTSET','EscrowCreate':rn(10000,1000000).toFixed(0)+' XRP','NFTokenMint':'NFT #'+Math.floor(rn(1000,9999))};h+='<div class="actr"><span class="atype '+tx.c+'">'+tx.l+'</span><span class="btess">TESSUCCESS</span><span class="aacct">'+W[addr]+'</span><span class="aval">'+(vs[tx.l]||'--')+'</span></div>';}return h;}},
-  whale:{t:'WHALE ALERTS — >100K XRP',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Transfers exceeding 100,000 XRP threshold · live detection</div>';for(var i=0;i<12;i++){var f=ra(),t=ra();while(t===f)t=ra();h+='<div class="whr"><span class="whi">🐋</span><a class="whf" href="'+wu(f)+'" target="_blank">'+W[f]+'</a><span class="ta">→</span><a class="wht" href="'+wu(t)+'" target="_blank">'+W[t]+'</a><span class="wha">'+rn(100,8000).toFixed(0)+'K XRP</span></div>';}return h;}},
+  act:{t:'XRPL LIVE ACTIVITY — FULL STREAM',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">All transaction types · TESSUCCESS filtered · real-time simulation</div>';for(var i=0;i<16;i++){var tx=AT[Math.floor(Math.random()*AT.length)],addr=ra();var vs={'Payment':'$'+rn(1,500).toFixed(0)+'K','OfferCreate':rn(100,50000).toFixed(0)+' XRP','TrustSet':'TRUSTSET','EscrowCreate':rn(10000,1000000).toFixed(0)+' XRP','NFTokenMint':'NFT #'+Math.floor(rn(1000,9999))};h+='<div class="actr"><span class="atype '+tx.c+'">'+tx.l+'</span><span class="btess">TESSUCCESS</span><span class="aacct">'+W[addr]+'</span><span class="aval">'+(vs[tx.l]||'--')+'</span></div>';}return h;}},
+  whale:{t:'WHALE ALERTS — >100K XRP',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Transfers exceeding 100,000 XRP threshold · live detection</div>';for(var i=0;i<12;i++){var f=ra(),t=ra();while(t===f)t=ra();h+='<div class="whr"><span class="whi">🐋</span><a class="whf" href="'+wu(f)+'" target="_blank">'+W[f]+'</a><span class="ta">→</span><a class="wht" href="'+wu(t)+'" target="_blank">'+W[t]+'</a><span class="wha">'+rn(100,8000).toFixed(0)+'K XRP</span></div>';}return h;}},
   news:{t:'XRP MARKET NEWS',h:function(){return '<div class="nrow"><div class="nsrc"><span class="nsl">COINDESK XRP</span><span class="balrt">ALERT</span></div><div class="nhl">BTC bounces to $77,200, ETH, XRP follow suit as Senate curbs Trump\'s Iran war powers — CoinDesk</div><div class="nage">2 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">XRP MARKETS</span></div><div class="nhl">XRP Price Prediction: Can XRP Reach $1,000? Analysts weigh in on long-term targets</div><div class="nage">3 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">PHEMEX</span><span class="bconf">CONFLICT</span></div><div class="nhl">Ripple Keeps Winning Institutional Deals but XRP Still Is Not Rallying — Phemex Analysis</div><div class="nage">4 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">24/7 WALL ST.</span></div><div class="nhl">Ripple Is Closing Bank Deals Every Week: Why XRP Holders Aren\'t Seeing the Benefit</div><div class="nage">5 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">TRADINGVIEW</span></div><div class="nhl">XRP Price Analysis: Key support at $1.28 holds — next resistance at $1.62</div><div class="nage">6 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">DECRYPT</span><span class="beco">BULLISH</span></div><div class="nhl">Ripple\'s institutional sales pipeline expands to 6 new central bank partnerships in Q1 2026</div><div class="nage">7 days ago</div></div>';}},
   rlusd:{t:'RLUSD & STABLECOINS',h:function(){return '<div class="sr"><span class="sl">RLUSD Supply</span><span class="sv a">$1.65B</span></div><div class="sr"><span class="sl">Peg Status</span><span class="sv g">$1.0001 ✓ Healthy</span></div><div class="sr"><span class="sl">24H Volume</span><span class="sv y">$284M</span></div><div class="sr"><span class="sl">7D Volume</span><span class="sv y">$1.92B</span></div><div class="sr"><span class="sl">Peg Confidence</span><span class="sv g">99.98%</span></div><div class="sr"><span class="sl">Holders</span><span class="sv a2">18,441</span></div><div class="sr"><span class="sl">Largest AMM Pool</span><span class="sv">XRP/RLUSD — $5.4M TVL</span></div><div class="sr"><span class="sl">Supply 30D Change</span><span class="sv g">+$410M (+33%)</span></div><div class="msec"><div class="msect">Latest News</div><div class="nrow"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">GROWTH</span></div><div class="nhl">Ripple\'s RLUSD stablecoin supply surpasses $1.65B, signaling rising adoption and market confidence</div><div class="nage">yesterday</div></div><div class="nrow"><div class="nsrc"><span class="nsl">STABLECOIN POLICY</span></div><div class="nhl">Stablecoin loophole threatens lending by Krause community banks — AOL report</div><div class="nage">3 days ago</div></div></div>';}},
   rwa:{t:'TOKENIZATION & RWA ON XRPL',h:function(){return '<div class="sr"><span class="sl">RWA TVL on XRPL</span><span class="sv a">$3.5B</span></div><div class="sr"><span class="sl">30D Inflow</span><span class="sv g">+$412M</span></div><div class="sr"><span class="sl">Active RWA Projects</span><span class="sv a2">47</span></div><div class="sr"><span class="sl">Asset Categories</span><span class="sv">Real Estate, Bonds, Commodities</span></div><div class="sr"><span class="sl">Largest Partner</span><span class="sv y">OpenEden — $800M</span></div><div class="sr"><span class="sl">Net Flow vs ETH/SOL</span><span class="sv g">+$1.1B net gain</span></div><div class="msec"><div class="msect">Latest News</div><div class="nrow"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">RWA</span></div><div class="nhl">XRPL\'s $3.5B surge in tokenized real-world assets marks a major shift toward institutional blockchain finance</div><div class="nage">3 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">INDEXBOX</span></div><div class="nhl">XRP Ledger Sees $1.1B Inflows as RWA Value Surges Amid Ethereum and Solana Outflows</div><div class="nage">4 days ago</div></div></div>';}},
   policy:{t:'POLICY & REGULATION',h:function(){return '<div class="nrow"><div class="nsrc"><span class="nsl">GLOBAL POLICY</span><span class="beco">ECONOMIC</span></div><div class="nhl">The future of crypto regulation: Is XRP becoming a model for institutional adoption? — Azerbaijan report</div><div class="nage">3 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">CRYPTO REGULATION</span></div><div class="nhl">Curious About What The CLARITY Act Says About XRP? Read this breakdown — XRPL.org</div><div class="nage">4 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">SEC / CFTC</span><span class="balrt">WATCH</span></div><div class="nhl">Dual committee jurisdiction stalls CLARITY Act Senate vote — Yield Wall provision contested by Senate Banking</div><div class="nage">5 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">COINBASE</span><span class="bconf">CONFLICT</span></div><div class="nhl">Coinbase formally opposes CLARITY Act CFTC jurisdiction clause in Senate submission</div><div class="nage">6 days ago</div></div><div class="nrow"><div class="nsrc"><span class="nsl">RIPPLE</span><span class="beco">UPDATE</span></div><div class="nhl">Ripple Legal Team: SEC case formally closed — XRP is not a security under US law</div><div class="nage">8 days ago</div></div>';}},
-  ntok:{t:'NEW TOKEN LISTINGS — STREAM',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Detected via TrustSet + AMM pool creation events on XRPL</div>';['$724','$KRON','$AQUA','$SOLO2','$BFLX','$ORBT','$NOVA','$RZRP','$LMNX','$QBIT','$ZETA','$FLUX2'].forEach(function(sym){var iss=ra();h+='<div class="ntr"><span class="ntsym">'+sym+'</span><a class="ntiss" href="https://bithomp.com/explorer/'+iss+'" target="_blank">'+W[iss]+'</a><span class="ntliq">$'+rn(1,80).toFixed(1)+'K</span><span class="bnew">NEW</span><span class="ntage">'+Math.floor(rn(1,180))+'m</span></div>';});return h;}},
-  nft:{t:'TOP NFT COLLECTIONS — 7 DAYS',h:function(){var cols=[['ANIMAL FAM','516','$66.9K','$129'],['Fuzzybears','27','$26.6K','$985'],['sraebyzzuF','15','$17.9K','$1,193'],['Fuzzycards Genesis','23','$16.9K','$735'],['Teddy BG','199','$7.4K','$37'],['Zerpmon','84','$5.1K','$60'],['Paradise XRPL','41','$3.8K','$93'],['XPunks','12','$2.2K','$183'],['OnXRP Art','67','$1.9K','$28'],['Cosmic Apes','9','$1.4K','$155']];var h='<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px;font-size:8px;color:var(--t3);margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Collection</span><span>Sales</span><span>Volume</span><span>Avg</span></div>';cols.forEach(function(c){h+='<div class="nftr" style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px"><span class="nftn">'+c[0]+'</span><span class="nfts">'+c[1]+'</span><span class="nftv">'+c[2]+'</span><span style="color:var(--t2);font-size:8px">'+c[3]+'</span></div>';});return h;}},
+  ntok:{t:'NEW TOKEN LISTINGS — STREAM',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Detected via TrustSet + AMM pool creation events on XRPL</div>';['$724','$KRON','$AQUA','$SOLO2','$BFLX','$ORBT','$NOVA','$RZRP','$LMNX','$QBIT','$ZETA','$FLUX2'].forEach(function(sym){var iss=ra();h+='<div class="ntr"><span class="ntsym">'+sym+'</span><a class="ntiss" href="https://bithomp.com/explorer/'+iss+'" target="_blank">'+W[iss]+'</a><span class="ntliq">$'+rn(1,80).toFixed(1)+'K</span><span class="bnew">NEW</span><span class="ntage">'+Math.floor(rn(1,180))+'m</span></div>';});return h;}},
+  nft:{t:'TOP NFT COLLECTIONS — 7 DAYS',h:function(){var cols=[['ANIMAL FAM','516','$66.9K','$129'],['Fuzzybears','27','$26.6K','$985'],['sraebyzzuF','15','$17.9K','$1,193'],['Fuzzycards Genesis','23','$16.9K','$735'],['Teddy BG','199','$7.4K','$37'],['Zerpmon','84','$5.1K','$60'],['Paradise XRPL','41','$3.8K','$93'],['XPunks','12','$2.2K','$183'],['OnXRP Art','67','$1.9K','$28'],['Cosmic Apes','9','$1.4K','$155']];var h='<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px;font-size:9px;color:var(--t3);margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Collection</span><span>Sales</span><span>Volume</span><span>Avg</span></div>';cols.forEach(function(c){h+='<div class="nftr" style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 10px"><span class="nftn">'+c[0]+'</span><span class="nfts">'+c[1]+'</span><span class="nftv">'+c[2]+'</span><span style="color:var(--t2);font-size:9px">'+c[3]+'</span></div>';});return h;}},
   xmag:{t:'xMAGNETIC ECOSYSTEM',h:function(){return '<div class="m2c"><div class="msc"><div class="mscl">MAG Price</div><div class="mscv">'+document.getElementById('magp').textContent+'</div><div class="mscs">Pool TVL: $1.1M · 2,031 holders</div></div><div class="msc"><div class="mscl">DROP Price</div><div class="mscv">'+document.getElementById('dropp').textContent+'</div><div class="mscs">Pool TVL: $211K · 1,104 holders</div></div><div class="msc"><div class="mscl">FUZZY Price</div><div class="mscv">'+document.getElementById('fuzzp').textContent+'</div><div class="mscs">Fuzzybears NFT token · 411 holders</div></div><div class="msc"><div class="mscl">YUZZF Price</div><div class="mscv">'+document.getElementById('yuzzp').textContent+'</div><div class="mscs">sraebyzzuF ecosystem</div></div></div><div class="msec"><div class="msect">Ecosystem Metrics</div><div class="sr"><span class="sl">Total Ecosystem Vol 24H</span><span class="sv y">$116.7K</span></div><div class="sr"><span class="sl">Magnetic DEX Vol 24H</span><span class="sv y">$28K</span></div><div class="sr"><span class="sl">Top Pool</span><span class="sv a">XRP/MAG — $1.1M TVL</span></div></div>';}},
-  ob:{t:'DEX ORDER BOOK — XRP/RLUSD',h:function(){var h='<div style="text-align:center;font-size:14px;color:var(--yellow);padding:8px 0;border:1px solid var(--border);border-radius:3px;margin-bottom:10px">MID $'+price.toFixed(4)+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><div class="oblbl">BIDS (BUY)</div>';for(var i=0;i<10;i++)h+='<div class="obr"><span class="obbid">'+(price-rn(0.001,0.01)*(i+1)).toFixed(4)+'</span><span class="obqty">'+fmt(Math.floor(rn(500,8000)))+'</span></div>';h+='</div><div><div class="oblbl">ASKS (SELL)</div>';for(var i=0;i<12;i++)h+='<div class="obr"><span class="obask">'+(price+rn(0.001,0.01)*(i+1)).toFixed(4)+'</span><span class="obqty">'+fmt(Math.floor(rn(500,8000)))+'</span></div>';h+='</div></div>';return h;}},
+  ob:{t:'DEX ORDER BOOK — XRP/RLUSD',h:function(){var h='<div style="text-align:center;font-size:17px;color:var(--yellow);padding:8px 0;border:1px solid var(--border);border-radius:3px;margin-bottom:10px">MID $'+price.toFixed(4)+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><div class="oblbl">BIDS (BUY)</div>';for(var i=0;i<10;i++)h+='<div class="obr"><span class="obbid">'+(price-rn(0.001,0.01)*(i+1)).toFixed(4)+'</span><span class="obqty">'+fmt(Math.floor(rn(500,8000)))+'</span></div>';h+='</div><div><div class="oblbl">ASKS (SELL)</div>';for(var i=0;i<12;i++)h+='<div class="obr"><span class="obask">'+(price+rn(0.001,0.01)*(i+1)).toFixed(4)+'</span><span class="obqty">'+fmt(Math.floor(rn(500,8000)))+'</span></div>';h+='</div></div>';return h;}},
   esc:{t:'ESCROW MONITOR — FULL VIEW',h:function(){return '<div class="sr"><span class="sl">Active Escrows</span><span class="sv a">14,168</span></div><div class="sr"><span class="sl">Total XRP Locked</span><span class="sv y">4.82B XRP</span></div><div class="sr"><span class="sl">Ripple ODL Escrows</span><span class="sv a2">3.1B XRP</span></div><div class="sr"><span class="sl">Avg Escrow Size</span><span class="sv">340,000 XRP</span></div><div class="sr"><span class="sl">Escrows Expiring &lt;30D</span><span class="sv r">214</span></div><div class="msec"><div class="msect">Upcoming Releases</div><div class="escr"><span class="esca">Ripple ODL</span><span class="escamt">500M XRP</span><span class="escdue">Jun 1, 2026</span></div><div class="escr"><span class="esca">GateHub</span><span class="escamt">12.4M XRP</span><span class="escdue">Jun 15, 2026</span></div><div class="escr"><span class="esca">rBRVqc…mxk</span><span class="escamt">4.2M XRP</span><span class="escdue">Jul 1, 2026</span></div><div class="escr"><span class="esca">Bitstamp</span><span class="escamt">88M XRP</span><span class="escdue">Aug 1, 2026</span></div><div class="escr"><span class="esca">Ripple ODL</span><span class="escamt">500M XRP</span><span class="escdue">Sep 1, 2026</span></div><div class="escr"><span class="esca">Ripple ODL</span><span class="escamt">500M XRP</span><span class="escdue">Oct 1, 2026</span></div></div>';}},
-  xls:{t:'XLS KEY DATE TRACKER',h:function(){return '<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Monitoring Key Date changes across all active XLS prerelease specs · <a href="https://opensource.ripple.com/docs" target="_blank" style="color:var(--accent2)">opensource.ripple.com/docs</a></div><div class="sr"><span class="sl">XLS-66 Vote Consensus</span><span class="sv y">'+v66.toFixed(2)+'%</span></div><div class="sr"><span class="sl">XLS-65 Vote Consensus</span><span class="sv y">'+v65.toFixed(2)+'%</span></div><div class="sr"><span class="sl">XLS-68 Mainnet Status</span><span class="sv a2">Not yet on Mainnet</span></div><div class="sr"><span class="sl">XLS-66 Mainnet Voting Since</span><span class="sv g">Jan 27, 2026</span></div><div class="sr"><span class="sl">XLS-65 Mainnet Voting Since</span><span class="sv g">Jan 27, 2026</span></div><div class="sr"><span class="sl">XLS-68 Spec Live Since</span><span class="sv g">Jan 29, 2026</span></div><div class="sr"><span class="sl">80% threshold ETA (est.)</span><span class="sv y">~Q3 2026</span></div><div class="msec"><div class="msect">All Active Specs on opensource.ripple.com</div><div class="sr"><span class="sl">XLS-85 Token Escrow</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-81 Permissioned DEXes</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-80 Permissioned Domains</span><span class="sv g">Enabled on Mainnet</span></div><div class="sr"><span class="sl">XLS-77 Deep Freeze</span><span class="sv a2">In Development</span></div><div class="sr"><span class="sl">XLS-94 Dynamic MPTs</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-96 Confidential Transfers</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-100 Smart Escrows</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-82 MPT DEX Integration</span><span class="sv a2">Prerelease Docs Live</span></div></div>';}}
+  xls:{t:'XLS KEY DATE TRACKER',h:function(){return '<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Monitoring Key Date changes across all active XLS prerelease specs · <a href="https://opensource.ripple.com/docs" target="_blank" style="color:var(--accent2)">opensource.ripple.com/docs</a></div><div class="sr"><span class="sl">XLS-66 Vote Consensus</span><span class="sv y">'+v66.toFixed(2)+'%</span></div><div class="sr"><span class="sl">XLS-65 Vote Consensus</span><span class="sv y">'+v65.toFixed(2)+'%</span></div><div class="sr"><span class="sl">XLS-68 Mainnet Status</span><span class="sv a2">Not yet on Mainnet</span></div><div class="sr"><span class="sl">XLS-66 Mainnet Voting Since</span><span class="sv g">Jan 27, 2026</span></div><div class="sr"><span class="sl">XLS-65 Mainnet Voting Since</span><span class="sv g">Jan 27, 2026</span></div><div class="sr"><span class="sl">XLS-68 Spec Live Since</span><span class="sv g">Jan 29, 2026</span></div><div class="sr"><span class="sl">80% threshold ETA (est.)</span><span class="sv y">~Q3 2026</span></div><div class="msec"><div class="msect">All Active Specs on opensource.ripple.com</div><div class="sr"><span class="sl">XLS-85 Token Escrow</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-81 Permissioned DEXes</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-80 Permissioned Domains</span><span class="sv g">Enabled on Mainnet</span></div><div class="sr"><span class="sl">XLS-77 Deep Freeze</span><span class="sv a2">In Development</span></div><div class="sr"><span class="sl">XLS-94 Dynamic MPTs</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-96 Confidential Transfers</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-100 Smart Escrows</span><span class="sv a2">Prerelease Docs Live</span></div><div class="sr"><span class="sl">XLS-82 MPT DEX Integration</span><span class="sv a2">Prerelease Docs Live</span></div></div>';}}
 };
 
 function openModal(key){
@@ -1152,10 +1152,10 @@ function renderLo(){
 /* ── MODAL CONTENT FOR NEW BOXES ── */
 MC.tpschart={t:'TPS LIVE CHART — EXTENDED',h:function(){return '<div class="m2c"><div class="msc"><div class="mscl">Current TPS</div><div class="mscv">'+tpsHistory[tpsHistory.length-1]+'</div><div class="mscs">live reading</div></div><div class="msc"><div class="mscl">60s Average</div><div class="mscv">'+( tpsHistory.reduce(function(a,b){return a+b},0)/tpsHistory.length).toFixed(1)+'</div><div class="mscs">rolling window</div></div><div class="msc"><div class="mscl">Peak (60s)</div><div class="mscv">'+Math.max.apply(null,tpsHistory)+'</div><div class="mscs">highest recorded</div></div><div class="msc"><div class="mscl">Network Load</div><div class="mscv" style="color:var(--green)">'+gaugeLoad.toFixed(2)+'x</div><div class="mscs">of base capacity</div></div></div><div class="msec"><div class="msect">TPS Context</div><div class="sr"><span class="sl">XRPL Theoretical Max</span><span class="sv a">1,500 TPS</span></div><div class="sr"><span class="sl">Typical Sustained</span><span class="sv">15–25 TPS</span></div><div class="sr"><span class="sl">All-Time Peak</span><span class="sv y">~600 TPS (stress test)</span></div><div class="sr"><span class="sl">vs Ethereum base</span><span class="sv g">~12x faster</span></div></div>';}};
 MC.donut={t:'TRANSACTION TYPE BREAKDOWN — 24H',h:function(){var total=DONUT_DATA.reduce(function(a,b){return a+b.val},0);var h='';DONUT_DATA.forEach(function(d){var pct=((d.val/total)*100).toFixed(1);h+='<div class="sr"><span class="sl" style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:'+d.col+';display:inline-block;flex-shrink:0"></span>'+d.lbl+'</span><span class="sv">'+fmt(d.val)+' ('+pct+'%)</span></div>';});h+='<div class="sr" style="margin-top:4px"><span class="sl" style="color:var(--accent)">Total Transactions</span><span class="sv a">'+fmt(total)+'</span></div>';return h;}};
-MC.gauge={t:'NETWORK LOAD GAUGE',h:function(){return '<div style="text-align:center;margin-bottom:12px"><div style="font-size:28px;color:var(--accent)">'+gaugeLoad.toFixed(3)+'x</div><div style="font-size:10px;color:var(--t2);margin-top:4px">Load Factor — 1.0 is baseline normal</div></div><div class="sr"><span class="sl">Base Fee</span><span class="sv">10 drops (0.00001 XRP)</span></div><div class="sr"><span class="sl">Effective Fee at Load</span><span class="sv y">'+(10*gaugeLoad).toFixed(1)+' drops</span></div><div class="sr"><span class="sl">Queue Depth</span><span class="sv r">'+(gaugeLoad>1.5?Math.floor(rn(10,200)):0)+' tx</span></div><div class="sr"><span class="sl">Fee Escalation</span><span class="sv">'+(gaugeLoad>2?'Active':gaugeLoad>1.3?'Mild':'None')+'</span></div><div class="msec"><div class="msect">Load Factor Scale</div><div class="sr"><span class="sl">1.0 = Normal</span><span class="sv g">Standard fee, no queue</span></div><div class="sr"><span class="sl">1.1–1.5 = Elevated</span><span class="sv y">Mild fee pressure</span></div><div class="sr"><span class="sl">&gt;1.5 = High Load</span><span class="sv r">Queue forming, fees escalating</span></div><div class="sr"><span class="sl">&gt;3.0 = Stress</span><span class="sv r">Significant network congestion</span></div></div>';}};
-MC.movers={t:'TOP MOVERS — 24H % CHANGE',h:function(){var h='<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><div style="font-size:9px;color:var(--green);letter-spacing:1px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)">▲ TOP GAINERS</div>';MOVERS_GAIN.forEach(function(d){h+='<div class="mv-row"><span class="mv-sym" style="color:var(--accent)">'+d.sym+'</span><div class="mv-bar-wrap"><div class="mv-bar" style="width:'+(d.pct/20*100)+'%;background:rgba(0,232,122,.45)"></div></div><span class="mv-pct" style="color:var(--green)">+'+d.pct+'%</span></div>';});h+='</div><div><div style="font-size:9px;color:var(--red);letter-spacing:1px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)">▼ TOP LOSERS</div>';MOVERS_LOSE.forEach(function(d){h+='<div class="mv-row"><span class="mv-sym" style="color:var(--accent)">'+d.sym+'</span><div class="mv-bar-wrap"><div class="mv-bar" style="width:'+(Math.abs(d.pct)/15*100)+'%;background:rgba(255,68,102,.45)"></div></div><span class="mv-pct" style="color:var(--red)">'+d.pct+'%</span></div>';});h+='</div></div>';return h;}};
-MC.github={t:'XRPL GITHUB ACTIVITY — 7 DAYS',h:function(){var repos=[{name:'XRPLF/rippled',commits:14,prs:3,issues:8,stars:'4.1k',desc:'Core XRP Ledger node software (C++)'},{name:'XRPLF/xrpl.js',commits:7,prs:2,issues:4,stars:'1.2k',desc:'JavaScript / TypeScript SDK'},{name:'XRPLF/xrpl-py',commits:5,prs:1,issues:2,stars:'421',desc:'Python SDK for the XRP Ledger'},{name:'XRPLF/xrpl-dev-portal',commits:11,prs:4,issues:6,stars:'588',desc:'Documentation, tutorials and guides'},{name:'XRPLF/XRPL-Standards',commits:3,prs:2,issues:9,stars:'312',desc:'XLS specification proposals'}];var h='';repos.forEach(function(r){h+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:var(--accent2)">'+r.name+'</span><span style="font-size:8px;color:var(--t3)">★ '+r.stars+'</span></div><div style="font-size:9px;color:var(--t3);margin-bottom:5px">'+r.desc+'</div><div class="gh-stat"><span class="gh-pill gh-commits">'+r.commits+' commits</span><span class="gh-pill gh-prs">'+r.prs+' PRs</span><span class="gh-pill gh-issues">'+r.issues+' issues</span></div></div>';});return h;}};
-MC.objects={t:'LEDGER OBJECT COUNTS — LIVE',h:function(){var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Current XRP Ledger state object counts. Each object type requires 2 XRP reserve to maintain.</div>';LO_DATA.forEach(function(d){var pct=(d.val/d.max*100).toFixed(1),pos=d.delta.charAt(0)==='+';h+='<div class="lo-row" style="padding:5px 0"><span class="lo-lbl" style="font-size:11px">'+d.lbl+'</span><div class="lo-bar-wrap"><div class="lo-bar" style="width:'+pct+'%;background:'+d.col+'"></div></div><span class="lo-val" style="font-size:12px">'+fmt(d.val)+'</span><span class="lo-delta" style="color:'+(pos?'var(--green)':'var(--red)')+'">'+d.delta+'</span></div>';});h+='<div class="msec"><div class="msect">Reserve Cost Reference</div><div class="sr"><span class="sl">Base account reserve</span><span class="sv y">10 XRP</span></div><div class="sr"><span class="sl">Per-object increment</span><span class="sv y">2 XRP</span></div><div class="sr"><span class="sl">Trust lines dominate</span><span class="sv a2">8.2M+ objects</span></div></div>';return h;}};
+MC.gauge={t:'NETWORK LOAD GAUGE',h:function(){return '<div style="text-align:center;margin-bottom:12px"><div style="font-size:34px;color:var(--accent)">'+gaugeLoad.toFixed(3)+'x</div><div style="font-size:12px;color:var(--t2);margin-top:4px">Load Factor — 1.0 is baseline normal</div></div><div class="sr"><span class="sl">Base Fee</span><span class="sv">10 drops (0.00001 XRP)</span></div><div class="sr"><span class="sl">Effective Fee at Load</span><span class="sv y">'+(10*gaugeLoad).toFixed(1)+' drops</span></div><div class="sr"><span class="sl">Queue Depth</span><span class="sv r">'+(gaugeLoad>1.5?Math.floor(rn(10,200)):0)+' tx</span></div><div class="sr"><span class="sl">Fee Escalation</span><span class="sv">'+(gaugeLoad>2?'Active':gaugeLoad>1.3?'Mild':'None')+'</span></div><div class="msec"><div class="msect">Load Factor Scale</div><div class="sr"><span class="sl">1.0 = Normal</span><span class="sv g">Standard fee, no queue</span></div><div class="sr"><span class="sl">1.1–1.5 = Elevated</span><span class="sv y">Mild fee pressure</span></div><div class="sr"><span class="sl">&gt;1.5 = High Load</span><span class="sv r">Queue forming, fees escalating</span></div><div class="sr"><span class="sl">&gt;3.0 = Stress</span><span class="sv r">Significant network congestion</span></div></div>';}};
+MC.movers={t:'TOP MOVERS — 24H % CHANGE',h:function(){var h='<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><div style="font-size:11px;color:var(--green);letter-spacing:1px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)">▲ TOP GAINERS</div>';MOVERS_GAIN.forEach(function(d){h+='<div class="mv-row"><span class="mv-sym" style="color:var(--accent)">'+d.sym+'</span><div class="mv-bar-wrap"><div class="mv-bar" style="width:'+(d.pct/20*100)+'%;background:rgba(0,232,122,.45)"></div></div><span class="mv-pct" style="color:var(--green)">+'+d.pct+'%</span></div>';});h+='</div><div><div style="font-size:11px;color:var(--red);letter-spacing:1px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)">▼ TOP LOSERS</div>';MOVERS_LOSE.forEach(function(d){h+='<div class="mv-row"><span class="mv-sym" style="color:var(--accent)">'+d.sym+'</span><div class="mv-bar-wrap"><div class="mv-bar" style="width:'+(Math.abs(d.pct)/15*100)+'%;background:rgba(255,68,102,.45)"></div></div><span class="mv-pct" style="color:var(--red)">'+d.pct+'%</span></div>';});h+='</div></div>';return h;}};
+MC.github={t:'XRPL GITHUB ACTIVITY — 7 DAYS',h:function(){var repos=[{name:'XRPLF/rippled',commits:14,prs:3,issues:8,stars:'4.1k',desc:'Core XRP Ledger node software (C++)'},{name:'XRPLF/xrpl.js',commits:7,prs:2,issues:4,stars:'1.2k',desc:'JavaScript / TypeScript SDK'},{name:'XRPLF/xrpl-py',commits:5,prs:1,issues:2,stars:'421',desc:'Python SDK for the XRP Ledger'},{name:'XRPLF/xrpl-dev-portal',commits:11,prs:4,issues:6,stars:'588',desc:'Documentation, tutorials and guides'},{name:'XRPLF/XRPL-Standards',commits:3,prs:2,issues:9,stars:'312',desc:'XLS specification proposals'}];var h='';repos.forEach(function(r){h+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3px"><span style="font-size:13px;color:var(--accent2)">'+r.name+'</span><span style="font-size:9px;color:var(--t3)">★ '+r.stars+'</span></div><div style="font-size:11px;color:var(--t3);margin-bottom:5px">'+r.desc+'</div><div class="gh-stat"><span class="gh-pill gh-commits">'+r.commits+' commits</span><span class="gh-pill gh-prs">'+r.prs+' PRs</span><span class="gh-pill gh-issues">'+r.issues+' issues</span></div></div>';});return h;}};
+MC.objects={t:'LEDGER OBJECT COUNTS — LIVE',h:function(){var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Current XRP Ledger state object counts. Each object type requires 2 XRP reserve to maintain.</div>';LO_DATA.forEach(function(d){var pct=(d.val/d.max*100).toFixed(1),pos=d.delta.charAt(0)==='+';h+='<div class="lo-row" style="padding:5px 0"><span class="lo-lbl" style="font-size:13px">'+d.lbl+'</span><div class="lo-bar-wrap"><div class="lo-bar" style="width:'+pct+'%;background:'+d.col+'"></div></div><span class="lo-val" style="font-size:14px">'+fmt(d.val)+'</span><span class="lo-delta" style="color:'+(pos?'var(--green)':'var(--red)')+'">'+d.delta+'</span></div>';});h+='<div class="msec"><div class="msect">Reserve Cost Reference</div><div class="sr"><span class="sl">Base account reserve</span><span class="sv y">10 XRP</span></div><div class="sr"><span class="sl">Per-object increment</span><span class="sv y">2 XRP</span></div><div class="sr"><span class="sl">Trust lines dominate</span><span class="sv a2">8.2M+ objects</span></div></div>';return h;}};
 
 dspk();tick();uconv();uob();besc();
 for(var i=0;i<7;i++){altx();aact();}
@@ -1630,7 +1630,7 @@ function _renderNft(box,n){
 function _renderGh(box,n){
   var bb=box.querySelector('.bb');if(!bb)return;
   var sl=ALL_GH.slice(0,Math.min(n,ALL_GH.length));
-  var heat='<div style="font-size:8px;color:var(--t3);margin-top:4px;padding-top:3px;border-top:1px solid var(--border)">Commit activity — last 7 days</div>'
+  var heat='<div style="font-size:9px;color:var(--t3);margin-top:4px;padding-top:3px;border-top:1px solid var(--border)">Commit activity — last 7 days</div>'
     +'<div class="gh-heat" id="gh-heat"></div>'
     +'<div class="gh-hlegend"><span>Less</span><div class="gh-hcell" style="background:var(--bg3)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.2)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.5)"></div><div class="gh-hcell" style="background:var(--accent)"></div><span>More</span></div>';
   bb.innerHTML='';
@@ -2115,29 +2115,29 @@ function renderLPHolders(){
 
 /* ── MODAL CONTENT for 7 new boxes ── */
 MC.odl={t:'ODL CORRIDOR TRACKER — LIVE',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Ripple On-Demand Liquidity active corridors. Volume is estimated 24H flow through RippleNet ODL rails.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Ripple On-Demand Liquidity active corridors. Volume is estimated 24H flow through RippleNet ODL rails.</div>';
   ODL_CORRIDORS.forEach(function(c){
-    h+='<div class="odl-row" style="padding:5px 0"><span class="odl-flag" style="font-size:12px">'+c.flags+'</span>'
-      +'<span class="odl-lane" style="font-size:10px;min-width:90px">'+c.lane+'</span>'
+    h+='<div class="odl-row" style="padding:5px 0"><span class="odl-flag" style="font-size:14px">'+c.flags+'</span>'
+      +'<span class="odl-lane" style="font-size:12px;min-width:90px">'+c.lane+'</span>'
       +'<div class="odl-bar-wrap"><div class="odl-bar" style="width:'+c.pct+'%"></div></div>'
-      +'<span class="odl-vol" style="font-size:10px">'+c.vol+'</span>'
+      +'<span class="odl-vol" style="font-size:12px">'+c.vol+'</span>'
       +'<span class="odl-status '+(c.status==='on'?'odl-on':'odl-off')+'">'+(c.status==='on'?'LIVE':'PAUSED')+'</span></div>';
   });
   return h;
 }};
 MC.richlist={t:'XRP RICHLIST — TOP 20 WALLETS',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Top wallets by XRP balance. Exchange hot/cold wallets labeled where known. 24H change in millions.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Top wallets by XRP balance. Exchange hot/cold wallets labeled where known. 24H change in millions.</div>';
   RICHLIST.forEach(function(w){
-    h+='<div class="rich-row" style="padding:4px 0"><span class="rich-rank" style="font-size:9px">#'+w.rank+'</span>'
-      +'<a class="rich-name" href="https://bithomp.com/explorer/'+w.addr+'" target="_blank" style="font-size:10px">'+w.name+'</a>'
-      +'<span class="rich-bal" style="font-size:10px">'+w.bal+' XRP</span>'
-      +'<span class="rich-chg" style="color:var(--'+w.chgc+');font-size:9px">'+w.chg+'</span></div>';
+    h+='<div class="rich-row" style="padding:4px 0"><span class="rich-rank" style="font-size:11px">#'+w.rank+'</span>'
+      +'<a class="rich-name" href="https://bithomp.com/explorer/'+w.addr+'" target="_blank" style="font-size:12px">'+w.name+'</a>'
+      +'<span class="rich-bal" style="font-size:12px">'+w.bal+' XRP</span>'
+      +'<span class="rich-chg" style="color:var(--'+w.chgc+');font-size:11px">'+w.chg+'</span></div>';
   });
   return h;
 }};
 MC.closetime={t:'LEDGER CLOSE TIME HISTOGRAM',h:function(){
   var avg=(CT_DATA.reduce(function(a,b){return a+b},0)/CT_DATA.length).toFixed(2);
-  return '<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Last 60 ledger close times. Target: 3-4s. Above 7s indicates consensus stress.</div>'
+  return '<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Last 60 ledger close times. Target: 3-4s. Above 7s indicates consensus stress.</div>'
     +'<div class="sr"><span class="sl">Average Close Time</span><span class="sv a">'+avg+'s</span></div>'
     +'<div class="sr"><span class="sl">Minimum</span><span class="sv g">'+Math.min.apply(null,CT_DATA).toFixed(1)+'s</span></div>'
     +'<div class="sr"><span class="sl">Maximum</span><span class="sv r">'+Math.max.apply(null,CT_DATA).toFixed(1)+'s</span></div>'
@@ -2149,8 +2149,8 @@ MC.closetime={t:'LEDGER CLOSE TIME HISTOGRAM',h:function(){
     +'<div class="sr"><span class="sl">&gt;7s = Stress</span><span class="sv r">Consensus issues, network load</span></div></div>';
 }};
 MC.dextrades={t:'DEX TRADE HISTORY — XRP/RLUSD',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">Most recent completed trades on the XRP Ledger DEX for XRP/RLUSD pair.</div>'
-    +'<div style="display:grid;grid-template-columns:40px 1fr 1fr 60px;gap:4px 8px;font-size:8px;color:var(--t3);margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>SIDE</span><span>PRICE</span><span>SIZE</span><span>TIME</span></div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">Most recent completed trades on the XRP Ledger DEX for XRP/RLUSD pair.</div>'
+    +'<div style="display:grid;grid-template-columns:40px 1fr 1fr 60px;gap:4px 8px;font-size:9px;color:var(--t3);margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>SIDE</span><span>PRICE</span><span>SIZE</span><span>TIME</span></div>';
   for(var i=0;i<20;i++){
     var buy=Math.random()>0.48;
     var p=(1.3558+rn(-0.01,0.01)).toFixed(4);
@@ -2162,34 +2162,34 @@ MC.dextrades={t:'DEX TRADE HISTORY — XRP/RLUSD',h:function(){
   return h;
 }};
 MC.consensus={t:'CONSENSUS ROUND TIMER',h:function(){
-  return '<div style="text-align:center;padding:14px 0 10px"><div style="font-size:40px;color:var(--accent);letter-spacing:4px;font-family:\'Courier New\',monospace" id="mdl-cns-timer">--</div><div style="font-size:10px;color:var(--t2);margin-top:6px;letter-spacing:2px">SECONDS TO NEXT LEDGER CLOSE</div></div>'
+  return '<div style="text-align:center;padding:14px 0 10px"><div style="font-size:40px;color:var(--accent);letter-spacing:4px;font-family:\'Courier New\',monospace" id="mdl-cns-timer">--</div><div style="font-size:12px;color:var(--t2);margin-top:6px;letter-spacing:2px">SECONDS TO NEXT LEDGER CLOSE</div></div>'
     +'<div class="sr"><span class="sl">Average Close Time</span><span class="sv a">3.8s</span></div>'
     +'<div class="sr"><span class="sl">Validators on UNL</span><span class="sv a2">35</span></div>'
     +'<div class="sr"><span class="sl">Quorum Required</span><span class="sv">28 of 35</span></div>'
     +'<div class="sr"><span class="sl">Consensus Model</span><span class="sv">RPCA (Federated Byzantine)</span></div>'
     +'<div class="sr"><span class="sl">Finality</span><span class="sv g">3-5 seconds (probabilistic final)</span></div>'
     +'<div class="msec"><div class="msect">How XRPL Consensus Works</div>'
-    +'<div style="font-size:10px;color:var(--t2);line-height:1.6">Validators share proposed transaction sets and vote until 80% agree. No mining, no PoW. The agreed set closes as a ledger every 3-5 seconds. Each ledger hash is chained to the previous — immutable once closed.</div></div>';
+    +'<div style="font-size:12px;color:var(--t2);line-height:1.6">Validators share proposed transaction sets and vote until 80% agree. No mining, no PoW. The agreed set closes as a ledger every 3-5 seconds. Each ledger hash is chained to the previous — immutable once closed.</div></div>';
 }};
 MC.sniper={t:'xMAGNETIC SNIPER FEED',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:8px">New token launches detected via TrustSet + AMM pool creation on Magnetic DEX. Trust line count is a key legitimacy signal.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:8px">New token launches detected via TrustSet + AMM pool creation on Magnetic DEX. Trust line count is a key legitimacy signal.</div>';
   SNIPER_TOKENS.forEach(function(tok){
-    h+='<div class="snp-row" style="padding:5px 0"><span class="snp-sym" style="font-size:10px">'+tok.sym+'</span>'
-      +'<span class="snp-iss" style="font-size:9px">'+tok.iss+'</span>'
-      +'<span class="snp-liq" style="font-size:9px">'+tok.liq+'</span>'
-      +'<span class="snp-trust" style="font-size:9px;color:var(--t2)">'+tok.trust+' trust lines</span>'
+    h+='<div class="snp-row" style="padding:5px 0"><span class="snp-sym" style="font-size:12px">'+tok.sym+'</span>'
+      +'<span class="snp-iss" style="font-size:11px">'+tok.iss+'</span>'
+      +'<span class="snp-liq" style="font-size:11px">'+tok.liq+'</span>'
+      +'<span class="snp-trust" style="font-size:11px;color:var(--t2)">'+tok.trust+' trust lines</span>'
       +'<span class="snp-age">'+tok.age+'</span>'
       +'<span class="snp-risk snp-'+tok.risk+'">'+(tok.risk==='safe'?'SAFE':tok.risk==='warn'?'WATCH':'NEW')+'</span></div>';
   });
   return h;
 }};
 MC.lpholders={t:'TOP LP TOKEN HOLDERS BY POOL',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Wallets with largest LP token positions across XRPL AMM pools. LP % = share of pool\'s total liquidity.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Wallets with largest LP token positions across XRPL AMM pools. LP % = share of pool\'s total liquidity.</div>';
   LP_HOLDERS.forEach(function(lh){
-    h+='<div class="lp-row" style="padding:5px 0"><span class="lp-name" style="font-size:10px">'+lh.name+'</span>'
-      +'<span class="lp-pool" style="color:var(--accent2);font-size:9px">'+lh.pool+'</span>'
-      +'<span class="lp-pct" style="font-size:10px">'+lh.pct+'</span>'
-      +'<span class="lp-val" style="font-size:10px">'+lh.val+'</span></div>';
+    h+='<div class="lp-row" style="padding:5px 0"><span class="lp-name" style="font-size:12px">'+lh.name+'</span>'
+      +'<span class="lp-pool" style="color:var(--accent2);font-size:11px">'+lh.pool+'</span>'
+      +'<span class="lp-pct" style="font-size:12px">'+lh.pct+'</span>'
+      +'<span class="lp-val" style="font-size:12px">'+lh.val+'</span></div>';
   });
   return h;
 }};
@@ -2358,7 +2358,7 @@ function renderPredMarket(){
     r.innerHTML='<div class="pred-q">'+m.q+'</div>'
       +'<div class="pred-bar-wrap"><div class="pred-yes" style="width:'+m.yes+'%"></div><div class="pred-no" style="width:'+m.no+'%"></div></div>'
       +'<div class="pred-meta"><span class="pred-yes-lbl">YES '+m.yes+'%</span><span class="pred-vol">'+m.vol+'</span><span class="pred-no-lbl">NO '+m.no+'%</span></div>'
-      +'<div style="font-size:7px;color:var(--t3);margin-top:1px">Ends: '+m.end+'</div>';
+      +'<div style="font-size:8px;color:var(--t3);margin-top:1px">Ends: '+m.end+'</div>';
     l.appendChild(r);
   });
 }
@@ -2392,7 +2392,7 @@ function renderMemepad(){
           +'<span class="mem-chg" style="color:var(--'+(pos?'green':'red')+')">'+t.chg+'</span>'
         +'</div>'
         +'<div class="mem-prog-wrap"><div class="mem-prog" style="width:'+t.prog+'%"></div></div>'
-        +'<div style="font-size:7px;color:var(--t3);margin-top:1px">Bonding '+t.prog+'% · '+t.age+' ago</div>'
+        +'<div style="font-size:8px;color:var(--t3);margin-top:1px">Bonding '+t.prog+'% · '+t.age+' ago</div>'
       +'</div>';
     l.appendChild(r);
   });
@@ -2430,7 +2430,7 @@ setInterval(renderFarming,10000);
 /* ── MODAL CONTENT ── */
 MC.crash={t:'☄️ CRASH GAME — xMAGNETIC',h:function(){
   var avg=crashHistory.length?((crashHistory.reduce(function(s,v){return s+v},0)/crashHistory.length).toFixed(2))+'×':'--';
-  var h='<div style="text-align:center;padding:8px 0 10px"><div style="font-size:9px;color:var(--t2);letter-spacing:2px;margin-bottom:8px">CRASH HISTORY — LAST 10 ROUNDS</div>'
+  var h='<div style="text-align:center;padding:8px 0 10px"><div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:8px">CRASH HISTORY — LAST 10 ROUNDS</div>'
     +'<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:14px">';
   crashHistory.forEach(function(v){h+='<span class="crash-chip '+(v>=4?'crash-win':v>=1.5?'crash-mid':'crash-bust')+'">'+v.toFixed(2)+'×</span>';});
   h+='</div></div>'
@@ -2439,42 +2439,42 @@ MC.crash={t:'☄️ CRASH GAME — xMAGNETIC',h:function(){
     +'<div class="sr"><span class="sl">24H Wagered</span><span class="sv y">214,841 MAG</span></div>'
     +'<div class="sr"><span class="sl">24H Players</span><span class="sv a2">1,882</span></div>'
     +'<div class="msec"><div class="msect">How Crash Works</div>'
-    +'<div style="font-size:10px;color:var(--t2);line-height:1.6">Place a MAG wager before the round starts. The multiplier climbs from 1.00×. Cash out anytime before it crashes — or lose your bet. The crash point is provably fair, seeded on-chain by the XRPL ledger hash.</div></div>';
+    +'<div style="font-size:12px;color:var(--t2);line-height:1.6">Place a MAG wager before the round starts. The multiplier climbs from 1.00×. Cash out anytime before it crashes — or lose your bet. The crash point is provably fair, seeded on-chain by the XRPL ledger hash.</div></div>';
   return h;
 }};
 MC.predmarket={t:'🌌 PREDICTION MARKET — xMAGNETIC',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Binary outcome markets. Stake MAG on YES or NO. Settlement is automatic at expiry via XRPL oracle feed.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Binary outcome markets. Stake MAG on YES or NO. Settlement is automatic at expiry via XRPL oracle feed.</div>';
   PRED_MARKETS.forEach(function(m){
-    h+='<div class="pred-row" style="padding:7px 0"><div class="pred-q" style="font-size:10px;margin-bottom:5px">'+m.q+'</div>'
+    h+='<div class="pred-row" style="padding:7px 0"><div class="pred-q" style="font-size:12px;margin-bottom:5px">'+m.q+'</div>'
       +'<div class="pred-bar-wrap" style="height:7px"><div class="pred-yes" style="width:'+m.yes+'%"></div><div class="pred-no" style="width:'+m.no+'%"></div></div>'
-      +'<div class="pred-meta" style="margin-top:3px"><span class="pred-yes-lbl" style="font-size:9px">YES '+m.yes+'%</span><span class="pred-vol" style="font-size:9px">'+m.vol+'</span><span class="pred-no-lbl" style="font-size:9px">NO '+m.no+'%</span></div>'
-      +'<div style="font-size:8px;color:var(--t3);margin-top:2px">Ends: '+m.end+'</div></div>';
+      +'<div class="pred-meta" style="margin-top:3px"><span class="pred-yes-lbl" style="font-size:11px">YES '+m.yes+'%</span><span class="pred-vol" style="font-size:11px">'+m.vol+'</span><span class="pred-no-lbl" style="font-size:11px">NO '+m.no+'%</span></div>'
+      +'<div style="font-size:9px;color:var(--t3);margin-top:2px">Ends: '+m.end+'</div></div>';
   });
   return h;
 }};
 MC.memepad={t:'🚀 MEMEPAD — xMAGNETIC MEMECOIN LAUNCHER',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Launch a memecoin on XRPL in two clicks. Tokens follow a bonding curve. Graduates to full DEX when curve reaches 100%.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Launch a memecoin on XRPL in two clicks. Tokens follow a bonding curve. Graduates to full DEX when curve reaches 100%.</div>';
   MEMEPAD_TOKENS.forEach(function(t){
     var pos=t.chg.charAt(0)==='+';
-    h+='<div class="mem-row" style="padding:6px 0"><span class="mem-sym" style="font-size:10px;min-width:60px">'+t.sym+'</span>'
+    h+='<div class="mem-row" style="padding:6px 0"><span class="mem-sym" style="font-size:12px;min-width:60px">'+t.sym+'</span>'
       +'<div style="flex:1;min-width:0"><div style="display:flex;justify-content:space-between;margin-bottom:4px">'
-      +'<span style="font-size:9px;color:var(--t2)">'+t.name+'</span>'
-      +'<span style="font-size:10px;color:var(--yellow)">'+t.mc+'</span>'
-      +'<span style="font-size:10px;color:var(--'+(pos?'green':'red')+')">'+t.chg+'</span></div>'
+      +'<span style="font-size:11px;color:var(--t2)">'+t.name+'</span>'
+      +'<span style="font-size:12px;color:var(--yellow)">'+t.mc+'</span>'
+      +'<span style="font-size:12px;color:var(--'+(pos?'green':'red')+')">'+t.chg+'</span></div>'
       +'<div class="mem-prog-wrap" style="height:5px"><div class="mem-prog" style="width:'+t.prog+'%"></div></div>'
-      +'<div style="font-size:8px;color:var(--t3);margin-top:2px">Bonding '+t.prog+'% · '+t.age+' ago</div></div></div>';
+      +'<div style="font-size:9px;color:var(--t3);margin-top:2px">Bonding '+t.prog+'% · '+t.age+' ago</div></div></div>';
   });
   return h;
 }};
 MC.farming={t:'🌾 FARMING — xMAGNETIC YIELD POOLS',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Provide liquidity to AMM pools on xMagnetic and earn token rewards every 24 hours. APY = trading fees + incentive emissions.</div>'
-    +'<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 12px;font-size:8px;color:var(--t3);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Pool</span><span>TVL</span><span>APY</span><span>Reward</span></div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Provide liquidity to AMM pools on xMagnetic and earn token rewards every 24 hours. APY = trading fees + incentive emissions.</div>'
+    +'<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 12px;font-size:9px;color:var(--t3);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)"><span>Pool</span><span>TVL</span><span>APY</span><span>Reward</span></div>';
   FARM_POOLS.forEach(function(p){
     h+='<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:3px 12px;padding:5px 0;border-bottom:1px solid rgba(0,255,180,.04)">'
-      +'<span style="font-size:10px;color:var(--accent2)">'+p.pool+'</span>'
-      +'<span style="font-size:10px;color:var(--yellow)">'+p.tvl+'</span>'
-      +'<span style="font-size:10px;color:var(--green);font-weight:bold">'+p.apy+'%</span>'
-      +'<span style="font-size:9px;color:var(--purple)">+'+p.reward+'</span></div>';
+      +'<span style="font-size:12px;color:var(--accent2)">'+p.pool+'</span>'
+      +'<span style="font-size:12px;color:var(--yellow)">'+p.tvl+'</span>'
+      +'<span style="font-size:12px;color:var(--green);font-weight:bold">'+p.apy+'%</span>'
+      +'<span style="font-size:11px;color:var(--purple)">+'+p.reward+'</span></div>';
   });
   return h;
 }};
@@ -2682,7 +2682,7 @@ function renderSupplyChart(){
 MC.valheat={t:'VALIDATOR AGREEMENT HEATMAP',h:function(){
   var missed=0,late=0,total=VAL_ROWS*VAL_COLS;
   valHeatData.forEach(function(row){row.forEach(function(v){if(v===2)missed++;if(v===1)late++;});});
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Each row = one ledger (newest top). Each column = one dUNL validator. Green = agreed, yellow = late, red = missed.</div>'
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Each row = one ledger (newest top). Each column = one dUNL validator. Green = agreed, yellow = late, red = missed.</div>'
     +'<div style="display:grid;grid-template-columns:repeat(20,1fr);gap:2px;margin-bottom:10px" id="mdl-valheat"></div>'
     +'<div class="sr"><span class="sl">Agreement Rate</span><span class="sv g">'+((( total-missed-late)/total)*100).toFixed(2)+'%</span></div>'
     +'<div class="sr"><span class="sl">Missed Votes</span><span class="sv r">'+missed+'</span></div>'
@@ -2694,30 +2694,30 @@ MC.feemarket={t:'FEE MARKET HISTORY — 7 DAYS',h:function(){
   var peak=Math.max.apply(null,FEE_DATA).toFixed(2);
   var avg=(FEE_DATA.reduce(function(a,b){return a+b},0)/FEE_DATA.length).toFixed(3);
   var events=FEE_DATA.filter(function(v){return v>2;}).length;
-  return '<div style="font-size:9px;color:var(--t2);margin-bottom:10px">168 hourly samples. Dashed line = baseline 1.0×. Spikes indicate fee escalation events where transaction queue formed.</div>'
+  return '<div style="font-size:11px;color:var(--t2);margin-bottom:10px">168 hourly samples. Dashed line = baseline 1.0×. Spikes indicate fee escalation events where transaction queue formed.</div>'
     +'<svg id="mdl-fee-chart" style="width:100%;height:120px;display:block;margin-bottom:10px"></svg>'
     +'<div class="sr"><span class="sl">7-Day Peak</span><span class="sv r">'+peak+'×</span></div>'
     +'<div class="sr"><span class="sl">7-Day Average</span><span class="sv">'+avg+'×</span></div>'
     +'<div class="sr"><span class="sl">Congestion Events (&gt;2×)</span><span class="sv y">'+events+' ('+((events/168)*100).toFixed(0)+'% of time)</span></div>'
     +'<div class="sr"><span class="sl">Current Load</span><span class="sv a">'+gaugeLoad.toFixed(3)+'×</span></div>'
     +'<div class="msec"><div class="msect">Fee Escalation Explained</div>'
-    +'<div style="font-size:10px;color:var(--t2);line-height:1.6">When the transaction queue grows, the base fee scales with the load factor. At 2× load, the fee doubles from 10 to 20 drops. At 3×, 30 drops. High-fee transactions get priority.</div></div>';
+    +'<div style="font-size:12px;color:var(--t2);line-height:1.6">When the transaction queue grows, the base fee scales with the load factor. At 2× load, the fee doubles from 10 to 20 drops. At 3×, 30 drops. High-fee transactions get priority.</div></div>';
 }};
 MC.tokcharts={t:'xMAGNETIC TOKEN PRICE CHARTS',h:function(){
   var h='';
   Object.keys(TOK_DATA).forEach(function(sym){
     var t=TOK_DATA[sym];
     var col=t.chg>=0?'var(--green)':'var(--red)';
-    h+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:11px;color:var(--accent);font-weight:bold">'+sym+'</span><span style="font-size:14px;color:var(--t)">$'+t.price.toFixed(t.price<0.001?6:4)+'</span><span style="font-size:11px;color:'+col+'">'+(t.chg>=0?'+':'')+t.chg.toFixed(1)+'%</span></div>'
+    h+='<div style="padding:8px 0;border-bottom:1px solid var(--border)"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:13px;color:var(--accent);font-weight:bold">'+sym+'</span><span style="font-size:17px;color:var(--t)">$'+t.price.toFixed(t.price<0.001?6:4)+'</span><span style="font-size:13px;color:'+col+'">'+(t.chg>=0?'+':'')+t.chg.toFixed(1)+'%</span></div>'
       +'<svg id="mdl-tc-'+sym+'" style="width:100%;height:44px;display:block" aria-hidden="true"></svg></div>';
   });
   return h;
 }};
 MC.supplysched={t:'XRP SUPPLY SCHEDULE — ESCROW RELEASES',h:function(){
-  var h='<div style="font-size:9px;color:var(--t2);margin-bottom:10px">Ripple releases up to 1B XRP monthly from escrow. Unused amounts are returned for another 54-month escrow. Green = released to market, yellow = sold/used for ODL, gray = returned.</div>';
+  var h='<div style="font-size:11px;color:var(--t2);margin-bottom:10px">Ripple releases up to 1B XRP monthly from escrow. Unused amounts are returned for another 54-month escrow. Green = released to market, yellow = sold/used for ODL, gray = returned.</div>';
   SUPPLY_DATA.forEach(function(d){
     var pct=d.sold>0?((d.sold/d.rel)*100).toFixed(0)+'% sold':'projected';
-    h+='<div class="sr"><span class="sl">'+d.m+'</span><span class="sv">'+d.rel+'M released</span><span style="font-size:8px;color:var(--t3);padding-left:8px">'+pct+'</span></div>';
+    h+='<div class="sr"><span class="sl">'+d.m+'</span><span class="sv">'+d.rel+'M released</span><span style="font-size:9px;color:var(--t3);padding-left:8px">'+pct+'</span></div>';
   });
   h+='<div class="msec"><div class="msect">Escrow Facts</div>'
     +'<div class="sr"><span class="sl">Total Remaining</span><span class="sv a">4.82B XRP</span></div>'
