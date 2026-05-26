@@ -16,7 +16,103 @@
 }
 body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;min-height:100vh}
 .wrap{padding:10px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:3px;margin-bottom:8px;gap:8px;flex-wrap:wrap;position:sticky;top:8px;z-index:50;backdrop-filter:blur(8px)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:3px 3px 0 0;margin-bottom:0;gap:8px;flex-wrap:wrap;position:sticky;top:8px;z-index:50;backdrop-filter:blur(8px)}
+/* BREAKING NEWS TICKER */
+.ticker-bar{
+  position:sticky;top:calc(8px + 38px);z-index:49;
+  background:var(--bg3);
+  border:1px solid var(--border);border-top:none;
+  border-radius:0;
+  padding:4px 10px;
+  display:flex;align-items:center;gap:8px;
+  overflow:hidden;
+  margin-bottom:0;
+  backdrop-filter:blur(8px);
+}
+.ticker-label{
+  font-size:8px;font-weight:bold;letter-spacing:1.5px;
+  color:var(--bg);background:var(--red);
+  padding:2px 6px;border-radius:2px;
+  flex-shrink:0;white-space:nowrap;
+}
+.ticker-track{
+  flex:1;overflow:hidden;position:relative;height:16px;
+}
+.ticker-inner{
+  display:flex;align-items:center;gap:40px;
+  white-space:nowrap;
+  position:absolute;
+  animation:ticker-scroll 60s linear infinite;
+  font-size:9px;color:var(--t2);
+}
+.ticker-inner:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
+.ticker-src{color:var(--t3);font-size:8px;letter-spacing:.5px}
+.ticker-hl{color:var(--t)}
+.ticker-sep{color:var(--t3);font-size:8px}
+.ticker-dot-g{color:var(--green);font-size:8px}
+.ticker-dot-r{color:var(--red);font-size:8px}
+@keyframes ticker-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+/* PRICE TICKER BAR */
+.price-ticker-bar{
+  background:var(--bg2);border:1px solid rgba(0,200,255,.15);border-top:none;
+  border-radius:0;padding:0;
+  display:flex;align-items:stretch;
+  overflow:hidden;height:26px;
+  position:sticky;top:calc(8px + 38px + 26px);z-index:48;
+  backdrop-filter:blur(8px);
+  margin-bottom:0;
+}
+.ptk-item{
+  display:flex;align-items:center;gap:5px;
+  padding:0 10px;
+  border-right:1px solid rgba(0,200,255,.1);
+  white-space:nowrap;font-size:8.5px;flex-shrink:0;
+  cursor:default;transition:background .15s;
+}
+.ptk-item:hover{background:rgba(0,200,255,.05)}
+.ptk-sym{color:var(--yellow);font-weight:bold;letter-spacing:.5px;min-width:32px}
+.ptk-price{color:var(--t);font-family:var(--mono)}
+.ptk-chg{font-size:8px}
+.ptk-up{color:var(--green)}
+.ptk-dn{color:var(--red)}
+.ptk-arrow-up{color:var(--green);font-size:8px}
+.ptk-arrow-dn{color:var(--red);font-size:8px}
+.ptk-sep{width:1px;background:rgba(0,200,255,.1);flex-shrink:0;align-self:stretch}
+/* CHART CROSSHAIR */
+.chart-wrap{position:relative;display:block;cursor:crosshair}
+.chart-crosshair{
+  position:absolute;pointer-events:none;
+  top:0;bottom:0;width:1px;
+  background:rgba(255,255,255,.3);
+  display:none;
+}
+.chart-tooltip{
+  position:absolute;pointer-events:none;
+  background:rgba(10,15,20,.92);
+  border:1px solid var(--border);
+  border-radius:3px;padding:4px 8px;
+  font-size:9px;color:var(--t);
+  white-space:nowrap;z-index:10;
+  display:none;transform:translateX(-50%);
+}
+.chart-tooltip .tt-date{color:var(--t2);font-size:8px}
+.chart-tooltip .tt-val{color:var(--accent);font-size:11px;font-weight:bold}
+/* COLLAPSIBLE BOXES */
+.box.collapsed .bb{display:none}
+.box.collapsed .bb + *{display:none}
+.collapse-btn{
+  cursor:pointer;font-size:10px;line-height:1;
+  padding:0 4px;background:transparent;
+  border:none;color:var(--t3);
+  font-family:var(--mono);transition:color .15s,transform .2s;
+  flex-shrink:0;
+}
+.collapse-btn:hover{color:var(--accent)}
+.box.collapsed .collapse-btn{transform:rotate(-90deg);color:var(--accent2)}
 .logo{font-size:14px;color:var(--accent);letter-spacing:3px;flex-shrink:0}
 .status{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2);flex:1}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.8s infinite;flex-shrink:0}
@@ -27,24 +123,40 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
 .ctb{font-size:9px;padding:2px 8px;background:transparent;border:1px solid var(--border);color:var(--t2);border-radius:2px;cursor:pointer;font-family:var(--mono);transition:all .15s}
 .ctb:hover{border-color:var(--borderhi);color:var(--t)}
 .ctb.act{background:rgba(0,255,180,.1);border-color:var(--accent);color:var(--accent)}
-/* CSS Columns masonry — browser handles gapless layout natively */
+/* 3 independent flex columns — gaps fill, columns balance */
 .grid{
-  column-count:var(--grid-cols,3);
-  column-gap:7px;
-  orphans:1;widows:1;
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+}
+.grid-col{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+/* subtle separator line between vertically stacked boxes */
+.grid-col .box + .box{
+  border-top:1px solid var(--bg);
+}
+/* all boxes share vertical space equally within their column */
+.grid-col .box{
+  flex:1;
+  margin-bottom:0;
 }
 .box{
-  break-inside:avoid;
-  display:inline-block;
   width:100%;
-  margin-bottom:7px;
-  vertical-align:top;
-}
-/* XLS full-width: spans all columns */
-#xls-box{
-  column-span:all;
   display:block;
-  margin-bottom:7px;
+}
+/* XLS full-width wrapper below all columns */
+.grid-xls-row{
+  width:100%;
+  margin-top:7px;
+}
+#xls-box{
+  display:block;
+  width:100%;
 }
 .grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;align-items:start}
 .box{background:var(--bg2);border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:min-height .25s ease,border-color .2s}
@@ -442,9 +554,84 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 
+<div class="ticker-bar">
+  <span class="ticker-label">BREAKING</span>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="ticker-inner">
+      <span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">BENZINGA</span><span class="ticker-hl">XRP soars as Ripple wins landmark ODL contract with Japan's three largest commercial banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">BLOOMBERG</span><span class="ticker-hl">RLUSD crosses $1.65B supply milestone — outpacing USDC's first-year growth rate by 3×</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">REUTERS</span><span class="ticker-hl">IMF Working Group recommends XRP Ledger as remittance standard for developing-economy central banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">24/7 WALL ST.</span><span class="ticker-hl">Ripple Is Closing Bank Deals Every Week — Why XRP Holders Aren't Seeing Immediate Benefit</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">YAHOO FINANCE</span><span class="ticker-hl">XRPL's $3.5B surge in tokenized real-world assets marks major institutional shift</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">COINDESK</span><span class="ticker-hl">SEC formally closes XRP case — Ripple declared compliant with US securities law</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">CNBC</span><span class="ticker-hl">Senate Banking Committee schedules emergency session on crypto reserve bill — XRP included</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">FINANCIAL TIMES</span><span class="ticker-hl">Ripple's stablecoin strategy positions RLUSD as SWIFT-compatible dollar rail for banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">MARKETWATCH</span><span class="ticker-hl">XRP trading volume hits $8.4B in 24H — highest since January 2025 ETF speculation peak</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">BARRON'S</span><span class="ticker-hl">CLARITY Act stalled — dual committee jurisdiction dispute between Banking and Agriculture panels</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">DECRYPT</span><span class="ticker-hl">xMagnetic Crash game volume surges 214% — 1,882 active players in last 24H</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">REUTERS</span><span class="ticker-hl">Ripple ODL releases 500M XRP from escrow June 1 — market watches absorption closely</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">FORBES</span><span class="ticker-hl">XRPL named most energy-efficient blockchain for institutional payments in 2026 report</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">THE BLOCK</span><span class="ticker-hl">XRP Ledger DEX volume hits record $220M in single session — AMM pools capture 38%</span></span><span class="ticker-sep">·</span>
+      <span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">BENZINGA</span><span class="ticker-hl">XRP soars as Ripple wins landmark ODL contract with Japan's three largest commercial banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">BLOOMBERG</span><span class="ticker-hl">RLUSD crosses $1.65B supply milestone — outpacing USDC's first-year growth rate by 3×</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">REUTERS</span><span class="ticker-hl">IMF Working Group recommends XRP Ledger as remittance standard for developing-economy central banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">24/7 WALL ST.</span><span class="ticker-hl">Ripple Is Closing Bank Deals Every Week — Why XRP Holders Aren't Seeing Immediate Benefit</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">YAHOO FINANCE</span><span class="ticker-hl">XRPL's $3.5B surge in tokenized real-world assets marks major institutional shift</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">COINDESK</span><span class="ticker-hl">SEC formally closes XRP case — Ripple declared compliant with US securities law</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">CNBC</span><span class="ticker-hl">Senate Banking Committee schedules emergency session on crypto reserve bill — XRP included</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">FINANCIAL TIMES</span><span class="ticker-hl">Ripple's stablecoin strategy positions RLUSD as SWIFT-compatible dollar rail for banks</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">MARKETWATCH</span><span class="ticker-hl">XRP trading volume hits $8.4B in 24H — highest since January 2025 ETF speculation peak</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">BARRON'S</span><span class="ticker-hl">CLARITY Act stalled — dual committee jurisdiction dispute between Banking and Agriculture panels</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">DECRYPT</span><span class="ticker-hl">xMagnetic Crash game volume surges 214% — 1,882 active players in last 24H</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">◆</span><span class="ticker-src">REUTERS</span><span class="ticker-hl">Ripple ODL releases 500M XRP from escrow June 1 — market watches absorption closely</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">FORBES</span><span class="ticker-hl">XRPL named most energy-efficient blockchain for institutional payments in 2026 report</span></span><span class="ticker-sep">·</span><span class="ticker-item"><span class="ticker-dot-g">▲</span><span class="ticker-src">THE BLOCK</span><span class="ticker-hl">XRP Ledger DEX volume hits record $220M in single session — AMM pools capture 38%</span></span><span class="ticker-sep">·</span>
+    </div>
+  </div>
+</div>
+
+<div class="price-ticker-bar" id="price-ticker">
+<div class="ptk-item" id="xrp-ptk">
+  <span class="ptk-sym">XRP</span>
+  <span class="ptk-price" id="xrp-ptk-p">1.3558</span>
+  <span class="ptk-up">▲ +2.1%</span>
+</div><div class="ptk-item" id="rlusd-ptk">
+  <span class="ptk-sym">RLUSD</span>
+  <span class="ptk-price" id="rlusd-ptk-p">1.0001</span>
+  <span class="ptk-up">▲ +0.0%</span>
+</div><div class="ptk-item" id="btc-ptk">
+  <span class="ptk-sym">BTC</span>
+  <span class="ptk-price" id="btc-ptk-p">76,455</span>
+  <span class="ptk-dn">▼ -1.58%</span>
+</div><div class="ptk-item" id="eth-ptk">
+  <span class="ptk-sym">ETH</span>
+  <span class="ptk-price" id="eth-ptk-p">2,076</span>
+  <span class="ptk-dn">▼ -2.75%</span>
+</div><div class="ptk-item" id="mag-ptk">
+  <span class="ptk-sym">MAG</span>
+  <span class="ptk-price" id="mag-ptk-p">0.00182</span>
+  <span class="ptk-dn">▼ -1.2%</span>
+</div><div class="ptk-item" id="drop-ptk">
+  <span class="ptk-sym">DROP</span>
+  <span class="ptk-price" id="drop-ptk-p">0.000312</span>
+  <span class="ptk-up">▲ +0.8%</span>
+</div><div class="ptk-item" id="fuzz-ptk">
+  <span class="ptk-sym">FUZZY</span>
+  <span class="ptk-price" id="fuzz-ptk-p">0.004561</span>
+  <span class="ptk-up">▲ +0.53%</span>
+</div><div class="ptk-item" id="yuzz-ptk">
+  <span class="ptk-sym">YUZZF</span>
+  <span class="ptk-price" id="yuzz-ptk-p">0.000094</span>
+  <span class="ptk-dn">▼ -0.4%</span>
+</div><div class="ptk-item" id="phnix-ptk">
+  <span class="ptk-sym">PHNIX</span>
+  <span class="ptk-price" id="phnix-ptk-p">0.01828</span>
+  <span class="ptk-up">▲ +0.0%</span>
+</div><div class="ptk-item" id="sol-ptk">
+  <span class="ptk-sym">SOL</span>
+  <span class="ptk-price" id="sol-ptk-p">148.32</span>
+  <span class="ptk-dn">▼ -1.2%</span>
+</div><div class="ptk-item" id="usdc-ptk">
+  <span class="ptk-sym">USDC</span>
+  <span class="ptk-price" id="usdc-ptk-p">1.0000</span>
+  <span class="ptk-up">▲ +0.0%</span>
+</div><div class="ptk-item" id="usdt-ptk">
+  <span class="ptk-sym">USDT</span>
+  <span class="ptk-price" id="usdt-ptk-p">1.0000</span>
+  <span class="ptk-up">▲ +0.0%</span>
+</div><div class="ptk-item" id="bnb-ptk">
+  <span class="ptk-sym">BNB</span>
+  <span class="ptk-price" id="bnb-ptk-p">594.41</span>
+  <span class="ptk-up">▲ +0.8%</span>
+</div><div class="ptk-item" id="core-ptk">
+  <span class="ptk-sym">COREUM</span>
+  <span class="ptk-price" id="core-ptk-p">0.0512</span>
+  <span class="ptk-up">▲ +1.4%</span>
+</div><div class="ptk-item" id="solo-ptk">
+  <span class="ptk-sym">SOLO</span>
+  <span class="ptk-price" id="solo-ptk-p">0.1261</span>
+  <span class="ptk-dn">▼ -3.1%</span>
+</div>
+</div>
+<div style="height:8px"></div>
 <div class="grid" id="mg">
+<div class="grid-col" id="gcol-0">
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">XRPL Live Statistics</span></div><div class="bhr"><a class="va" href="https://bithomp.com" target="_blank">View All</a><button class="xi" onclick="openModal('stats')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">XRPL Live Statistics</span></div><div class="bhr"><a class="va" href="https://bithomp.com" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('stats')">⤢</button></div></div>
   <div class="bb"><div class="s2c">
     <div class="sc"><div class="scl">Active Accounts</div><div class="scv" id="stat-acct">17,145</div><div class="scs">+312 new today</div></div>
     <div class="sc"><div class="scl">Transactions</div><div class="scv" id="stat-tx">1,282,314</div><div class="scs">ledger seq</div></div>
@@ -453,27 +640,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div></div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">The Last Ledger</span></div><div class="bhr"><a class="va" href="https://bithomp.com/ledgers" target="_blank">View All</a><button class="xi" onclick="openModal('ledger')">⤢</button></div></div>
-  <div class="bb">
-    <div class="sr"><span class="sl">Ledger Index</span><a class="sv a" id="li" href="https://bithomp.com/ledger/94821043" target="_blank" style="text-decoration:none">94,821,043</a></div>
-    <div class="sr"><span class="sl">Close Time</span><span class="sv" id="lct">--:--:--</span></div>
-    <div class="sr"><span class="sl">Transactions</span><span class="sv y" id="ltx">12</span></div>
-    <div class="sr"><span class="sl">Base Fee</span><span class="sv">0.00001 XRP</span></div>
-    <div class="sr"><span class="sl">Validation Quorum</span><span class="sv a2">28 <span style="color:var(--t3);font-size:9px">(35 proposers)</span></span></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Network</span></div><div class="bhr"><span class="bnet">MAINNET</span><button class="xi" onclick="openModal('network')">⤢</button></div></div>
-  <div class="bb">
-    <div class="sr"><span class="sl">Accounts</span><span class="sv a" id="na">5,421,337</span></div>
-    <div class="sr"><span class="sl">Usernames</span><span class="sv">136,219</span></div>
-    <div class="sr"><span class="sl">Escrows</span><span class="sv">14,168</span></div>
-    <div class="sr"><span class="sl">AMM Pools</span><span class="sv a2">312</span></div>
-    <div class="sr"><span class="sl">Nodes</span><span class="sv y">844</span></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Live Price &amp; Converter</span></div><div class="bhr"><button class="cbtn hist" id="pbtn" onclick="advP()">1D</button><button class="xi" onclick="openModal('price')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRP Live Price &amp; Converter</span></div><div class="bhr"><button class="cbtn hist" id="pbtn" onclick="advP()">1D</button><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('price')">⤢</button></div></div>
   <div class="bb">
     <div class="prbox"><div class="prnum">1 XRP = <span id="xp">1.3558</span> USD</div><div style="font-size:8px;color:var(--t3);letter-spacing:.5px;margin-top:3px" id="price-src">simulated · loading…</div></div>
     <div class="conv"><input type="number" id="cin" value="1" min="0" step="0.01"><span class="ceq">XRP =</span><span class="cres" id="cout">$1.3558</span><span class="ceq">USD</span></div>
@@ -481,21 +648,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top Transfers</span><button class="cbtn live" id="txbtn" onclick="advTx()">24H</button></div><div class="bhr"><a class="va" href="https://bithomp.com/transactions" target="_blank">View All</a><button class="xi" onclick="openModal('tx')">⤢</button></div></div>
-  <div class="bb"><div class="txdr" id="txdr"></div><div id="txl"></div></div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top AMM Pools by TVL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View All</a><button class="xi" onclick="openModal('amm')">⤢</button></div></div>
-  <div class="bb">
-    <div class="pr"><span class="pn">XRP/CRYPTO</span><span class="pv">769 holders</span><span class="pf">$7.6M</span></div>
-    <div class="pr"><span class="pn">XRP/RLUSD</span><span class="pv">1,299 holders</span><span class="pf">$5.4M</span></div>
-    <div class="pr"><span class="pn">XRP/FUZZY</span><span class="pv">411 holders</span><span class="pf">$1.6M</span></div>
-    <div class="pr"><span class="pn">XRP/MAG</span><span class="pv">2,031 holders</span><span class="pf">$1.1M</span></div>
-    <div class="pr"><span class="pn">XRP/XPM</span><span class="pv">2,751 holders</span><span class="pf">$922.5K</span></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Tokens</span></div><div class="bhr"><a class="va" href="https://bithomp.com/tokens" target="_blank">View All</a><button class="xi" onclick="openModal('tokens')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Tokens</span></div><div class="bhr"><a class="va" href="https://bithomp.com/tokens" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('tokens')">⤢</button></div></div>
   <div class="bb">
     <div class="tk"><span class="ts">RLUSD</span><span class="tp">$0.9987</span><span class="tc" style="color:var(--green)">+0%</span></div>
     <div class="tk"><span class="ts">PHNIX</span><span class="tp">$0.01828</span><span class="tc" style="color:var(--green)">+0%</span></div>
@@ -505,25 +658,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Latest Amendments</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amendments" target="_blank">View All</a><button class="xi" onclick="openModal('amend')">⤢</button></div></div>
-  <div class="bb">
-    <div class="amr"><span class="amn">SingleAssetVault</span><span class="amv">v1.1.0</span><span class="bdg vt">VOTING</span></div>
-    <div class="amr"><span class="amn">LendingProtocol</span><span class="amv">v1.1.0</span><span class="bdg vt">VOTING</span></div>
-    <div class="amr"><span class="amn">fixXChainRewardRounding</span><span class="amv">v2.2.0</span><span class="bdg vt">VOTING</span></div>
-    <div class="amr"><span class="amn">XChainBridge</span><span class="amv">v2.0.0</span><span class="bdg vt">VOTING</span></div>
-    <div class="amr"><span class="amn">PermissionedDEX</span><span class="amv">v2.3.0</span><span class="bdg en">ENABLED</span></div>
-    <div class="amr"><span class="amn">TokenEscrow</span><span class="amv">v2.5.0</span><span class="bdg en">ENABLED</span></div>
-    <div class="amr"><span class="amn">fixTokenEscrowV1</span><span class="amv">v3.0.0</span><span class="bdg en">ENABLED</span></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Validators</span></div><div class="bhr"><a class="va" href="https://bithomp.com/validators" target="_blank">View All</a><button class="xi" onclick="openModal('val')">⤢</button></div></div>
-  <div class="bb">
-    <div id="val-bb-static"></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Dapps</span></div><div class="bhr"><a class="va" href="https://bithomp.com/dapps" target="_blank">View All</a><button class="xi" onclick="openModal('dapp')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Top Dapps</span></div><div class="bhr"><a class="va" href="https://bithomp.com/dapps" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('dapp')">⤢</button></div></div>
   <div class="bb">
     <div class="dpr"><span class="dn">Magnetic</span><span class="da">565 addr</span><span class="dv">$116.7K</span><span class="dchg" style="color:var(--red)">-41.9%</span></div>
     <div class="dpr"><span class="dn">First Ledger</span><span class="da">444 addr</span><span class="dv">$97.1K</span><span class="dchg" style="color:var(--green)">+8.0%</span></div>
@@ -533,15 +668,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRPL Live Activity</span></div><div class="bhr"><button class="xi" onclick="openModal('act')">⤢</button></div></div>
-  <div class="bb" id="actl"></div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Whale Alerts</span><span style="font-size:9px;color:var(--t2)">›100K XRP</span></div><div class="bhr"><button class="xi" onclick="openModal('whale')">⤢</button></div></div>
-  <div class="bb" id="whl"></div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Market News</span></div><div class="bhr"><button class="xi" onclick="openModal('news')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">XRP Market News</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('news')">⤢</button></div></div>
   <div class="bb">
     <div class="nrow"><div class="nsrc"><span class="nsl">COINDESK XRP</span><span class="balrt">ALERT</span></div><div class="nhl">BTC bounces to $77,200, ETH, XRP follow suit as Senate curbs Trump's Iran war powers</div><div class="nage">2 days ago</div></div>
     <div class="nrow"><div class="nsrc"><span class="nsl">XRP MARKETS</span></div><div class="nhl">XRP Price Prediction: Can XRP Reach $1,000? Analysts weigh long-term targets</div><div class="nage">3 days ago</div></div>
@@ -549,28 +676,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">RLUSD &amp; Stablecoins</span></div><div class="bhr"><button class="xi" onclick="openModal('rlusd')">⤢</button></div></div>
-  <div class="bb">
-    <div class="sr"><span class="sl">RLUSD Supply</span><span class="sv a">$1.65B</span></div>
-    <div class="sr"><span class="sl">Peg Status</span><span class="sv g">$1.0001 ✓</span></div>
-    <div class="sr"><span class="sl">24H Volume</span><span class="sv y">$284M</span></div>
-    <div class="pgbw"><div class="pgb" style="width:99.98%"></div></div>
-    <div style="font-size:9px;color:var(--t2);text-align:right;margin-top:1px">99.98% peg confidence</div>
-    <div class="nrow" style="margin-top:5px"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">GROWTH</span></div><div class="nhl">RLUSD supply surpasses $1.65B, signaling rising adoption and market confidence</div><div class="nage">yesterday</div></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Tokenization &amp; RWA</span></div><div class="bhr"><button class="xi" onclick="openModal('rwa')">⤢</button></div></div>
-  <div class="bb">
-    <div class="sr"><span class="sl">RWA on XRPL (TVL)</span><span class="sv a">$3.5B</span></div>
-    <div class="sr"><span class="sl">30D Inflow</span><span class="sv g">+$412M</span></div>
-    <div class="sr"><span class="sl">Active Projects</span><span class="sv a2">47</span></div>
-    <div class="nrow" style="margin-top:5px"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">RWA</span></div><div class="nhl">XRPL's $3.5B surge in tokenized real-world assets marks major institutional shift</div><div class="nage">3 days ago</div></div>
-    <div class="nrow"><div class="nsrc"><span class="nsl">INDEXBOX</span></div><div class="nhl">XRP Ledger sees $1.1B inflows as RWA surges amid ETH and SOL outflows</div><div class="nage">4 days ago</div></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Policy &amp; Regulation</span></div><div class="bhr"><button class="xi" onclick="openModal('policy')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Policy &amp; Regulation</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('policy')">⤢</button></div></div>
   <div class="bb">
     <div class="nrow"><div class="nsrc"><span class="nsl">GLOBAL POLICY</span><span class="beco">ECONOMIC</span></div><div class="nhl">Is XRP becoming a model for institutional adoption? — Azerbaijan report</div><div class="nage">3 days ago</div></div>
     <div class="nrow"><div class="nsrc"><span class="nsl">CRYPTO REGULATION</span></div><div class="nhl">What The CLARITY Act Says About XRP — full breakdown via XRPL.org</div><div class="nage">4 days ago</div></div>
@@ -578,21 +684,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bnew">DETECTED</span><span class="bt">New Token Listings</span></div><div class="bhr"><button class="xi" onclick="openModal('ntok')">⤢</button></div></div>
-  <div class="bb" id="ntokl"></div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top NFT Collections</span></div><div class="bhr"><span class="b7d">7 DAYS</span><a class="va" href="https://bithomp.com/nft-collections" target="_blank" style="margin-left:3px">View All</a><button class="xi" onclick="openModal('nft')">⤢</button></div></div>
-  <div class="bb">
-    <div class="nftr"><span class="nftn">ANIMAL FAM</span><span class="nfts">516 sales</span><span class="nftv">$66.9K</span></div>
-    <div class="nftr"><span class="nftn">Fuzzybears</span><span class="nfts">27 sales</span><span class="nftv">$26.6K</span></div>
-    <div class="nftr"><span class="nftn">sraebyzzuF</span><span class="nfts">15 sales</span><span class="nftv">$17.9K</span></div>
-    <div class="nftr"><span class="nftn">Fuzzycards Genesis</span><span class="nfts">23 sales</span><span class="nftv">$16.9K</span></div>
-    <div class="nftr"><span class="nftn">Teddy BG</span><span class="nfts">199 sales</span><span class="nftv">$7.4K</span></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">xMagnetic Ecosystem</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">xMagnetic</a><button class="xi" onclick="openModal('xmag')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">xMagnetic Ecosystem</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">xMagnetic</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('xmag')">⤢</button></div></div>
   <div class="bb">
     <div class="xmr"><span class="xms">MAG</span><span class="xmp" id="magp">$0.00182</span><span class="xmc" style="color:var(--red)">-1.2%</span></div>
     <div class="xmr"><span class="xms">DROP</span><span class="xmp" id="dropp">$0.000312</span><span class="xmc" style="color:var(--green)">+0.8%</span></div>
@@ -606,122 +698,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">DEX Order Book</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><button class="xi" onclick="openModal('ob')">⤢</button></div></div>
-  <div class="bb">
-    <div class="obpair">PAIR: <span style="color:var(--accent2)">XRP / RLUSD</span></div>
-    <div class="obmid" id="obmid">MID $1.3558</div>
-    <div class="obside"><div><div class="oblbl">BIDS</div><div id="obbids"></div></div><div><div class="oblbl">ASKS</div><div id="obasks"></div></div></div>
-  </div>
-</div>
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Escrow Monitor</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">View All</a><button class="xi" onclick="openModal('esc')">⤢</button></div></div>
-  <div class="bb">
-    <div class="sr"><span class="sl">Active Escrows</span><span class="sv a">14,168</span></div>
-    <div class="sr"><span class="sl">Total XRP Locked</span><span class="sv y">4.82B XRP</span></div>
-    <div class="sr"><span class="sl">Ripple ODL Held</span><span class="sv a2">3.1B XRP</span></div>
-    <div style="margin-top:5px;font-size:9px;color:var(--t2);letter-spacing:1px;margin-bottom:3px">UPCOMING RELEASES</div>
-    <div id="escl"></div>
-  </div>
-</div>
-
-<!-- ── 7 NEW BOXES ─────────────────────────────── -->
-
-<!-- ODL CORRIDOR TRACKER -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">ODL Corridors</span></div><div class="bhr"><a class="va" href="https://ripple.com/solutions/cross-border-payments/" target="_blank">Ripple ODL</a><button class="xi" onclick="openModal('odl')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">ODL Corridors</span></div><div class="bhr"><a class="va" href="https://ripple.com/solutions/cross-border-payments/" target="_blank">Ripple ODL</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('odl')">⤢</button></div></div>
   <div class="bb" id="odl-list"></div>
 </div>
-
-<!-- XRP RICHLIST -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Richlist</span><span style="font-size:9px;color:var(--t2)">TOP WALLETS</span></div><div class="bhr"><a class="va" href="https://bithomp.com/top-wallets" target="_blank">View All</a><button class="xi" onclick="openModal('richlist')">⤢</button></div></div>
-  <div class="bb" id="rich-list"></div>
-</div>
-
-<!-- LEDGER CLOSE TIME HISTOGRAM -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Ledger Close Times</span><span style="font-size:9px;color:var(--t2)">LAST 60</span></div><div class="bhr"><button class="xi" onclick="openModal('closetime')">⤢</button></div></div>
-  <div class="bb">
-    <div class="tps-wrap" id="ct-bars"></div>
-    <div class="tps-xax"><span>60 ago</span><span>30 ago</span><span>now</span></div>
-    <div class="tps-stats">
-      <div class="tps-stat"><div class="tps-sl">AVG</div><div class="tps-sv" id="ct-avg">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">MIN</div><div class="tps-sv" id="ct-min" style="color:var(--green)">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">MAX</div><div class="tps-sv" id="ct-max" style="color:var(--red)">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">STRESS</div><div class="tps-sv" id="ct-stress" style="color:var(--green)">NONE</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- DEX TRADE HISTORY -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">DEX Trade History</span></div><div class="bhr"><span style="font-size:9px;color:var(--t2)" id="dex-pair-lbl">XRP/RLUSD</span><button class="xi" onclick="openModal('dextrades')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">DEX Trade History</span></div><div class="bhr"><span style="font-size:9px;color:var(--t2)" id="dex-pair-lbl">XRP/RLUSD</span><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('dextrades')">⤢</button></div></div>
   <div class="bb" id="dex-trades"></div>
 </div>
-
-<!-- CONSENSUS ROUND TIMER -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Consensus Timer</span></div><div class="bhr"><button class="xi" onclick="openModal('consensus')">⤢</button></div></div>
-  <div class="bb">
-    <div style="text-align:center;padding:6px 0 2px">
-      <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">NEXT LEDGER CLOSE IN</div>
-      <div id="cns-timer" style="font-size:36px;color:var(--accent);letter-spacing:4px;font-family:'Courier New',monospace">3.4s</div>
-      <div id="cns-phase" style="font-size:11px;color:var(--accent2);letter-spacing:2px;margin-top:4px">OPEN</div>
-    </div>
-    <div style="margin:6px 0 4px;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden">
-      <div id="cns-bar" style="height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:2px;transition:width .1s linear;width:0%"></div>
-    </div>
-    <div class="sr"><span class="sl">Last Close</span><span class="sv a" id="cns-last">--</span></div>
-    <div class="sr"><span class="sl">Validators Proposing</span><span class="sv a2">35 / 35</span></div>
-    <div class="sr"><span class="sl">Avg Close (60 ledgers)</span><span class="sv" id="cns-avg">3.8s</span></div>
-    <div class="sr"><span class="sl">Ledger</span><span class="sv y" id="cns-seq">--</span></div>
-  </div>
-</div>
-
-<!-- xMAGNETIC SNIPER FEED -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bnew">NEW LAUNCH</span><span class="bt">xMagnetic Sniper</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><button class="xi" onclick="openModal('sniper')">⤢</button></div></div>
-  <div class="bb" id="sniper-list"></div>
-</div>
-
-<!-- TOP LP TOKEN HOLDERS -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top LP Holders</span><span style="font-size:9px;color:var(--t2)">BY POOL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View AMMs</a><button class="xi" onclick="openModal('lpholders')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">Top LP Holders</span><span style="font-size:9px;color:var(--t2)">BY POOL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View AMMs</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('lpholders')">⤢</button></div></div>
   <div class="bb" id="lp-list"></div>
 </div>
-
-<!-- VALIDATOR AGREEMENT HEATMAP -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Validator Agreement</span><span style="font-size:9px;color:var(--t2)">LAST 20 LEDGERS</span></div><div class="bhr"><button class="xi" onclick="openModal('valheat')">⤢</button></div></div>
-  <div class="bb">
-    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-bottom:3px"><span>VALIDATORS →</span><span>← LEDGER AGE</span></div>
-    <div id="valheat-grid" style="display:grid;grid-template-columns:repeat(20,1fr);gap:1px"></div>
-    <div style="display:flex;align-items:center;gap:8px;margin-top:5px;font-size:9px;color:var(--t3)">
-      <span><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:1px;margin-right:3px"></span>Agreed</span>
-      <span><span style="display:inline-block;width:8px;height:8px;background:var(--yellow);border-radius:1px;margin-right:3px"></span>Late</span>
-      <span><span style="display:inline-block;width:8px;height:8px;background:var(--red);border-radius:1px;margin-right:3px"></span>Missed</span>
-    </div>
-    <div class="sr" style="margin-top:4px"><span class="sl">dUNL Agreement Rate</span><span class="sv g" id="val-agree-pct">98.4%</span></div>
-    <div class="sr"><span class="sl">Diverging Validators</span><span class="sv" id="val-diverge">0</span></div>
-  </div>
-</div>
-
-<!-- FEE MARKET HISTORY -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b7d">7 DAYS</span><span class="bt">Fee Market History</span></div><div class="bhr"><button class="xi" onclick="openModal('feemarket')">⤢</button></div></div>
-  <div class="bb">
-    <svg id="fee-chart" style="width:100%;height:70px;display:block" aria-hidden="true"></svg>
-    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:2px"><span>7d ago</span><span>4d ago</span><span>now</span></div>
-    <div class="sr" style="margin-top:4px"><span class="sl">Peak Load Factor</span><span class="sv r" id="fee-peak">--</span></div>
-    <div class="sr"><span class="sl">Avg Load Factor</span><span class="sv" id="fee-avg">--</span></div>
-    <div class="sr"><span class="sl">Congestion Events (&gt;2×)</span><span class="sv y" id="fee-events">--</span></div>
-    <div class="sr"><span class="sl">Current</span><span class="sv g" id="fee-cur">1.00×</span></div>
-  </div>
-</div>
-
-<!-- MAG / DROP / FUZZY / YUZZF CHARTS -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">xMagnetic Price Charts</span></div><div class="bhr"><button class="xi" onclick="openModal('tokcharts')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">xMagnetic Price Charts</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('tokcharts')">⤢</button></div></div>
   <div class="bb">
     <div style="display:flex;gap:4px;margin-bottom:6px">
       <button class="mv-tab act" id="tc-mag" onclick="setTokChart('MAG',this)">MAG</button>
@@ -742,10 +731,102 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:1px"><span id="tc-range-start">24h ago</span><span>now</span></div>
   </div>
 </div>
-
-<!-- XRP SUPPLY SCHEDULE -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">XRP Supply Schedule</span><span style="font-size:9px;color:var(--t2)">ESCROW RELEASES</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">Escrows</a><button class="xi" onclick="openModal('supplysched')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bt">🌌 Prediction Market</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/market" target="_blank">Trade ↗</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('predmarket')">⤢</button></div></div>
+  <div class="bb" id="pred-list"></div>
+</div>
+</div>
+<div class="grid-col" id="gcol-1">
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">The Last Ledger</span></div><div class="bhr"><a class="va" href="https://bithomp.com/ledgers" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('ledger')">⤢</button></div></div>
+  <div class="bb">
+    <div class="sr"><span class="sl">Ledger Index</span><a class="sv a" id="li" href="https://bithomp.com/ledger/94821043" target="_blank" style="text-decoration:none">94,821,043</a></div>
+    <div class="sr"><span class="sl">Close Time</span><span class="sv" id="lct">--:--:--</span></div>
+    <div class="sr"><span class="sl">Transactions</span><span class="sv y" id="ltx">12</span></div>
+    <div class="sr"><span class="sl">Base Fee</span><span class="sv">0.00001 XRP</span></div>
+    <div class="sr"><span class="sl">Validation Quorum</span><span class="sv a2">28 <span style="color:var(--t3);font-size:9px">(35 proposers)</span></span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Top Transfers</span><button class="cbtn live" id="txbtn" onclick="advTx()">24H</button></div><div class="bhr"><a class="va" href="https://bithomp.com/transactions" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('tx')">⤢</button></div></div>
+  <div class="bb"><div class="txdr" id="txdr"></div><div id="txl"></div></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Latest Amendments</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amendments" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('amend')">⤢</button></div></div>
+  <div class="bb">
+    <div class="amr"><span class="amn">SingleAssetVault</span><span class="amv">v1.1.0</span><span class="bdg vt">VOTING</span></div>
+    <div class="amr"><span class="amn">LendingProtocol</span><span class="amv">v1.1.0</span><span class="bdg vt">VOTING</span></div>
+    <div class="amr"><span class="amn">fixXChainRewardRounding</span><span class="amv">v2.2.0</span><span class="bdg vt">VOTING</span></div>
+    <div class="amr"><span class="amn">XChainBridge</span><span class="amv">v2.0.0</span><span class="bdg vt">VOTING</span></div>
+    <div class="amr"><span class="amn">PermissionedDEX</span><span class="amv">v2.3.0</span><span class="bdg en">ENABLED</span></div>
+    <div class="amr"><span class="amn">TokenEscrow</span><span class="amv">v2.5.0</span><span class="bdg en">ENABLED</span></div>
+    <div class="amr"><span class="amn">fixTokenEscrowV1</span><span class="amv">v3.0.0</span><span class="bdg en">ENABLED</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">XRPL Live Activity</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('act')">⤢</button></div></div>
+  <div class="bb" id="actl"></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">RLUSD &amp; Stablecoins</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('rlusd')">⤢</button></div></div>
+  <div class="bb">
+    <div class="sr"><span class="sl">RLUSD Supply</span><span class="sv a">$1.65B</span></div>
+    <div class="sr"><span class="sl">Peg Status</span><span class="sv g">$1.0001 ✓</span></div>
+    <div class="sr"><span class="sl">24H Volume</span><span class="sv y">$284M</span></div>
+    <div class="pgbw"><div class="pgb" style="width:99.98%"></div></div>
+    <div style="font-size:9px;color:var(--t2);text-align:right;margin-top:1px">99.98% peg confidence</div>
+    <div class="nrow" style="margin-top:5px"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">GROWTH</span></div><div class="nhl">RLUSD supply surpasses $1.65B, signaling rising adoption and market confidence</div><div class="nage">yesterday</div></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bnew">DETECTED</span><span class="bt">New Token Listings</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('ntok')">⤢</button></div></div>
+  <div class="bb" id="ntokl"></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">DEX Order Book</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('ob')">⤢</button></div></div>
+  <div class="bb">
+    <div class="obpair">PAIR: <span style="color:var(--accent2)">XRP / RLUSD</span></div>
+    <div class="obmid" id="obmid">MID $1.3558</div>
+    <div class="obside"><div><div class="oblbl">BIDS</div><div id="obbids"></div></div><div><div class="oblbl">ASKS</div><div id="obasks"></div></div></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">XRP Richlist</span><span style="font-size:9px;color:var(--t2)">TOP WALLETS</span></div><div class="bhr"><a class="va" href="https://bithomp.com/top-wallets" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('richlist')">⤢</button></div></div>
+  <div class="bb" id="rich-list"></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Consensus Timer</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('consensus')">⤢</button></div></div>
+  <div class="bb">
+    <div style="text-align:center;padding:6px 0 2px">
+      <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">NEXT LEDGER CLOSE IN</div>
+      <div id="cns-timer" style="font-size:36px;color:var(--accent);letter-spacing:4px;font-family:'Courier New',monospace">3.4s</div>
+      <div id="cns-phase" style="font-size:11px;color:var(--accent2);letter-spacing:2px;margin-top:4px">OPEN</div>
+    </div>
+    <div style="margin:6px 0 4px;height:4px;background:var(--bg3);border-radius:2px;overflow:hidden">
+      <div id="cns-bar" style="height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:2px;transition:width .1s linear;width:0%"></div>
+    </div>
+    <div class="sr"><span class="sl">Last Close</span><span class="sv a" id="cns-last">--</span></div>
+    <div class="sr"><span class="sl">Validators Proposing</span><span class="sv a2">35 / 35</span></div>
+    <div class="sr"><span class="sl">Avg Close (60 ledgers)</span><span class="sv" id="cns-avg">3.8s</span></div>
+    <div class="sr"><span class="sl">Ledger</span><span class="sv y" id="cns-seq">--</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Validator Agreement</span><span style="font-size:9px;color:var(--t2)">LAST 20 LEDGERS</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('valheat')">⤢</button></div></div>
+  <div class="bb">
+    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-bottom:3px"><span>VALIDATORS →</span><span>← LEDGER AGE</span></div>
+    <div id="valheat-grid" style="display:grid;grid-template-columns:repeat(20,1fr);gap:1px"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:5px;font-size:9px;color:var(--t3)">
+      <span><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:1px;margin-right:3px"></span>Agreed</span>
+      <span><span style="display:inline-block;width:8px;height:8px;background:var(--yellow);border-radius:1px;margin-right:3px"></span>Late</span>
+      <span><span style="display:inline-block;width:8px;height:8px;background:var(--red);border-radius:1px;margin-right:3px"></span>Missed</span>
+    </div>
+    <div class="sr" style="margin-top:4px"><span class="sl">dUNL Agreement Rate</span><span class="sv g" id="val-agree-pct">98.4%</span></div>
+    <div class="sr"><span class="sl">Diverging Validators</span><span class="sv" id="val-diverge">0</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">XRP Supply Schedule</span><span style="font-size:9px;color:var(--t2)">ESCROW RELEASES</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">Escrows</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('supplysched')">⤢</button></div></div>
   <div class="bb">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;font-size:9px;color:var(--t3)">
       <span><span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:1px;margin-right:3px;opacity:.8"></span>Released</span>
@@ -759,12 +840,102 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     <div class="sr"><span class="sl">Est. Full Release Year</span><span class="sv a2">~2027</span></div>
   </div>
 </div>
-
-<!-- ── xMAGNETIC PLATFORM BOXES ──────────────────── -->
-
-<!-- CRASH GAME MONITOR -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">☄️ Crash</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/crash?network=mainnet" target="_blank">Play ↗</a><button class="xi" onclick="openModal('crash')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="bnew">LAUNCHES</span><span class="bt">🚀 Memepad</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/memepad" target="_blank">Launch ↗</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('memepad')">⤢</button></div></div>
+  <div class="bb" id="memepad-list"></div>
+</div>
+</div>
+<div class="grid-col" id="gcol-2">
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Network</span></div><div class="bhr"><span class="bnet">MAINNET</span><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('network')">⤢</button></div></div>
+  <div class="bb">
+    <div class="sr"><span class="sl">Accounts</span><span class="sv a" id="na">5,421,337</span></div>
+    <div class="sr"><span class="sl">Usernames</span><span class="sv">136,219</span></div>
+    <div class="sr"><span class="sl">Escrows</span><span class="sv">14,168</span></div>
+    <div class="sr"><span class="sl">AMM Pools</span><span class="sv a2">312</span></div>
+    <div class="sr"><span class="sl">Nodes</span><span class="sv y">844</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Top AMM Pools by TVL</span></div><div class="bhr"><a class="va" href="https://bithomp.com/amms" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('amm')">⤢</button></div></div>
+  <div class="bb">
+    <div class="pr"><span class="pn">XRP/CRYPTO</span><span class="pv">769 holders</span><span class="pf">$7.6M</span></div>
+    <div class="pr"><span class="pn">XRP/RLUSD</span><span class="pv">1,299 holders</span><span class="pf">$5.4M</span></div>
+    <div class="pr"><span class="pn">XRP/FUZZY</span><span class="pv">411 holders</span><span class="pf">$1.6M</span></div>
+    <div class="pr"><span class="pn">XRP/MAG</span><span class="pv">2,031 holders</span><span class="pf">$1.1M</span></div>
+    <div class="pr"><span class="pn">XRP/XPM</span><span class="pv">2,751 holders</span><span class="pf">$922.5K</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Validators</span></div><div class="bhr"><a class="va" href="https://bithomp.com/validators" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('val')">⤢</button></div></div>
+  <div class="bb">
+    <div id="val-bb-static"></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Whale Alerts</span><span style="font-size:9px;color:var(--t2)">›100K XRP</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('whale')">⤢</button></div></div>
+  <div class="bb" id="whl"></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Tokenization &amp; RWA</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('rwa')">⤢</button></div></div>
+  <div class="bb">
+    <div class="sr"><span class="sl">RWA on XRPL (TVL)</span><span class="sv a">$3.5B</span></div>
+    <div class="sr"><span class="sl">30D Inflow</span><span class="sv g">+$412M</span></div>
+    <div class="sr"><span class="sl">Active Projects</span><span class="sv a2">47</span></div>
+    <div class="nrow" style="margin-top:5px"><div class="nsrc"><span class="nsl">PLUANG</span><span class="beco">RWA</span></div><div class="nhl">XRPL's $3.5B surge in tokenized real-world assets marks major institutional shift</div><div class="nage">3 days ago</div></div>
+    <div class="nrow"><div class="nsrc"><span class="nsl">INDEXBOX</span></div><div class="nhl">XRP Ledger sees $1.1B inflows as RWA surges amid ETH and SOL outflows</div><div class="nage">4 days ago</div></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Top NFT Collections</span></div><div class="bhr"><span class="b7d">7 DAYS</span><a class="va" href="https://bithomp.com/nft-collections" target="_blank" style="margin-left:3px">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('nft')">⤢</button></div></div>
+  <div class="bb">
+    <div class="nftr"><span class="nftn">ANIMAL FAM</span><span class="nfts">516 sales</span><span class="nftv">$66.9K</span></div>
+    <div class="nftr"><span class="nftn">Fuzzybears</span><span class="nfts">27 sales</span><span class="nftv">$26.6K</span></div>
+    <div class="nftr"><span class="nftn">sraebyzzuF</span><span class="nfts">15 sales</span><span class="nftv">$17.9K</span></div>
+    <div class="nftr"><span class="nftn">Fuzzycards Genesis</span><span class="nfts">23 sales</span><span class="nftv">$16.9K</span></div>
+    <div class="nftr"><span class="nftn">Teddy BG</span><span class="nfts">199 sales</span><span class="nftv">$7.4K</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Escrow Monitor</span></div><div class="bhr"><a class="va" href="https://bithomp.com/escrows" target="_blank">View All</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('esc')">⤢</button></div></div>
+  <div class="bb">
+    <div class="sr"><span class="sl">Active Escrows</span><span class="sv a">14,168</span></div>
+    <div class="sr"><span class="sl">Total XRP Locked</span><span class="sv y">4.82B XRP</span></div>
+    <div class="sr"><span class="sl">Ripple ODL Held</span><span class="sv a2">3.1B XRP</span></div>
+    <div style="margin-top:5px;font-size:9px;color:var(--t2);letter-spacing:1px;margin-bottom:3px">UPCOMING RELEASES</div>
+    <div id="escl"></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">Ledger Close Times</span><span style="font-size:9px;color:var(--t2)">LAST 60</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('closetime')">⤢</button></div></div>
+  <div class="bb">
+    <div class="tps-wrap" id="ct-bars"></div>
+    <div class="tps-xax"><span>60 ago</span><span>30 ago</span><span>now</span></div>
+    <div class="tps-stats">
+      <div class="tps-stat"><div class="tps-sl">AVG</div><div class="tps-sv" id="ct-avg">--</div></div>
+      <div class="tps-stat"><div class="tps-sl">MIN</div><div class="tps-sv" id="ct-min" style="color:var(--green)">--</div></div>
+      <div class="tps-stat"><div class="tps-sl">MAX</div><div class="tps-sv" id="ct-max" style="color:var(--red)">--</div></div>
+      <div class="tps-stat"><div class="tps-sl">STRESS</div><div class="tps-sv" id="ct-stress" style="color:var(--green)">NONE</div></div>
+    </div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bnew">NEW LAUNCH</span><span class="bt">xMagnetic Sniper</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org" target="_blank">Magnetic DEX</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('sniper')">⤢</button></div></div>
+  <div class="bb" id="sniper-list"></div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="b7d">7 DAYS</span><span class="bt">Fee Market History</span></div><div class="bhr"><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('feemarket')">⤢</button></div></div>
+  <div class="bb">
+    <svg id="fee-chart" style="width:100%;height:70px;display:block" aria-hidden="true"></svg>
+    <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3);margin-top:2px"><span>7d ago</span><span>4d ago</span><span>now</span></div>
+    <div class="sr" style="margin-top:4px"><span class="sl">Peak Load Factor</span><span class="sv r" id="fee-peak">--</span></div>
+    <div class="sr"><span class="sl">Avg Load Factor</span><span class="sv" id="fee-avg">--</span></div>
+    <div class="sr"><span class="sl">Congestion Events (&gt;2×)</span><span class="sv y" id="fee-events">--</span></div>
+    <div class="sr"><span class="sl">Current</span><span class="sv g" id="fee-cur">1.00×</span></div>
+  </div>
+</div>
+<div class="box">
+  <div class="bh"><div class="bhl"><span class="bt">☄️ Crash</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/crash?network=mainnet" target="_blank">Play ↗</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('crash')">⤢</button></div></div>
   <div class="bb">
     <div style="text-align:center;padding:4px 0 6px">
       <div style="font-size:9px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">CURRENT MULTIPLIER</div>
@@ -787,110 +958,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
     </div>
   </div>
 </div>
-
-<!-- PREDICTION MARKET -->
 <div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">🌌 Prediction Market</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/market" target="_blank">Trade ↗</a><button class="xi" onclick="openModal('predmarket')">⤢</button></div></div>
-  <div class="bb" id="pred-list"></div>
-</div>
-
-<!-- MEMEPAD -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bnew">LAUNCHES</span><span class="bt">🚀 Memepad</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/memepad" target="_blank">Launch ↗</a><button class="xi" onclick="openModal('memepad')">⤢</button></div></div>
-  <div class="bb" id="memepad-list"></div>
-</div>
-
-<!-- FARMING REWARDS -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">🌾 Farming</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/farming" target="_blank">Farm ↗</a><button class="xi" onclick="openModal('farming')">⤢</button></div></div>
+  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">🌾 Farming</span></div><div class="bhr"><a class="va" href="https://xmagnetic.org/farming" target="_blank">Farm ↗</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('farming')">⤢</button></div></div>
   <div class="bb" id="farm-list"></div>
 </div>
-
+</div>
 </div>
 
-<!-- NEW ROW: 5 visual / data boxes -->
-<div class="grid2" id="mg2" style="margin-top:8px">
-
-<!-- TPS BAR CHART -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">TPS Live Chart</span></div><div class="bhr"><span id="tps-cur" style="font-size:11px;color:var(--accent)">-- TPS</span><button class="xi" onclick="openModal('tpschart')">⤢</button></div></div>
-  <div class="bb">
-    <div class="tps-wrap" id="tps-bars"></div>
-    <div class="tps-xax"><span>60s ago</span><span>30s ago</span><span>now</span></div>
-    <div class="tps-stats">
-      <div class="tps-stat"><div class="tps-sl">AVG</div><div class="tps-sv" id="tps-avg">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">PEAK</div><div class="tps-sv" id="tps-peak">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">MIN</div><div class="tps-sv" id="tps-min">--</div></div>
-      <div class="tps-stat"><div class="tps-sl">LOAD</div><div class="tps-sv" id="tps-load" style="color:var(--green)">1.0x</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- TX TYPE DONUT -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b24">24H</span><span class="bt">Tx Type Breakdown</span></div><div class="bhr"><button class="xi" onclick="openModal('donut')">⤢</button></div></div>
-  <div class="bb">
-    <div class="donut-wrap">
-      <svg class="donut-svg" id="donut-svg" width="80" height="80" viewBox="0 0 80 80"></svg>
-      <div class="donut-legend" id="donut-legend"></div>
-    </div>
-    <div style="text-align:center;font-size:9px;color:var(--t3);margin-top:2px">Total: <span id="donut-total" style="color:var(--t2)">--</span> transactions</div>
-  </div>
-</div>
-
-<!-- NETWORK LOAD GAUGE -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Network Load</span></div><div class="bhr"><button class="xi" onclick="openModal('gauge')">⤢</button></div></div>
-  <div class="bb">
-    <div class="gauge-wrap">
-      <svg class="gauge-svg" id="gauge-svg" height="70" viewBox="0 0 180 90"></svg>
-      <div class="gauge-val" id="gauge-val">1.0x</div>
-      <div class="gauge-lbl" id="gauge-lbl">NORMAL</div>
-    </div>
-    <div class="gauge-stats">
-      <div class="sr"><span class="sl">Queue Depth</span><span class="sv" id="g-queue">0 tx</span></div>
-      <div class="sr"><span class="sl">Base Fee</span><span class="sv">10 drops</span></div>
-      <div class="sr"><span class="sl">Fee Escalation</span><span class="sv g" id="g-esc">None</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- TOP MOVERS -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Top Movers</span></div><div class="bhr"><span id="mv-range-lbl" style="font-size:9px;color:var(--t2)">24H</span><button class="xi" onclick="openModal('movers')">⤢</button></div></div>
-  <div class="bb">
-    <div class="mv-tabs">
-      <button class="mv-tab act" onclick="setMovers('gain',this)">Gainers</button>
-      <button class="mv-tab" onclick="setMovers('lose',this)">Losers</button>
-    </div>
-    <div id="mv-list"></div>
-  </div>
-</div>
-
-<!-- XRPL GITHUB ACTIVITY -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="b7d">7D</span><span class="bt">XRPL GitHub Activity</span></div><div class="bhr"><a class="va" href="https://github.com/XRPLF" target="_blank">XRPLF ↗</a><button class="xi" onclick="openModal('github')">⤢</button></div></div>
-  <div class="bb">
-    <div class="gh-row"><span class="gh-repo">XRPLF/rippled</span><div class="gh-stat"><span class="gh-pill gh-commits">14 commits</span><span class="gh-pill gh-prs">3 PRs</span><span class="gh-pill gh-issues">8 issues</span></div></div>
-    <div class="gh-row"><span class="gh-repo">XRPLF/xrpl.js</span><div class="gh-stat"><span class="gh-pill gh-commits">7 commits</span><span class="gh-pill gh-prs">2 PRs</span><span class="gh-pill gh-issues">4 issues</span></div></div>
-    <div class="gh-row"><span class="gh-repo">XRPLF/xrpl-py</span><div class="gh-stat"><span class="gh-pill gh-commits">5 commits</span><span class="gh-pill gh-prs">1 PRs</span><span class="gh-pill gh-issues">2 issues</span></div></div>
-    <div class="gh-row"><span class="gh-repo">XRPLF/xrpl-dev-portal</span><div class="gh-stat"><span class="gh-pill gh-commits">11 commits</span><span class="gh-pill gh-prs">4 PRs</span><span class="gh-pill gh-issues">6 issues</span></div></div>
-    <div style="font-size:9px;color:var(--t3);margin-top:4px;padding-top:3px;border-top:1px solid var(--border)">Commit activity — last 7 days</div>
-    <div class="gh-heat" id="gh-heat"></div>
-    <div class="gh-hlegend"><span>Less</span><div class="gh-hcell" style="background:var(--bg3)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.2)"></div><div class="gh-hcell" style="background:rgba(0,255,180,.5)"></div><div class="gh-hcell" style="background:var(--accent)"></div><span>More</span></div>
-  </div>
-</div>
-
-<!-- LEDGER OBJECT COUNTS -->
-<div class="box">
-  <div class="bh"><div class="bhl"><span class="bt">Ledger Object Counts</span></div><div class="bhr"><button class="xi" onclick="openModal('objects')">⤢</button></div></div>
-  <div class="bb" id="lo-list"></div>
-</div>
-
+<!-- XLS FULL WIDTH -->
+<div class="grid-xls-row">
 <div class="box" id="xls-box">
   <div class="bh">
     <div class="bhl"><span class="bt">◈ XLS Key Date Tracker</span><span style="font-size:9px;color:var(--green)">● MONITORING</span><span style="font-size:9px;color:var(--t3)">3 ACTIVE SPECS</span></div>
-    <div class="bhr"><a class="va" href="https://opensource.ripple.com/docs" target="_blank">opensource.ripple.com/docs ↗</a><button class="xi" onclick="openModal('xls')">⤢</button></div>
+    <div class="bhr"><a class="va" href="https://opensource.ripple.com/docs" target="_blank">opensource.ripple.com/docs ↗</a><button class="collapse-btn" onclick="toggleCollapse(this)" title="Collapse">▼</button><button class="xi" onclick="openModal('xls')">⤢</button></div>
   </div>
   <div class="bb" style="padding:9px">
   <div class="xlsgrid">
@@ -919,6 +999,7 @@ body{background:var(--bg);color:var(--t);font-family:var(--mono);font-size:11px;
   </div>
   </div>
 </div>
+</div>
 
 <div class="movl" id="movl" onclick="handleOvl(event)">
   <div class="mdl">
@@ -938,8 +1019,23 @@ function fmt(n){return Math.round(n).toLocaleString()}
 function setCols(n,btn){
   document.querySelectorAll('.ctb').forEach(function(b){b.classList.remove('act')});
   btn.classList.add('act');
-  document.getElementById('mg').style.setProperty('--grid-cols',n);
-  /* CSS columns handles layout — no packGrid needed */
+  var mg=document.getElementById('mg');
+  /* collect all boxes from current grid-cols */
+  var allBoxes=[];
+  mg.querySelectorAll('.grid-col').forEach(function(col){
+    Array.from(col.children).forEach(function(b){allBoxes.push(b);});
+  });
+  /* remove old cols */
+  while(mg.firstChild) mg.removeChild(mg.firstChild);
+  /* build n new cols */
+  var newCols=[];
+  for(var ci=0;ci<n;ci++){
+    var col=document.createElement('div');
+    col.className='grid-col';col.id='gcol-'+ci;
+    mg.appendChild(col);newCols.push(col);
+  }
+  /* round-robin distribute */
+  allBoxes.forEach(function(b,i){newCols[i%n].appendChild(b);});
 }
 
 var W={'rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe':'Ripple','rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh':'Bitstamp','rN7n3473SaZBCG4dFL83w7PB5bNBEMJkyq':'Bithomp','r3AdwBDUDFMB7aFQaFhRiNbUxCMKFkgFcG':'GateHub','rsuUjfWxrACCAwGQDsNeZUhpzXf1n1NK5Z':'rsuUjf…K5Z','rBRVqcXrm1YAbanngTxDfH15LNb6TjNmxk':'rBRVqc…mxk','r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59':'r9cZA1…k59','rLHzPsX6oXkzU2qL12kHCH8G8cnZv1rBJh':'rLHzPs…BJh'};
@@ -1212,26 +1308,37 @@ document.addEventListener('mousedown',function(e){
   e.preventDefault();e.stopPropagation();
   var rect=box.getBoundingClientRect();
   ds={btn:e.target,box:box,startX:e.clientX,startY:e.clientY,rect:rect,
+    /* store actual rendered height for accurate snap calculation */
+    startH:rect.height,
     colTier:parseInt(box.dataset.colTier||0),hTier:parseInt(box.dataset.hTier||2),
     moved:false,axis:null,
     pendingCol:parseInt(box.dataset.colTier||0),pendingH:parseInt(box.dataset.hTier||2)};
   box.classList.add('dragging');
-  ghost.style.display='block';
-  updateGhost();
+  /* do NOT show ghost yet — wait until user actually moves */
 },true);
 
 document.addEventListener('mousemove',function(e){
   if(!ds) return;
   var dx=e.clientX-ds.startX,dy=e.clientY-ds.startY;
-  if(!ds.moved&&Math.sqrt(dx*dx+dy*dy)<6) return;
+  /* require 10px movement before committing to a direction */
+  if(!ds.moved&&Math.sqrt(dx*dx+dy*dy)<10) return;
   ds.moved=true;
+
   if(!ds.axis) ds.axis=Math.abs(dx)>Math.abs(dy)?'h':'v';
+
   if(ds.axis==='h'){
-    var d=Math.round(dx/80);
+    /* snap col tier every 100px of horizontal movement */
+    var d=Math.round(dx/100);
     ds.pendingCol=Math.max(0,Math.min(COL_TIERS.length-1,ds.colTier+d));
   } else {
-    var d2=Math.round(dy/65);
-    ds.pendingH=Math.max(0,Math.min(H_TIERS.length-1,ds.hTier+d2));
+    /* snap to nearest H_TIER based on actual dragged height, not fixed step */
+    var targetH=ds.startH+dy;
+    var best=0,bestDist=Infinity;
+    H_TIERS.forEach(function(t,i){
+      var dist=Math.abs(t-targetH);
+      if(dist<bestDist){bestDist=dist;best=i;}
+    });
+    ds.pendingH=best;
   }
   updateGhost();
 });
@@ -1302,22 +1409,26 @@ function applyHeight(box,tier){
 }
 
 function updateGhost(){
-  if(!ds) return;
-  var grid=ds.box.closest('.grid')||ds.box.closest('#mg')||ds.box.closest('#mg2');
-  var gridW=grid?grid.clientWidth:window.innerWidth-20;
-  var cols=3;
-  try{var tpl=window.getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/);cols=tpl.length||3;}catch(x){}
-  var gap=7;
-  var colW=(gridW-(cols-1)*gap)/cols;
-  /* CSS columns: span is either 1 col or full width */
-  var spanAll=(ds.pendingCol>=2||ds.box.id==='xls-box');
-  var w=spanAll?gridW:colW;
-  var hh=ds.axis==='v'?H_TIERS[ds.pendingH]+46:ds.rect.height;
+  if(!ds||!ds.axis) return; /* only show after axis is determined */
+  var rect=ds.box.getBoundingClientRect(); /* use live rect, not stale stored rect */
+  var w,h;
+  if(ds.axis==='h'){
+    /* horizontal: show estimated column width */
+    var grid=ds.box.closest('.grid-col')||ds.box.parentElement;
+    var gridW=grid?grid.clientWidth:200;
+    var spanAll=(ds.pendingCol>=2||ds.box.id==='xls-box');
+    w=spanAll?ds.box.closest('.grid').clientWidth||600:gridW;
+    h=rect.height;
+  } else {
+    /* vertical: use actual current box width, show target tier height */
+    w=rect.width;
+    h=H_TIERS[ds.pendingH]+28; /* 28px = header */
+  }
   ghost.style.cssText='display:block;position:fixed;pointer-events:none;z-index:8000;'
     +'border-radius:3px;background:rgba(0,255,180,.04);border:1px dashed rgba(0,255,180,.4);'
-    +'left:'+ds.rect.left+'px;top:'+ds.rect.top+'px;'
-    +'width:'+w+'px;height:'+(ds.axis==='v'?hh:ds.rect.height)+'px;'
-    +'transition:width .12s ease,height .12s ease;';
+    +'left:'+rect.left+'px;top:'+rect.top+'px;'
+    +'width:'+w+'px;height:'+h+'px;'
+    +'transition:height .1s ease;';
 }
 
 /* Double-click ⤢ → reset this box only to default size */
@@ -2741,7 +2852,7 @@ var _dragBox=null,_dragOver=null,_dragMoved=false;
 
 /* Inject grip icon into every box header */
 (function addGrips(){
-  document.querySelectorAll('#mg .box,.grid2 .box').forEach(function(box){
+  document.querySelectorAll('.grid-col .box,.grid2 .box').forEach(function(box){
     if(box.id==='xls-box') return; /* XLS stays full-width, skip */
     var bhl=box.querySelector('.bhl');
     if(!bhl||bhl.querySelector('.box-grip')) return;
@@ -2791,16 +2902,12 @@ document.addEventListener('mouseup',function(e){
   if(e.target.classList.contains('box-grip'))e.target.classList.remove('grabbing');
 
   if(_dragMoved&&_dragOver&&_dragOver!==_dragBox){
-    var grid=_dragBox.parentElement;
+    var col=_dragBox.parentElement;
     if(_dragOver._insertBefore){
-      grid.insertBefore(_dragBox,_dragOver);
+      col.insertBefore(_dragBox,_dragOver);
     } else {
-      grid.insertBefore(_dragBox,_dragOver.nextSibling);
+      col.insertBefore(_dragBox,_dragOver.nextSibling);
     }
-    /* restore XLS box to end if it got displaced */
-    var xlsBox=document.getElementById('xls-box');
-    if(xlsBox) xlsBox.parentElement.appendChild(xlsBox);
-    packGrid();
   }
   _dragBox=null;_dragOver=null;_dragMoved=false;
 });
@@ -2841,6 +2948,119 @@ if(typeof ResizeObserver!=='undefined'){
 /* Initial pack after fonts and images settle */
 setTimeout(packGrid,150);
 setTimeout(packGrid,600);
+
+
+/* ── COLLAPSIBLE BOXES ── */
+function toggleCollapse(btn){
+  var box=btn.closest('.box');
+  if(!box) return;
+  var isCollapsed=box.classList.toggle('collapsed');
+  /* save state */
+  if(box.dataset.modal) localStorage.setItem('collapse_'+box.dataset.modal, isCollapsed?'1':'0');
+}
+
+/* Restore collapse states on load */
+(function restoreCollapse(){
+  document.querySelectorAll('.box[data-modal]').forEach(function(box){
+    var saved=localStorage.getItem('collapse_'+box.dataset.modal);
+    if(saved==='1') box.classList.add('collapsed');
+  });
+})();
+
+/* ── TICKER SPEED CONTROL ── */
+(function(){
+  var inner=document.getElementById('ticker-inner');
+  if(!inner) return;
+  /* adjust animation duration based on content width for smooth constant speed */
+  var w=inner.scrollWidth/2;
+  var speed=80; /* px per second */
+  inner.style.animationDuration=(w/speed).toFixed(0)+'s';
+})();
+
+
+
+/* ── PRICE TICKER LIVE UPDATES ── */
+var PTK_DATA={
+  'xrp-ptk':  {price:1.3558,  base:1.3558,  sym:'XRP',   dec:4},
+  'rlusd-ptk':{price:1.0001,  base:1.0001,  sym:'RLUSD', dec:4},
+  'btc-ptk':  {price:76455,   base:76455,   sym:'BTC',   dec:0},
+  'eth-ptk':  {price:2076.42, base:2076.42, sym:'ETH',   dec:2},
+  'mag-ptk':  {price:0.00182, base:0.00182, sym:'MAG',   dec:5},
+  'drop-ptk': {price:0.000312,base:0.000312,sym:'DROP',  dec:6},
+  'fuzz-ptk': {price:0.004561,base:0.004561,sym:'FUZZY', dec:6},
+  'yuzz-ptk': {price:0.000094,base:0.000094,sym:'YUZZF', dec:6},
+  'phnix-ptk':{price:0.01828, base:0.01828, sym:'PHNIX', dec:5},
+  'sol-ptk':  {price:148.32,  base:148.32,  sym:'SOL',   dec:2},
+  'usdc-ptk': {price:1.0000,  base:1.0000,  sym:'USDC',  dec:4},
+  'usdt-ptk': {price:1.0000,  base:1.0000,  sym:'USDT',  dec:4},
+  'bnb-ptk':  {price:594.41,  base:594.41,  sym:'BNB',   dec:2},
+  'core-ptk': {price:0.0512,  base:0.0512,  sym:'COREUM',dec:4},
+  'solo-ptk': {price:0.1261,  base:0.1261,  sym:'SOLO',  dec:4},
+};
+function fmtPtk(v,d){return d===0?Math.round(v).toLocaleString():v.toFixed(d);}
+function updatePriceTicker(){
+  Object.keys(PTK_DATA).forEach(function(pid){
+    var d=PTK_DATA[pid];
+    var stable=d.sym==='USDC'||d.sym==='USDT'||d.sym==='RLUSD';
+    var vol=stable?0.00003:0.003;
+    d.price=Math.max(d.price*0.5,d.price*(1+rn(-vol,vol)));
+    var chgPct=((d.price-d.base)/d.base*100),up=chgPct>=0;
+    var el=document.getElementById(pid);if(!el)return;
+    var pel=document.getElementById(pid+'-p');
+    if(pel)pel.textContent='$'+fmtPtk(d.price,d.dec);
+    var spans=el.querySelectorAll('span');
+    var chgEl=spans[spans.length-1];
+    if(chgEl){chgEl.className=up?'ptk-up':'ptk-dn';chgEl.textContent=(up?'▲ +':'▼ ')+Math.abs(chgPct).toFixed(2)+'%';}
+    if(pid==='xrp-ptk'&&!_priceFromApi){price=d.price;var xpEl=document.getElementById('xp');if(xpEl)xpEl.textContent=price.toFixed(4);}
+  });
+}
+setInterval(updatePriceTicker,3000);
+
+/* ── SVG CHART CROSSHAIR ── */
+function addCrosshair(svgEl,dataArr,labelFn){
+  if(!svgEl||svgEl.dataset.crosshair) return;
+  svgEl.dataset.crosshair='1';
+  var wrap=document.createElement('div');
+  wrap.className='chart-wrap';
+  svgEl.parentNode.insertBefore(wrap,svgEl);
+  wrap.appendChild(svgEl);
+  var line=document.createElement('div');line.className='chart-crosshair';wrap.appendChild(line);
+  var tip=document.createElement('div');tip.className='chart-tooltip';
+  tip.innerHTML='<div class="tt-date"></div><div class="tt-val"></div>';wrap.appendChild(tip);
+  wrap.addEventListener('mousemove',function(e){
+    var rect=wrap.getBoundingClientRect();
+    var x=e.clientX-rect.left;
+    var idx=Math.min(dataArr.length-1,Math.max(0,Math.round((x/rect.width)*(dataArr.length-1))));
+    var val=dataArr[idx];
+    line.style.left=x+'px';line.style.display='block';
+    var tipX=Math.min(rect.width-90,Math.max(40,x));
+    tip.style.cssText='display:block;left:'+tipX+'px;top:2px;';
+    tip.querySelector('.tt-date').textContent=labelFn?labelFn(idx,dataArr.length):'';
+    tip.querySelector('.tt-val').textContent=typeof val==='number'?
+      (val<1?'$'+val.toFixed(val<0.001?6:4):'$'+val.toFixed(2)):String(val);
+  });
+  wrap.addEventListener('mouseleave',function(){line.style.display='none';tip.style.display='none';});
+}
+function sparkLabel(idx,total){
+  var now=new Date(),offset=(total-1-idx)*((24*3600*1000)/total);
+  var d=new Date(now-offset);
+  return (d.getMonth()+1)+'/'+d.getDate()+' '+(d.getHours()<10?'0':'')+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes();
+}
+function feeLabel(idx,total){
+  var now=new Date(),offset=(total-1-idx)*(7*24*3600*1000/total);
+  var d=new Date(now-offset);
+  return (d.getMonth()+1)+'/'+d.getDate()+' '+(d.getHours()<10?'0':'')+d.getHours()+'h';
+}
+setTimeout(function(){
+  var spk=document.getElementById('spk');if(spk)addCrosshair(spk,sparkData,sparkLabel);
+  var tok=document.getElementById('tok-chart');if(tok)addCrosshair(tok,TOK_DATA[_tcSym]?TOK_DATA[_tcSym].hist:[],sparkLabel);
+  var fee=document.getElementById('fee-chart');if(fee)addCrosshair(fee,FEE_DATA,feeLabel);
+},900);
+var _origSetTokChart2=setTokChart;
+setTokChart=function(sym,btn){
+  _origSetTokChart2(sym,btn);
+  setTimeout(function(){var tok=document.getElementById('tok-chart');if(tok){delete tok.dataset.crosshair;addCrosshair(tok,TOK_DATA[sym]?TOK_DATA[sym].hist:[],sparkLabel);}},120);
+};
 
 </script>
 </body>
